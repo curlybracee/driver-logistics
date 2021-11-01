@@ -1,0 +1,74 @@
+.header_section {
+  width: 100%;
+  border-bottom: #ebebeb solid 1px;
+  position: fixed;
+  background: #fff;
+  z-index: 10;
+  max-height: 101px;
+  display: flex;
+  justify-content: center;
+}
+.headerContainer {
+  max-width: 1170px;
+}
+.header_outer {
+  width: 100%;
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.main_logo {
+  width: 100%;
+}
+.main_logo img {
+  max-width: 60%;
+  max-height: 51px;
+}
+
+.menupart {
+  width: 90%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+.main-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.menu_active {
+  border-bottom: #ce2e33 solid 2px !important;
+}
+.stellarnav {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-bottom: 0;
+  justify-content: flex-end;
+}
+a {
+  text-decoration: none !important;
+}
+.stellarnav li {
+  display: inline-block;
+  margin-left: 25px;
+  border-bottom: transparent solid 2px;
+}
+.stellarnav li a {
+  color: #000;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease-out;
+}
+.stellarnav > li > a {
+  padding: 13px 0px 0px;
+  text-transform: uppercase;
+}
+.stellarnav > li:hover {
+  color: #ce2e33 !important;
+  border-bottom: #ce2e33 solid 2px;
+}
+.stellarnav > li > a:hover {
+  color: #ce2e33 !important;
+}
