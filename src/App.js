@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css';
 import Header from './components/Header';
+import Loader from './components/Loader';
 import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-
+        <Loader />
       </Router>
     </div>
   );
