@@ -1,15 +1,19 @@
 import React from 'react'
 import './App.css';
 import Header from './components/Header';
-import Loader from './components/Loader';
 import Footer from './components/Footer';
 import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Routes from './Routes'
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Router>
         <Header />
+        <div class="clearfix"></div>
+        <main className="main">
+          <Routes />
+        </main>
         <Footer />
       </Router>
     </div>
