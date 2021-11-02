@@ -2648,3 +2648,7 @@ button {
     display: none;
   }
 }
+
+.logo-item > img {
+  height: 120px;
+}
