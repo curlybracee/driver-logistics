@@ -269,7 +269,6 @@ h2.background {
         border-top: 0px solid #dfdfdf;
         content:"";
         margin: 0 auto; /* this centers the line to the full width specified */
-  position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
   top: 50%;
   left: 0;
   right: 0;
