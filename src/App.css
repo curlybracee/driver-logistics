@@ -10,3 +10,4 @@
 .main {
   flex: 1;
 }
+@import "./styles/animatedCss.css";
