@@ -10,7 +10,6 @@ const Loader = () => {
             </div>
             <img src={LoaderImage} width="159" height="92" alt="" />
         </div>
-
     )
 }
 export default Loader

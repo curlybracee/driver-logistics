@@ -1,4 +1,13 @@
 @import "./styles/header.css";
 @import "./styles/loader.css";
 @import "./styles/main.css";
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main {
+  flex: 1;
+}
 @import "./styles/animatedCss.css";
