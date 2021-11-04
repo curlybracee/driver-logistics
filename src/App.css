@@ -2,3 +2,12 @@
 @import "./styles/loader.css";
 @import "./styles/main.css";
 @import "./styles/animatedCss.css";
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main {
+  flex: 1;
+}

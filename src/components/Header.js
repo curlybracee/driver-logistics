@@ -34,12 +34,13 @@ const Header = () => {
                     <div className="header_outer">
                         <Col md={3}>
                             <div className="main_logo">
-                                <a href="index.html">
+                                <Link to="/">
                                     <img
                                         src={MainLogo}
                                         alt="Driver Logistics"
                                         title="Driver Logistics"
-                                    /></a>
+                                    />
+                                </Link>
                             </div>
                         </Col>
                         <Col md={9}>
