@@ -270,6 +270,7 @@ h2.background {
         content:"";
         margin: 0 auto; /* this centers the line to the full width specified */
   top: 50%;
+  /* position: absolute; */
   left: 0;
   right: 0;
   bottom: 0;
@@ -490,6 +491,7 @@ h3.double:after {
   width: 100%;
   padding-top: 0px;
   padding-bottom: 80px;
+  position: relative;
 }
 
 .slider_outer {
