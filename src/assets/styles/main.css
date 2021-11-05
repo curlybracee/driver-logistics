@@ -175,7 +175,7 @@ p {
   top: 500px;
   height: 420px;
   width: 200px;
-  background: url(../assets/images/services_right.png) no-repeat top right;
+  background: url(../images/services_right.png) no-repeat top right;
   /* opacity: ; */
   background-size: contain;
   z-index: 100000000000000000;
@@ -208,7 +208,7 @@ p {
   bottom: 300px;
   height: 420px;
   width: 200px;
-  background: url(../assets/images/services_left.png) no-repeat top right;
+  background: url(../images/services_left.png) no-repeat top right;
   /* opacity: ; */
   background-size: contain;
   z-index: 100000000000000000;
@@ -231,7 +231,7 @@ p {
   top: -80px;
   height: 420px;
   width: 200px;
-  background: url(../assets/images/services_right.png) no-repeat top right;
+  background: url(../images/services_right.png) no-repeat top right;
   /* opacity: ; */
   background-size: contain;
   z-index: 100000000000000000;
@@ -450,7 +450,7 @@ h3.double:after {
 }
 
 .home_testi_bg {
-  background: url(../assets/images/testi_img.png) center top no-repeat;
+  background: url(../images/testi_img.png) center top no-repeat;
   width: 100%;
   padding: 50px 150px 50px 150px;
 }
@@ -876,7 +876,7 @@ button {
   top: 400px;
   height: 520px;
   width: 200px;
-  background: url(../assets/images/services_right.png) no-repeat top right;
+  background: url(../images/services_right.png) no-repeat top right;
   /* opacity: ;  */
   background-size: contain;
   z-index: 1;
@@ -1565,7 +1565,7 @@ button {
   top: 500px;
   height: 420px;
   width: 200px;
-  background: url(../assets/images/services_right.png) no-repeat top right;
+  background: url(../images/services_right.png) no-repeat top right;
   /* opacity: ;  */
   background-size: contain;
   z-index: 100000000000000000;
@@ -1824,7 +1824,7 @@ button {
   top: 240px;
   height: 420px;
   width: 200px;
-  background: url(../assets/images/services_right.png) no-repeat top right;
+  background: url(../images/services_right.png) no-repeat top right;
   /* opacity: ; */
   background-size: contain;
   z-index: 100000000000000000;
@@ -1851,7 +1851,7 @@ button {
   top: 90%;
   height: 104px;
   width: 500px;
-  background: url(../assets/images/careers_box_after.png) no-repeat top right;
+  background: url(../images/careers_box_after.png) no-repeat top right;
   /* opacity: ; */
   background-size: contain;
   z-index: 1;
@@ -1872,7 +1872,7 @@ button {
   top: 92%;
   height: 104px;
   width: 500px;
-  background: url(../assets/images/careers_box_after_1.png) no-repeat top right;
+  background: url(../images/careers_box_after_1.png) no-repeat top right;
   /* opacity: ; */
   background-size: contain;
   z-index: 1;
@@ -2548,7 +2548,7 @@ button {
     top: 240px;
     height: 420px;
     width: 200px;
-    background: url(../assets/images/services_right.png) no-repeat top right;
+    background: url(../images/services_right.png) no-repeat top right;
     /* opacity: ; */
     background-size: contain;
     z-index: 100000000000000000;
@@ -2653,3 +2653,34 @@ button {
 .logo-item > img {
   height: 120px;
 }
+
+/* //bhagath */
+.background_double{
+  position: relative;
+  z-index: 1;
+  
+}
+background_double::before{
+    border-top: none;
+
+}
+.background_double::after{
+ border-bottom: 3px solid #c62028;
+  -webkit-box-shadow: 0 1px 0 0 red;
+  -moz-box-shadow: 0 1px 0 0 red;
+  box-shadow: 0 1px 0 0 red;
+  content: "";
+  margin: 0 auto; /* this centers the line to the full width specified */
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  width: 35%;
+  z-index: -1;
+}
+.h2_Span{
+  background: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
