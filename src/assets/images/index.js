@@ -18,6 +18,7 @@ import LocationIco from './contact_icon_1.png'
 import MailIco from './contact_icon_2.png'
 import PhoneIco from './contact_icon_3.png'
 import WorkWithUsImg from './career_img.png'
+import BlogIntroImg from './blog_img.png'
 export {
     MainLogo, HeroImg,
     Logo1,
@@ -26,5 +27,5 @@ export {
     Logo4,
     Logo5,
     ServiceWareHouseImg, ServiceFleetImg, ServiceConstructionImg, ServiceDigitisationImg, tab_img_1, tab_img_2,
-    ContactSecImg, LocationIco, MailIco, PhoneIco, WorkWithUsImg
+    ContactSecImg, LocationIco, MailIco, PhoneIco, WorkWithUsImg, BlogIntroImg
 }
