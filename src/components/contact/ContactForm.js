@@ -1,5 +1,6 @@
 import React from "react";
 import { LocationIco, MailIco, PhoneIco } from "../../assets/images";
+import Fade from 'react-reveal/Fade';
 
 const ContactForm = () => {
     return (
@@ -56,30 +57,32 @@ const ContactForm = () => {
                         </div>
 
                         <div className="col-md-6 wow fadeInUp" data-wow-delay="2s">
-                            <div className="contact_address">
-                                <h1>Contact Details</h1>
+                            <Fade bottom>
+                                <div className="contact_address">
+                                    <h1>Contact Details</h1>
 
-                                <ul>
-                                    <li>
-                                        <img src={LocationIco} alt='' />
-                                        University Road, CUSAT PO, Kochi,
-                                        <br />
-                                        Kerala, India - 682022
-                                    </li>
+                                    <ul>
+                                        <li>
+                                            <img src={LocationIco} alt='' />
+                                            University Road, CUSAT PO, Kochi,
+                                            <br />
+                                            Kerala, India - 682022
+                                        </li>
 
-                                    <li>
-                                        <img src={MailIco} alt='' />
-                                        <a href="mailto:info@driverlogistics.in">
-                                            info @driverlogistics.in
-                                        </a>
-                                    </li>
+                                        <li>
+                                            <img src={MailIco} alt='' />
+                                            <a href="mailto:info@driverlogistics.in">
+                                                info @driverlogistics.in
+                                            </a>
+                                        </li>
 
-                                    <li>
-                                        <img src={PhoneIco} alt='' />
-                                        <a href="tel:+914842544002">+91 484 254 4002</a>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <li>
+                                            <img src={PhoneIco} alt='' />
+                                            <a href="tel:+914842544002">+91 484 254 4002</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </Fade>
                         </div>
                     </div>
                 </div>

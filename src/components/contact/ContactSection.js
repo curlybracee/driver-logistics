@@ -1,5 +1,6 @@
 import React from 'react'
 import { ContactSecImg } from '../../assets/images'
+import Fade from 'react-reveal/Fade';
 
 const ContactSection = () => {
     return (<section class="inner_contact_section">
@@ -23,15 +24,16 @@ const ContactSection = () => {
                         </div>
 
                     </div>
-
                     <div class="col-md-6 inner_contact_box">
+                        <Fade bottom>
 
-                        <div class="inner_contact_contantbox wow fadeInUp" data-wow-delay="1s">
+                            <div class="inner_contact_contantbox wow fadeInUp" data-wow-delay="1s">
 
-                            <img src={ContactSecImg} alt='img' />
+                                <img src={ContactSecImg} alt='img' />
 
-                        </div>
+                            </div>
 
+                        </Fade>
                     </div>
 
 
