@@ -25,5 +25,5 @@ export {
     Logo4,
     Logo5,
     ServiceWareHouseImg, ServiceFleetImg, ServiceConstructionImg, ServiceDigitisationImg, tab_img_1, tab_img_2,
-    ContactSecImg, LocationIco, MailIco, PhoneIco
+    ContactSecImg, LocationIco, MailIco, PhoneIco,
 }

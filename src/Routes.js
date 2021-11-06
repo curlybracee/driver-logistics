@@ -6,6 +6,7 @@ const AboutUs = lazy(() => import("./components/about/AboutUs"));
 const Home = lazy(() => import("./components/home/Home"));
 const service = lazy(() => import("./components/services/ServiceMain"));
 const Contact = lazy(() => import("./components/contact/Contact"));
+const Clientele = lazy(() => import("./components/clientele"));
 const Routes = () => {
     return (
         <Suspense fallback={<Loader />}>
@@ -14,6 +15,7 @@ const Routes = () => {
                 <Route exact path="/about-us" component={AboutUs} />
                 <Route exact path="/services" component={service} />
                 <Route exact path="/contact" component={Contact} />
+                <Route exact path="/clientele" component={Clientele} />
             </Switch>
         </Suspense>
     )
