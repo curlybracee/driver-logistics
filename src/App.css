@@ -12,8 +12,6 @@
 @import "./assets/styles/themify-icons.css";
 @import "./assets/styles/bootstrap.min.css"; */
 
-
-
 .App {
   display: flex;
   flex-direction: column;
@@ -21,4 +19,24 @@
 }
 .main {
   flex: 1;
+}
+.form-control {
+  border-radius: 50px !important;
+  padding: 15px 20px !important;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #000;
+  background: #fff;
+  background-clip: padding-box;
+  border: 1 px solid #777194;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-size: 12px;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 400;
+  color: #b6afaf;
 }
