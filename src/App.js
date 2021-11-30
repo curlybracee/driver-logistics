@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Routes from './Routes'
-import $ from 'jquery'
+// import $ from 'jquery'
 
 function App() {
   return (

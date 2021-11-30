@@ -18,7 +18,7 @@ const ContactSection = () => {
                             </h1>
 
                             <p>Have questions about our services? Let's talk about
-                                how we can help you achieve your goals and take
+                            how we can help you achieve your goals and take
                                 your business to the top!</p>
 
                         </div>
