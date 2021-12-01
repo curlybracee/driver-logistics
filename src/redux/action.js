@@ -1,0 +1,11 @@
+export const TYPES = {
+    FETCH_TESTIMONIALS: 'FETCH_TESTIMONIALS',
+    FETCH_TESTIMONIALS_REQUEST: 'FETCH_TESTIMONIALS_REQUEST',
+    FETCH_TESTIMONIALS_SUCCESS: 'FETCH_TESTIMONIALS_SUCCESS',
+    FETCH_TESTIMONIALS_FAILURE: 'FETCH_TESTIMONIALS_FAILURE',
+}
+export const action = (type, payload = {}) => {
+    return { type, payload }
+}
+
+export const fetchTestimonials = () => action(TYPES.FETCH_TESTIMONIALS)

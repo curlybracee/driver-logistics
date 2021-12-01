@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchTestimonials } from '../../redux/action';
 
 const Testimonial = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        // fetch(`${BASE_API}/testimonial`).then(res => res).then(res => {
+        //     console.log({ res });
+        // }).catch(err => {
+        //     console.log({ err });
+        // })
+        dispatch(fetchTestimonials())
+    }, [])
     return (
         <section class="testimmonial_section wow fadeInUp" data-wow-delay="1s">
             <div class="container">

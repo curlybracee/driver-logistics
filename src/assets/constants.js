@@ -1,0 +1,1 @@
+export const BASE_API = 'http://besterpsolution.in/demo/driver_logistics/public/api'

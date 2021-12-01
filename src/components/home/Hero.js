@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { HeroImg } from '../../assets/images'
 
 const Hero = () => {
+
     return (
         <div className='main_bannerpart'>
             <div className='banner_contantpart_outer'>
