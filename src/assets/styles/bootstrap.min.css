@@ -10,6 +10,13 @@
 body {
 	margin: 0
 }
+.formError {
+  color: #144114;
+  font-size: 14.7px;
+  padding: 3px;
+  margin-left: 21px;
+  text-align: end;
+}
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
 	display: block
 }
@@ -2689,6 +2696,13 @@ a.btn.disabled, fieldset[disabled] a.btn {
         box-shadow: 0px 10px 10px rgb(0 0 0 / 30%);
     transition: all 0.5s ease-out 0s;
     text-transform: uppercase;
+	    border-radius: 30px;
+    width: 14%;
+    margin-left: 5px;
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+
 }
 .btn-default.focus, .btn-default:focus {
 	color: #333;
