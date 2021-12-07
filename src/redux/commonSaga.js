@@ -13,7 +13,7 @@ function* handlePostSubscription(action) {
     const { response, error } = yield call(postApi, URL.NEWS_LETTER, email)
     console.log({ response });
     if (error) {
-
+        yield put(action(TYPES.POST_SUBSCRIPTION_FAILURE, error))
     } else {
         yield put(action(TYPES.POST_SUBSCRIPTION_SUCCESS, response?.data))
     }
@@ -21,6 +21,7 @@ function* handlePostSubscription(action) {
 function* handlePostResume(action) {
     const { response, error } = yield call(postApi, URL.RESUME, action?.payload?.data)
     if (error) {
+        yield put(action(TYPES.POST_RESUME_FAILURE, error))
 
     } else {
         yield put(action(TYPES.POST_RESUME_SUCCESS, response?.data))
@@ -29,6 +30,7 @@ function* handlePostResume(action) {
 function* handlePostContact(action) {
     const { response, error } = yield call(postApi, URL.CONTACT, action?.payload?.data)
     if (error) {
+        yield put(action(TYPES.POST_CONTACT_FORM_FAILURE, error))
 
     } else {
         yield put(action(TYPES.POST_CONTACT_FORM_SUCCESS, response?.data))
