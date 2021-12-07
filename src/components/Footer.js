@@ -99,26 +99,24 @@ const Footer = () => {
 
                         </div>
 
+                        <div class="footer_form">
 
+                            <form onSubmit={Formik.handleSubmit}>
+                                <div class="col-md-12">
+                                    <div >
+                                        <input type="text" id='email' name="email" placeholder=""
+                                            onChange={Formik.handleChange}
+                                        />
 
-                        <div class="col-md-12">
-
-
-                            <div class="footer_form">
-
-                                <form onSubmit={Formik.handleSubmit} action="#" method="Post">
-                                    <input type="text" id='email' name="email" placeholder="" onChange={Formik.handleChange} />
-                                    {Formik.errors.email && Formik.touched.email ? (
-                                        <div className="formError">{Formik.errors.email}</div>
-                                    ) : null}
-
-                                    <button type="submit" class="btn btn-default">Send</button>
-                                </form>
-                            </div>
-
-
-
-
+                                        {Formik.errors.email && Formik.touched.email ? (
+                                            <div className="formError">{Formik.errors.email}</div>
+                                        ) : null}
+                                    </div>
+                                    <div>
+                                        <button type="submit" class=" btn-default" >Send</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
 
                         <div class="copyright_outer">
