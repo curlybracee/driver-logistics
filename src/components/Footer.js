@@ -1,8 +1,22 @@
 import React from 'react';
-import footerLogo from '../assets/images/footer_logo.png'
+import footerLogo from '../assets/images/footer_logo.png';
+import { useFormik } from 'formik';
+import * as Yup from "yup";
 
 const Footer = () => {
+    const Formic = useFormik({
+        validationSchema: Yup.object({
+            email: Yup.string()
+                .email()
+                .required("email is Required"),
+        })
+         onSubmit: (inputData) => {
+            // handleLogin(userInputData)
+        },
+
+    })
     return (
+
         <section class="footer_section inner_footer_top">
 
             <div class="container">
