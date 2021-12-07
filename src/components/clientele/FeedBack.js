@@ -42,28 +42,30 @@ const FeedBack = () => {
                         </div>
 
                         <div class="col-md-6 wow fadeInUp" data-wow-delay="2s">
-                            <Fade bottom>
+                            <Fade bottom style={{ display: 'flex' }}>
                                 <div class="testimonial_contantbox">
                                     <div class="testimonial_icon">
                                         <img alt='' src={TestImages.Testimonial_icon} />
                                     </div>
                                 </div>
 
-                                <div class="testi_new_box blog_second">
-                                    <span class="testi_left_imagebox">
-                                        <img alt='' src={TestImages.Testi_people_2} />
-                                        <h2>
-                                            <strong>Sooraj</strong>
-                                            <br />
+                                <div class="testi_new_box blog_second" >
+                                    <div style={{ display: 'flex !important' }}>
+                                        <span class="testi_left_imagebox">
+                                            <img alt='' src={TestImages.Testi_people_2} />
+                                            <h2>
+                                                <strong>Sooraj</strong>
+                                                <br />
                                             Area Manager, JK Tyres
                                         </h2>
-                                    </span>
+                                        </span>
 
-                                    <div class="testi_right_contant">
-                                        "Driver Logistics team consistently improves fulfilling our
-                                        markert requirement with prompt and timely deliveries to our
-                                        Channel Partners. Delightfully wishing all the best to this
-                                        awesome team."
+                                        <div class="testi_right_contant">
+                                            "Driver Logistics team consistently improves fulfilling our
+                                            markert requirement with prompt and timely deliveries to our
+                                            Channel Partners. Delightfully wishing all the best to this
+                                            awesome team."
+                                    </div>
                                     </div>
                                 </div>
                             </Fade>

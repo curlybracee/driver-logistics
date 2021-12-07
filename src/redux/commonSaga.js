@@ -4,7 +4,6 @@ import { invokeApi } from './api';
 
 function* handleFetchTestimonials() {
     const payload = yield call(invokeApi, 'testimonial')
-    console.log({ payload });
     yield put(action(TYPES.FETCH_TESTIMONIALS_SUCCESS, payload?.response?.data))
 }
 export default function* mySagas() {
