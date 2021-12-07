@@ -4,17 +4,22 @@ import { useFormik } from 'formik';
 import * as Yup from "yup";
 
 const Footer = () => {
-    const Formic = useFormik({
+    const Formik = useFormik({
+        initialValues: {
+            email: ""
+        },
         validationSchema: Yup.object({
             email: Yup.string()
                 .email()
                 .required("email is Required"),
-        })
-         onSubmit: (inputData) => {
-            // handleLogin(userInputData)
-        },
+        }),
+        // onSubmit: (inputData) => {
+        //     handleLogin(inputData)
+        // },
 
     })
+    const handleLogin = (inputData) => {
+    };
     return (
 
         <section class="footer_section inner_footer_top">
@@ -98,9 +103,13 @@ const Footer = () => {
 
                             <div class="footer_form">
 
-                                <form action="#" method="Post">
-                                    <input type="text" name="text" placeholder=""></input>
-                                    <button type="button" class="btn btn-default">Send</button>
+                                <form onSubmit={Formik.handleSubmit} action="#" method="Post">
+                                    <input type="text" id='email' name="email" placeholder="" />
+                                    {Formik.errors.email && Formik.touched.email ? (
+                                        <div className="formError">{Formik.errors.email}</div>
+                                    ) : null}
+
+                                    <button type="submit" class="btn btn-default">Send</button>
                                 </form>
                             </div>
 
