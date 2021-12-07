@@ -4,9 +4,40 @@ import { action, TYPES } from './action'
 import { invokeApi, postApi } from './api';
 
 function* handleFetchTestimonials() {
-    const payload = yield call(invokeApi, URL.TESTIMONIAL)
-    console.log({ payload });
-    yield put(action(TYPES.FETCH_TESTIMONIALS_SUCCESS, payload?.response?.data))
+    const { response, error } = yield call(invokeApi, URL.TESTIMONIAL)
+    console.log({ response });
+    if (error) {
+        yield put(action(TYPES.FETCH_TESTIMONIALS_FAILURE, error))
+    } else {
+        yield put(action(TYPES.FETCH_TESTIMONIALS_SUCCESS, response?.data))
+    }
+}
+function* handleFetchBanner() {
+    const { response, error } = yield call(invokeApi, URL.BANNER)
+    console.log({ response });
+    if (error) {
+        yield put(action(TYPES.FETCH_BANNER_FAILURE, error))
+    } else {
+        yield put(action(TYPES.FETCH_BANNER_SUCCESS, response?.data))
+    }
+}
+function* handleFetchBlog() {
+    const { response, error } = yield call(invokeApi, URL.BLOG)
+    console.log({ response });
+    if (error) {
+        yield put(action(TYPES.FETCH_BLOG_FAILURE, error))
+    } else {
+        yield put(action(TYPES.FETCH_BLOG_SUCCESS, response?.data))
+    }
+}
+function* handleFetchClient() {
+    const { response, error } = yield call(invokeApi, URL.CLIENT)
+    console.log({ response });
+    if (error) {
+        yield put(action(TYPES.FETCH_CLIENT_FAILURE, error))
+    } else {
+        yield put(action(TYPES.FETCH_CLIENT_SUCCESS, response?.data))
+    }
 }
 function* handlePostSubscription(action) {
     const { email } = action?.payload.data
@@ -39,6 +70,10 @@ function* handlePostContact(action) {
 export default function* mySagas() {
     yield all([
         takeLatest(TYPES.FETCH_TESTIMONIALS, handleFetchTestimonials),
+        takeLatest(TYPES.FETCH_BANNER, handleFetchBanner),
+        takeLatest(TYPES.FETCH_BLOG, handleFetchBlog),
+        takeLatest(TYPES.FETCH_CLIENT, handleFetchClient),
+
         takeLatest(TYPES.POST_SUBSCRIPTION, handlePostSubscription),
         takeLatest(TYPES.POST_RESUME, handlePostResume),
         takeLatest(TYPES.POST_CONTACT_FORM, handlePostContact),

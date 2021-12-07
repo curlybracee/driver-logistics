@@ -2,8 +2,11 @@ import React from 'react';
 import footerLogo from '../assets/images/footer_logo.png';
 import { useFormik } from 'formik';
 import * as Yup from "yup";
+import { useDispatch } from 'react-redux';
+import { postSubscription } from '../redux/action';
 
 const Footer = () => {
+    const dispatch = useDispatch()
     const Formik = useFormik({
         initialValues: {
             email: ""
@@ -13,13 +16,13 @@ const Footer = () => {
                 .email()
                 .required("email is Required"),
         }),
-        // onSubmit: (inputData) => {
-        //     handleLogin(inputData)
-        // },
+        onSubmit: (inputData) => {
+            const { email } = inputData;
+            dispatch(postSubscription(email))
+        },
 
     })
-    const handleLogin = (inputData) => {
-    };
+
     return (
 
         <section class="footer_section inner_footer_top">
@@ -37,8 +40,8 @@ const Footer = () => {
                             </div>
 
                             <p>Driver Logistics has a mission
-                            to be the supply chain
-                            extension of the most
+                                to be the supply chain
+                                extension of the most
                                 successful companies in the</p>
 
                         </div>
@@ -75,8 +78,8 @@ const Footer = () => {
                             <div class="footer_small_title">CONTACT</div>
 
                             <p>University Road, CUSAT
-                            PO, Kochi, Kerala, India -
-                            682022
+                                PO, Kochi, Kerala, India -
+                                682022
                                 <a href="mailto:info@driverlogistics.in">info@driverlogistics.in</a>
                             </p>
 
@@ -90,7 +93,7 @@ const Footer = () => {
                             <div class="footer_small_title">SUBSCRIBE</div>
 
                             <p>We understand your
-                            business and your
+                                business and your
                                 passion to drive it forward.</p>
 
 
@@ -104,7 +107,7 @@ const Footer = () => {
                             <div class="footer_form">
 
                                 <form onSubmit={Formik.handleSubmit} action="#" method="Post">
-                                    <input type="text" id='email' name="email" placeholder="" />
+                                    <input type="text" id='email' name="email" placeholder="" onChange={Formik.handleChange} />
                                     {Formik.errors.email && Formik.touched.email ? (
                                         <div className="formError">{Formik.errors.email}</div>
                                     ) : null}
