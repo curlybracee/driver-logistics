@@ -6,3 +6,12 @@ export const invokeApi = async (url, data) => {
         return { response }
     }).catch(error => ({ error }))
 }
+
+export const postApi = async (url, data) => {
+    return await fetch(`${BASE_API}/${url}`, {
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(res => res.json()).then(response => {
+        return { response }
+    }).catch(error => ({ error }))
+}
