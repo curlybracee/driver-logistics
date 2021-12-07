@@ -1,41 +1,43 @@
 import React, { useEffect } from 'react'
+import ReactOwlCarousel from 'react-owl-carousel';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux'
 import { fetchTestimonials } from '../../redux/action';
 
 const Testimonial = () => {
-    const dispatch = useDispatch();
+    const { data } = useSelector(state => state.userLog.testimonials)
+    console.log({ data });
     useEffect(() => {
-        // fetch(`${BASE_API}/testimonial`).then(res => res).then(res => {
-        //     console.log({ res });
-        // }).catch(err => {
-        //     console.log({ err });
-        // })
-        dispatch(fetchTestimonials())
-    }, [])
-    return (
+
+    }, [data])
+    return data.length > 0 && (
         <section class="testimmonial_section wow fadeInUp" data-wow-delay="1s">
             <div class="container">
-                <div class="col-md-12">
-                    <div class="home_testi_bg">
-                        <div class="home_testimonial_title">TESTIMONIALS</div>
-
-                        <p>
-                            ""They have ensured seamless operations. Process oriented and
-                            flexible and agile. In this pandemic time they have right sized
-                            the operations and shown the cost optimization. Being
-                            enthusiastic and agile their operational flexibility is their
-                            USP. Good at handling any seasonal spikes. They are constantly
-                            striving to serve better with the technology like data
-                            analytics, and ML, AI.""
-                        </p>
-
-                        <div className="home_testimonial_smalltitle">
-                            Rineesh PM - Cluster Head Supply Chain, Nestlé
+                <div class="col-xs-12">
+                    <ReactOwlCarousel
+                        items={1}
+                        dots={false}
+                        rewind={false}
+                        autoplay={true}
+                        autoplayTimeout={5000}
+                        className='owl-theme' loop={true} margin={10}>
+                        {data.map(item => <div class="col-md-12" style={{ width: '100%' }}>
+                            <div class="home_testi_bg">
+                                <div class="home_testimonial_title">TESTIMONIALS</div>
+                                <p>
+                                    {item.description}
+                                </p>
+                                <div className="home_testimonial_smalltitle">
+                                    {item.title} - {item.designation}
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        )
+                        }
+                    </ReactOwlCarousel>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 
