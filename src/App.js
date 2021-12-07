@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Routes from './Routes'
 import { useDispatch } from 'react-redux';
-import { fetchTestimonials } from './redux/action';
+import { fetchBanner, fetchBlogs, fetchClients, fetchTestimonials } from './redux/action';
 // import $ from 'jquery'
 
 function App() {
@@ -14,6 +14,9 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchTestimonials())
+    dispatch(fetchBlogs())
+    dispatch(fetchClients())
+    dispatch(fetchBanner())
   }, [])
 
   return (
