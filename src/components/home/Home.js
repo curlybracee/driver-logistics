@@ -9,6 +9,7 @@ import Testimonial from './Testimonial'
 import WhareHouseService from './WhareHouseService'
 import Fade from 'react-reveal/Fade';
 const Home = () => {
+
     return (
         <div>
             <Fade bottom>
