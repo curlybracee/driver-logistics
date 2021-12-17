@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react'
 import ReactOwlCarousel from 'react-owl-carousel';
 import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux'
-import { fetchTestimonials } from '../../redux/action';
+
 
 const Testimonial = () => {
-    const { data } = useSelector(state => state.userLog.testimonials)
+    const { data = [] } = useSelector(state => state.userLog.testimonials)
     console.log({ data });
     useEffect(() => {
 
