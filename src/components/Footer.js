@@ -1,8 +1,30 @@
 import React from 'react';
-import footerLogo from '../assets/images/footer_logo.png'
+import footerLogo from '../assets/images/footer_logo.png';
+import { useFormik } from 'formik';
+import * as Yup from "yup";
+import { useDispatch } from 'react-redux';
+import { postSubscription } from '../redux/action';
 
 const Footer = () => {
+    const dispatch = useDispatch()
+    const Formik = useFormik({
+        initialValues: {
+            email: ""
+        },
+        validationSchema: Yup.object({
+            email: Yup.string()
+                .email()
+                .required("email is Required"),
+        }),
+        onSubmit: (inputData) => {
+            const { email } = inputData;
+            dispatch(postSubscription(email))
+        },
+
+    })
+
     return (
+
         <section class="footer_section inner_footer_top">
 
             <div class="container">
@@ -18,8 +40,8 @@ const Footer = () => {
                             </div>
 
                             <p>Driver Logistics has a mission
-                            to be the supply chain
-                            extension of the most
+                                to be the supply chain
+                                extension of the most
                                 successful companies in the</p>
 
                         </div>
@@ -56,8 +78,8 @@ const Footer = () => {
                             <div class="footer_small_title">CONTACT</div>
 
                             <p>University Road, CUSAT
-                            PO, Kochi, Kerala, India -
-                            682022
+                                PO, Kochi, Kerala, India -
+                                682022
                                 <a href="mailto:info@driverlogistics.in">info@driverlogistics.in</a>
                             </p>
 
@@ -71,28 +93,30 @@ const Footer = () => {
                             <div class="footer_small_title">SUBSCRIBE</div>
 
                             <p>We understand your
-                            business and your
+                                business and your
                                 passion to drive it forward.</p>
 
 
                         </div>
 
+                        <div class="footer_form">
 
+                            <form onSubmit={Formik.handleSubmit}>
+                                <div class="col-md-12">
+                                    <div >
+                                        <input type="text" id='email' name="email" placeholder=""
+                                            onChange={Formik.handleChange}
+                                        />
 
-                        <div class="col-md-12">
-
-
-                            <div class="footer_form">
-
-                                <form action="#" method="Post">
-                                    <input type="text" name="text" placeholder=""></input>
-                                    <button type="button" class="btn btn-default">Send</button>
-                                </form>
-                            </div>
-
-
-
-
+                                        {Formik.errors.email && Formik.touched.email ? (
+                                            <div className="formError">{Formik.errors.email}</div>
+                                        ) : null}
+                                    </div>
+                                    <div>
+                                        <button type="submit" class=" btn-default" >Send</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
 
                         <div class="copyright_outer">

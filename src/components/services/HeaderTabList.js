@@ -1,0 +1,59 @@
+import React, { useState } from 'react'
+import TabPanel1 from './TabPanel1';
+import TabPanel2 from './TabPanel2';
+import TabPanel3 from './TabPanel3';
+import TabPanel4 from './TabPanel4';
+import Fade from 'react-reveal/Fade';
+
+
+function HeaderTabList(props) {
+    const [visibleState, SetVisibleState] = useState('first');
+    const [isLoader, SetIsLoader] = useState(false);
+    const ShowState = () => {
+        switch (visibleState) {
+            case 'first':
+                return <TabPanel1 loader={isLoader} />
+            case 'second':
+                return <TabPanel2 loader={isLoader} />
+            case 'third':
+                return <TabPanel3 loader={isLoader} />
+            case 'fourth':
+                return <TabPanel4 />
+            default:
+                break;
+        }
+    }
+    const TabOnClick = (value) => {
+        SetVisibleState(value)
+        SetIsLoader(true)
+    }
+
+    return (
+        <div id="skltbsResponsive" className="skltbs">
+
+            <ul role="tablist" className="skltbs-tab-group">
+                <li role="presentation" className="skltbs-tab-item">
+                    <button role="tab" className="skltbs-tab" onClick={() => TabOnClick('first')}  >WAREHOUSE MANAGEMENT</button>
+                </li>
+                <li role="presentation" className="skltbs-tab-item">
+                    <button role="tab" className="skltbs-tab" onClick={() => TabOnClick('second')} >FLEET & TRANSPORTATION</button>
+                </li>
+                <li role="presentation" className="skltbs-tab-item">
+                    <button role="tab" className="skltbs-tab" onClick={() => TabOnClick('third')} >3PL CONSULTATION</button>
+                </li>
+                <li role="presentation" className="skltbs-tab-item">
+                    <button role="tab" className="skltbs-tab lasttab_padding" onClick={() => TabOnClick('fourth')} >DIGITISATION & BUSINESS <br /> INTELLIGENCE</button>
+                </li>
+            </ul>
+            <div className="skltbs-panel-group">
+                <Fade bottom >
+                    {
+                        ShowState()
+                    }
+                </Fade>
+            </div>
+        </div>
+    )
+}
+
+export default HeaderTabList
