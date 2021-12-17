@@ -28,7 +28,7 @@ const BlogIntro = () => {
 
                         <div class="col-md-6 inner_blog_box">
                             <div class=" wow fadeInUp" data-wow-delay="1s">
-                                <img src={BlogIntroImg} />
+                                <img src={BlogIntroImg} alt='' />
                             </div>
                         </div>
                     </div>

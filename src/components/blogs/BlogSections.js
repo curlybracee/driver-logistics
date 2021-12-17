@@ -1,10 +1,9 @@
-import { map } from 'jquery';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 
 const BlogSections = () => {
-    const { data = [] } = useSelector(state => state.userLog.blogs)
+    const { data = {} } = useSelector(state => state.userLog.blogs)
 
     return (
         <section class="inner_blog_contantbox">
