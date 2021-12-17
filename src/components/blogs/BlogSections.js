@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 
 const BlogSections = () => {
-    const { data } = useSelector(state => state.userLog.blogs)
+    const { data = [] } = useSelector(state => state.userLog.blogs)
 
     useEffect(() => {
         const rowData = {};
@@ -36,11 +36,11 @@ const BlogSections = () => {
                                 <div class="blog_auther"><img alt='' src="img/auther_img.png" /> <span>Surya Gopal</span></div>
                                 <div class="clearfix"></div>
                                 <div class="blog_title"><a href="blog-details.html">Triple Bottom Line: The Yardstick
-                                To Measure Sustainability
-                                        In The Supply Chain</a></div>
+                                    To Measure Sustainability
+                                    In The Supply Chain</a></div>
 
                                 <p>People, planet and profit are the three
-                                driving forces that keep your supply
+                                    driving forces that keep your supply
                                     chain stable and organized. Building</p>
 
                                 <div class="blog_datebox">21 July 2021 | 3 mins<a href="blog-details.html"><img
@@ -50,7 +50,7 @@ const BlogSections = () => {
 
                                 <div class="blog_readmore"><a href="blog-details.html"
                                     class="theme-btn-three btn-style-three"><span class="btn-title-three">Read
-                                            More</span></a></div>
+                                        More</span></a></div>
 
                             </div>
 
