@@ -1,22 +1,10 @@
 import { map } from 'jquery';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 
 const BlogSections = () => {
     const { data = [] } = useSelector(state => state.userLog.blogs)
-
-    useEffect(() => {
-        const rowData = {};
-        data?.data.forEach(element => {
-            if (element.count < 3) {
-
-            }
-
-        });
-
-    }, [data])
-    console.log('QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ', data)
 
     return (
         <section class="inner_blog_contantbox">
