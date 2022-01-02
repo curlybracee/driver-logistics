@@ -4,6 +4,8 @@ import { Col, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { MainLogo } from '../assets/images'
 import { useLocation } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 const Header = () => {
     const { pathname } = useLocation()
     const [active, setActive] = useState({
@@ -47,7 +49,8 @@ const Header = () => {
                             <div className="menupart">
                                 <div id="main-nav" >
                                     <ul className="stellarnav">
-                                        <li className={clsx(active.home && 'menu_active')}><Link to="/">Home</Link></li>
+                                        <li className={clsx(active.home && 'menu_active')}><Link to="/">
+                                            <FontAwesomeIcon icon={faHome} size="1x" />  </Link></li>
                                         <li className={clsx(active.about_us && 'menu_active')}><Link to="/about-us">About Us</Link></li>
                                         <li className={clsx(active.services && 'menu_active')}><Link to="/services">Services</Link></li>
                                         <li className={clsx(active.clientele && 'menu_active')}><Link to="/clientele">Clientele</Link></li>
