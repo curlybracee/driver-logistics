@@ -606,20 +606,6 @@ button {
   font-weight: 500;
 }
 
-.copyright_outer {
-  width: 100%;
-  margin-top: 50px;
-}
-
-.copyright_outer p {
-  font-size: 16px;
-  line-height: 25px;
-  width: 100%;
-  color: #b9b9b9;
-  margin-top: 10px;
-  font-family: "Poppins", sans-serif;
-}
-
 .footer_rightpart {
   text-align: right;
 }
@@ -2423,13 +2409,6 @@ button {
     padding-left: 0px;
     padding-right: 0px;
   }
-
-  .skltbs-tab-group {
-    margin: 0;
-    padding: 0;
-    margin-left: 0%;
-  }
-
   .inner_service_section h1 {
     font-size: 32px;
     font-weight: 800;

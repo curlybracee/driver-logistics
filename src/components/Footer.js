@@ -4,6 +4,10 @@ import { useFormik } from 'formik';
 import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import { postSubscription } from '../redux/action';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 const Footer = () => {
     const dispatch = useDispatch()
@@ -40,8 +44,8 @@ const Footer = () => {
                             </div>
 
                             <p>Driver Logistics has a mission
-                                to be the supply chain
-                                extension of the most
+                            to be the supply chain
+                            extension of the most
                                 successful companies in the</p>
 
                         </div>
@@ -78,8 +82,8 @@ const Footer = () => {
                             <div class="footer_small_title">CONTACT</div>
 
                             <p>University Road, CUSAT
-                                PO, Kochi, Kerala, India -
-                                682022
+                            PO, Kochi, Kerala, India -
+                            682022
                                 <a href="mailto:info@driverlogistics.in">info@driverlogistics.in</a>
                             </p>
 
@@ -93,7 +97,7 @@ const Footer = () => {
                             <div class="footer_small_title">SUBSCRIBE</div>
 
                             <p>We understand your
-                                business and your
+                            business and your
                                 passion to drive it forward.</p>
 
 
@@ -103,7 +107,7 @@ const Footer = () => {
 
                             <form onSubmit={Formik.handleSubmit}>
                                 <div class="col-md-12">
-                                    <div >
+                                    <div class="col-md-10">
                                         <input type="text" id='email' name="email" placeholder=""
                                             onChange={Formik.handleChange}
                                         />
@@ -112,14 +116,14 @@ const Footer = () => {
                                             <div className="formError">{Formik.errors.email}</div>
                                         ) : null}
                                     </div>
-                                    <div>
+                                    <div class="col-md-2">
                                         <button type="submit" class=" btn-default" >Send</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
 
-                        <div class="copyright_outer">
+                        <div style={{ marginTop: '45px' }} >
                             <div class="col-md-6">
 
                                 <p>Copyright © Driver Logistics 2021.All right reserved</p>
@@ -130,14 +134,13 @@ const Footer = () => {
                                 <div class="footer_rightpart">
 
                                     <div class="dlab-topbar-right">
-                                        <ul class="dlab-social-icon">
+                                        <ul>
 
+                                            <li class="dlab-social-icon"><Link href="#"> <FontAwesomeIcon icon={faEnvelope} size="1x" />  </Link></li>
 
-
-                                            <li><a class="fa fa-instagram" href="#"></a></li>
-                                            <li><a class="fa fa-facebook" href="#"></a></li>
-                                            <li><a class="fa fa-linkedin" href="#"></a></li>
-                                            <li><a class="fa fa-envelope" href="#"></a></li>
+                                            <li class="dlab-social-icon"><Link href="#"> <FontAwesomeIcon icon={faInstagram} size="1x" /> </Link></li>
+                                            <li class="dlab-social-icon"><Link href="#"> <FontAwesomeIcon icon={faFacebookF} size="1x" /> </Link></li>
+                                            <li class="dlab-social-icon"><Link href="#"> <FontAwesomeIcon icon={faLinkedinIn} size="1x" /> </Link></li>
                                         </ul>
                                     </div>
 

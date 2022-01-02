@@ -4,7 +4,7 @@ import TabPanel2 from './TabPanel2';
 import TabPanel3 from './TabPanel3';
 import TabPanel4 from './TabPanel4';
 import Fade from 'react-reveal/Fade';
-
+import clsx from 'clsx'
 
 function HeaderTabList(props) {
     const [visibleState, SetVisibleState] = useState('first');
@@ -33,16 +33,16 @@ function HeaderTabList(props) {
 
             <ul role="tablist" className="skltbs-tab-group">
                 <li role="presentation" className="skltbs-tab-item">
-                    <button role="tab" className="skltbs-tab" onClick={() => TabOnClick('first')}  >WAREHOUSE MANAGEMENT</button>
+                    <button role="tab" className={visibleState === 'first' ? 'skltbs-tab-OnClicked' : 'skltbs-tab'} onClick={() => TabOnClick('first')}  >WAREHOUSE MANAGEMENT</button>
                 </li>
                 <li role="presentation" className="skltbs-tab-item">
-                    <button role="tab" className="skltbs-tab" onClick={() => TabOnClick('second')} >FLEET & TRANSPORTATION</button>
+                    <button role="tab" className={visibleState === 'second' ? 'skltbs-tab-OnClicked' : 'skltbs-tab'} onClick={() => TabOnClick('second')} >FLEET & TRANSPORTATION</button>
                 </li>
                 <li role="presentation" className="skltbs-tab-item">
-                    <button role="tab" className="skltbs-tab" onClick={() => TabOnClick('third')} >3PL CONSULTATION</button>
+                    <button role="tab" className={visibleState === 'third' ? 'skltbs-tab-OnClicked' : 'skltbs-tab'} onClick={() => TabOnClick('third')} >3PL CONSULTATION</button>
                 </li>
                 <li role="presentation" className="skltbs-tab-item">
-                    <button role="tab" className="skltbs-tab lasttab_padding" onClick={() => TabOnClick('fourth')} >DIGITISATION & BUSINESS <br /> INTELLIGENCE</button>
+                    <button role="tab" className={visibleState === 'fourth' ? 'skltbs-tab-OnClicked' : 'skltbs-tab'} onClick={() => TabOnClick('fourth')} >DIGITISATION & BUSINESS <br /> INTELLIGENCE</button>
                 </li>
             </ul>
             <div className="skltbs-panel-group">

@@ -56,6 +56,9 @@ const Header = () => {
                                         <li className={clsx(active.clientele && 'menu_active')}><Link to="/clientele">Clientele</Link></li>
                                         <li className={clsx(active.career && 'menu_active')}><Link to="/career">Career</Link></li>
                                         <li className={clsx(active.blog && 'menu_active')}><Link to="/blog">Blog</Link></li>
+                                        <li className={clsx(active.blog && 'menu_active')}><Link to="/blog">News</Link></li>
+                                        <li className={clsx(active.blog && 'menu_active')}><Link to="/">Case Studies</Link></li>
+                                        <li className={clsx(active.blog && 'menu_active')}><Link to="/">News Letters</Link></li>
                                         <li className={clsx(active.contact && 'menu_active')}><Link to="/contact">Contact</Link></li>
                                     </ul>
                                 </div>

@@ -607,7 +607,7 @@ button {
   font-weight: 500;
 }
 
-.copyright_outer {
+.copyright_outer_box {
   width: 100%;
   margin-top: 50px;
 }
@@ -643,7 +643,7 @@ button {
   margin-left: 10px;
 }
 
-.dlab-social-icon li a {
+.dlab-social-icon {
   height: 45px;
   width: 45px;
   line-height: 45px;
@@ -654,6 +654,7 @@ button {
   background-color: #ffffff;
   transition: all 0.5s;
   margin: 2px;
+  
 }
 
 .dlab-social-icon li a:hover {
@@ -2423,27 +2424,13 @@ button {
     padding-left: 0px;
     padding-right: 0px;
   }
-
-  .skltbs-tab-group {
-    margin: 0;
-    padding: 0;
-    margin-left: 0%;
-  }
-
-  .inner_service_section h1 {
+ .inner_service_section h1 {
     font-size: 32px;
     font-weight: 800;
     width: 100%;
     line-height: 40px;
   }
-
-  .skltbs-panel {
-    background: white;
-    padding: 10px 10px;
-    box-sizing: border-box;
-  }
-
-  .inner_service_section p {
+ .inner_service_section p {
     line-height: 25px;
     font-size: 18px;
   }
@@ -2595,12 +2582,6 @@ button {
     text-align: center;
     margin-bottom: 30px;
   }
-  .skltbs-panel {
-    background: white;
-    padding: 1em 0em !important;
-    box-sizing: border-box;
-  }
-
   .inner_testimonials_outer:after {
     display: none;
   }
@@ -2684,4 +2665,6 @@ background_double::before{
   padding-left: 20px;
   padding-right: 20px;
 }
+
+/* Bhagath_skell_tab */
 

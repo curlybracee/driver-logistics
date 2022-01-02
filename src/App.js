@@ -7,9 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Routes from './Routes'
 import { useDispatch } from 'react-redux';
 import { fetchBanner, fetchBlogs, fetchClients, fetchTestimonials } from './redux/action';
-// import $ from 'jquery'
+
 
 function App() {
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App" >
+    <div className={"App"} >
       <Router>
         <Header />
         <div class="clearfix"></div>
