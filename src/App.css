@@ -30,7 +30,7 @@
   color: #000;
   background: #fff;
   background-clip: padding-box;
-  border: 1 px solid #777194;
+  border: 1 px solid #4f4d5a;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   font-size: 12px;
 }
@@ -38,6 +38,7 @@ label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
+  font-size: 14px;
   font-weight: 400;
   color: #b6afaf;
 }

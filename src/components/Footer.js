@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { Grid } from '@material-ui/core';
 
 const Footer = () => {
     const dispatch = useDispatch()
@@ -106,20 +107,20 @@ const Footer = () => {
                         <div class="footer_form">
 
                             <form onSubmit={Formik.handleSubmit}>
-                                <div class="col-md-12">
-                                    <div class="col-md-10">
-                                        <input type="text" id='email' name="email" placeholder=""
+                                <Grid container>
+                                    <Grid md={10} sm={12}>
+                                        <input type="text" id='email' style={{ height: '80%', marginTop: '8px' }} name="email" placeholder=""
                                             onChange={Formik.handleChange}
                                         />
 
                                         {Formik.errors.email && Formik.touched.email ? (
                                             <div className="formError">{Formik.errors.email}</div>
                                         ) : null}
-                                    </div>
-                                    <div class="col-md-2">
+                                    </Grid>
+                                    <Grid md={2} sm={12}>
                                         <button type="submit" class=" btn-default" >Send</button>
-                                    </div>
-                                </div>
+                                    </Grid>
+                                </Grid>
                             </form>
                         </div>
 

@@ -9,13 +9,11 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 const Header = () => {
     const { pathname } = useLocation()
     const [isMobile, setIsMobile] = useState(true)
-    var w = window.screen.width;
     useEffect(() => {
         if (window.screen.width > 758) {
             setIsMobile(false)
         }
     }, [window.screen])
-    console.log({ w });
     const [active, setActive] = useState({
         home: false,
         about_us: false,
