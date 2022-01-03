@@ -26,12 +26,13 @@
 }
 
 .menupart {
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: grid;
   align-items: center;
 }
 .main-nav {
+  position: relative;
   height: 100%;
   display: flex;
   align-items: center;
@@ -40,6 +41,13 @@
   border-bottom: #ce2e33 solid 2px !important;
 }
 .stellarnav {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-bottom: 0;
+  justify-content: flex-end;
+}
+.stellarnav-mobile {
   display: flex;
   list-style: none;
   align-items: center;
@@ -71,4 +79,53 @@ a {
 }
 .stellarnav > li > a:hover {
   color: #ce2e33 !important;
+}
+.mobile-menu-icon {
+  display: none;
+}
+@media screen and (max-width: 780px) {
+  .log {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 35px;
+  }
+  .stellarnav {
+    display: none;
+  }
+  .stellarnav-mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    background-color: #ebebeb;
+    left: 0;
+    top: 0px;
+    transition: all 0.5s ease-out;
+    width: 100%;
+  }
+  .stellarnav-mobile li a {
+    color: #000;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+  }
+  .stellarnav-mobile li {
+    text-align: left;
+    border-bottom: 1px solid silver;
+    padding: 10px;
+    transition: all 0.5s ease;
+  }
+  .mobile-menu-icon {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    color: black;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    top: 15px;
+    right: 25px;
+  }
 }

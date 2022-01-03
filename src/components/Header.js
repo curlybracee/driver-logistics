@@ -8,6 +8,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 const Header = () => {
     const { pathname } = useLocation()
+    const [isMobile, setIsMobile] = useState(true)
+    var w = window.screen.width;
+    useEffect(() => {
+        if (window.screen.width > 758) {
+            setIsMobile(false)
+        }
+    }, [window.screen])
+    console.log({ w });
     const [active, setActive] = useState({
         home: false,
         about_us: false,
@@ -45,10 +53,17 @@ const Header = () => {
                                 </Link>
                             </div>
                         </Col>
+                        <button className="mobile-menu-icon" onClick={() => setIsMobile(!isMobile)}>
+                            {
+                                isMobile ? (
+                                    <i className='fa fa-times'></i>
+                                ) : <i className='fa fa-bars'></i>
+                            }
+                        </button>
                         <Col md={9}>
                             <div className="menupart">
                                 <div id="main-nav" >
-                                    <ul className="stellarnav">
+                                    <ul onClick={() => setIsMobile(false)} className={isMobile ? "stellarnav-mobile" : "stellarnav"}>
                                         <li className={clsx(active.home && 'menu_active')}><Link to="/">
                                             <FontAwesomeIcon icon={faHome} size="1x" />  </Link></li>
                                         <li className={clsx(active.about_us && 'menu_active')}><Link to="/about-us">About Us</Link></li>
@@ -61,6 +76,8 @@ const Header = () => {
                                         <li className={clsx(active.blog && 'menu_active')}><Link to="/">News Letters</Link></li>
                                         <li className={clsx(active.contact && 'menu_active')}><Link to="/contact">Contact</Link></li>
                                     </ul>
+
+
                                 </div>
                             </div>
                         </Col>
