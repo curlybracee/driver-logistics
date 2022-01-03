@@ -62,7 +62,7 @@ const Header = () => {
                         </button>
                         <Col md={9} style={{ flex: 1 }}>
                             <div className="menupart">
-                                <div id="main-nav" >
+                                <div id="main-nav" style={{ whiteSpace: 'nowrap' }}>
                                     <ul onClick={() => setIsMobile(false)} className={isMobile ? "stellarnav-mobile" : "stellarnav"}>
                                         <li className={clsx(active.home && 'menu_active')}><Link to="/">
                                             <FontAwesomeIcon icon={faHome} size="1x" />  </Link></li>
@@ -84,7 +84,7 @@ const Header = () => {
                     </div>
                 </Col>
             </Container>
-        </section>
+        </section >
     )
 }
 
