@@ -1992,72 +1992,73 @@ button {
 /*Btn Style One*/
 
 .btn-style-one {
-  position: relative;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 30px;
-  color: #ffffff;
-  font-weight: 600;
-  text-transform: capitalize;
-  border-radius: 50px;
-  overflow: hidden;
-  vertical-align: middle;
-  background: #c62028;
+	position: relative;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 30px;
+	color: #ffffff;
+	font-weight: 600;
+	text-transform: capitalize;
+	    border-radius: 50px;
+	overflow: hidden;
+	vertical-align: middle;
+	background: #c62028;
 }
 .btn-style-one:hover {
-  color: #000;
-  background: transparent;
+	color: #000;
+	background:#191952;
 }
 .btn-style-one .btn-title {
-  position: relative;
-  display: block;
-  z-index: 1;
-  padding: 7px 50px;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  border-radius: 6px;
-  overflow: hidden;
-  text-transform: uppercase;
-  font-size: 14px;
+	position: relative;
+	display: block;
+	z-index: 1;
+	padding: 7px 50px;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	border-radius: 6px;
+	overflow: hidden;
+    text-transform: uppercase;
+        font-size: 14px;
 }
 .btn-style-one:hover .btn-title {
-  color: #fff;
+	color: #FFF ;
 }
 
+
+
 .btn-style-one .btn-title::before {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  content: "";
-  background-color: #000;
-  border-radius: 6px;
-  color: #fff !important;
-  -webkit-transform: scale(0, 1);
-  -ms-transform: scale(0, 1);
-  transform: scale(0, 1);
-  -webkit-transform-origin: right top;
-  -ms-transform-origin: right top;
-  transform-origin: right top;
-  transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1) 0s,
-    -webkit-transform 500ms 0s;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	content: "";
+	background-color: #191952;
+    border-radius: 6px;
+    color: #fff !important;
+	-webkit-transform: scale(0, 1);
+	-ms-transform: scale(0, 1);
+	transform: scale(0, 1);
+	-webkit-transform-origin: right top;
+	-ms-transform-origin: right top;
+	transform-origin: right top;
+	transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1) 0s, -webkit-transform 500ms 0s;
 }
 .btn-style-one:hover .btn-title:before {
-  -webkit-transform: scale(1, 1);
-  -ms-transform: scale(1, 1);
-  transform: scale(1, 1);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
+	-webkit-transform: scale(1, 1);
+	-ms-transform: scale(1, 1);
+	transform: scale(1, 1);
+	-webkit-transform-origin: top left;
+	-ms-transform-origin: top left;
+	transform-origin: top left;
 }
 .btn-style-one .btn-title i {
-  margin-right: 10px;
-  font-size: 24px;
-  line-height: 1em;
-  top: 4px;
+	margin-right: 10px;
+	font-size: 24px;
+	line-height: 1em;
+	top: 4px;
 }
 
 .theme-btn-two {
