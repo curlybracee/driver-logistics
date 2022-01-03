@@ -38,9 +38,9 @@ const Home = () => {
                 <ViewportBlock />
             </Fade>
             <br />
-            <Fade bottom>
+            {/* <Fade bottom>
                 <LatestFromBlogs />
-            </Fade>
+            </Fade> */}
 
         </div>
     )
