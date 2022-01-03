@@ -60,7 +60,7 @@ const Header = () => {
                                 ) : <i className='fa fa-bars'></i>
                             }
                         </button>
-                        <Col md={9}>
+                        <Col md={9} style={{ flex: 1 }}>
                             <div className="menupart">
                                 <div id="main-nav" >
                                     <ul onClick={() => setIsMobile(false)} className={isMobile ? "stellarnav-mobile" : "stellarnav"}>
