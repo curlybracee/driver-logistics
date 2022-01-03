@@ -32,6 +32,9 @@ function HeaderTabList(props) {
         if (window.screen.width > 758) {
             setIsMobile(false)
         }
+        else {
+            setIsMobile(true)
+        }
     }, [window.screen])
 
     return (
