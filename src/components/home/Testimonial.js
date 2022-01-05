@@ -19,13 +19,13 @@ const Testimonial = () => {
                         autoplay={true}
                         autoplayTimeout={5000}
                         className='owl-theme' loop={true} margin={10}>
-                        {data.map(item => <div class="col-md-12" style={{ width: '100%' }}>
+                        {data.map(item => <div class="col-md-12 testimonialCard" style={{ width: '100%' }}>
                             <div class="home_testi_bg">
                                 <div class="home_testimonial_title">TESTIMONIALS</div>
                                 <p>
                                     {item.description}
                                 </p>
-                                <div className="home_testimonial_smalltitle">
+                                <div className="home_testimonial_small_designation">
                                     {item.title} - {item.designation}
                                 </div>
                             </div>

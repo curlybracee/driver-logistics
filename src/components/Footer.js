@@ -45,8 +45,8 @@ const Footer = () => {
                             </div>
 
                             <p>Driver Logistics has a mission
-                            to be the supply chain
-                            extension of the most
+                                to be the supply chain
+                                extension of the most
                                 successful companies in the</p>
 
                         </div>
@@ -83,8 +83,8 @@ const Footer = () => {
                             <div class="footer_small_title">CONTACT</div>
 
                             <p>University Road, CUSAT
-                            PO, Kochi, Kerala, India -
-                            682022
+                                PO, Kochi, Kerala, India -
+                                682022
                                 <a href="mailto:info@driverlogistics.in">info@driverlogistics.in</a>
                             </p>
 
@@ -92,37 +92,30 @@ const Footer = () => {
                         </div>
 
                         <div class="col-md-3">
-
-
-
                             <div class="footer_small_title">SUBSCRIBE</div>
-
                             <p>We understand your
-                            business and your
+                                business and your
                                 passion to drive it forward.</p>
 
-
                         </div>
 
-                        <div class="footer_form">
+                        <form onSubmit={Formik.handleSubmit} class="footer_form col-md-5">
+                            <Grid item xs={12} style={{ display: 'flex', alignItems: 'center' }}>
+                                <Grid item md={9} xs={7}>
+                                    <input type="text" id='email' style={{ width: '100%', height: '80%', marginTop: '8px', fontSize: 16 }} name="email" placeholder=""
+                                        onChange={Formik.handleChange}
+                                    />
 
-                            <form onSubmit={Formik.handleSubmit}>
-                                <Grid container>
-                                    <Grid md={10} sm={12}>
-                                        <input type="text" id='email' style={{ height: '80%', marginTop: '8px' }} name="email" placeholder=""
-                                            onChange={Formik.handleChange}
-                                        />
-
-                                        {Formik.errors.email && Formik.touched.email ? (
-                                            <div className="formError">{Formik.errors.email}</div>
-                                        ) : null}
-                                    </Grid>
-                                    <Grid md={2} sm={12}>
-                                        <button type="submit" class=" btn-default" >Send</button>
-                                    </Grid>
+                                    {Formik.errors.email && Formik.touched.email ? (
+                                        <div className="formError">{Formik.errors.email}</div>
+                                    ) : null}
                                 </Grid>
-                            </form>
-                        </div>
+                                <Grid item md={3} xs={5}>
+                                    <button type="submit" class="btn-default" style={{ width: '100%', borderColor: 'transparent' }} >Send</button>
+                                </Grid>
+                            </Grid>
+                        </form>
+
 
                         <div style={{ marginTop: '45px' }} >
                             <div class="col-md-6">
@@ -154,9 +147,9 @@ const Footer = () => {
 
                 </div>
 
-            </div>
+            </div >
 
-        </section>
+        </section >
     )
 }
 export default Footer
