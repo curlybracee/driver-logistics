@@ -6,9 +6,14 @@ import { MainLogo } from '../assets/images'
 import { useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
 const Header = () => {
     const { pathname } = useLocation()
-    const [isMobile, setIsMobile] = useState(true)
+    const matches840 = useMediaQuery('(max-width:840px)');
+
+    const [isMobile, setIsMobile] = useState(false)
+
     useEffect(() => {
         if (window.screen.width > 758) {
             setIsMobile(false)
@@ -61,7 +66,7 @@ const Header = () => {
                         <Col md={9} style={{ flex: 1 }}>
                             <div className="menupart">
                                 <div id="main-nav" style={{ whiteSpace: 'nowrap' }}>
-                                    <ul onClick={() => setIsMobile(false)} className={isMobile ? "stellarnav-mobile" : "stellarnav"}>
+                                    <ul onClick={() => setIsMobile(false)} className={matches840 && isMobile ? "stellarnav-mobile" : "stellarnav"}>
                                         <li className={clsx(active.home && 'menu_active')}><Link to="/">
                                             <FontAwesomeIcon icon={faHome} size="1x" />  </Link></li>
                                         <li className={clsx(active.about_us && 'menu_active')}><Link to="/about-us">About Us</Link></li>

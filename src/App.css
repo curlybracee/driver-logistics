@@ -85,4 +85,7 @@ label {
   .counder_box {
     width: 50%;
   }
+  .underline {
+    margin: 30px auto;
+  }
 }

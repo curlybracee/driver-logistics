@@ -4,8 +4,10 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Fade from 'react-reveal/Fade';
-
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 const LogoSection = () => {
+    const matches840 = useMediaQuery('(max-width:840px)');
+    const matches480 = useMediaQuery('(max-width:480px)');
     return (
         <section class="logo_section">
             <div class="container">
@@ -19,7 +21,7 @@ const LogoSection = () => {
                     <Fade bottom>
                         <div class="logo_slider_outer wow fadeInUp" data-wow-delay="1s">
                             <OwlCarousel
-                                items={5}
+                                items={matches480 ? 2 : matches840 ? 3 : 5}
                                 dots={false}
                                 rewind={false}
                                 className='owl-theme' loop margin={10}>

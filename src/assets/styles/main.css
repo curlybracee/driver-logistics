@@ -136,7 +136,7 @@ p {
   height: 4px;
   border-radius: 50px;
   background: #c62028;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .logo_slider_outer {
@@ -454,7 +454,14 @@ h3.double:after {
   width: 100%;
   padding: 50px 150px 50px 150px;
 }
-
+.home_testimonial_smalltitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #d9d9d9;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin-top: 45px;
+}
 .home_testimonial_title {
   padding-left: 20px;
   padding-right: 20px;
@@ -464,7 +471,16 @@ h3.double:after {
   text-align: center;
   color: #fff;
 }
-
+.testimonialCard {
+  min-height: 200px;
+}
+.home_testimonial_small_designation {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+  font-weight: 200;
+}
 .testimmonial_section p {
   font-size: 15px;
   line-height: 26px;
@@ -476,15 +492,6 @@ h3.double:after {
   line-height: 35px;
   margin-top: 20px;
   margin-bottom: 0px !important;
-}
-
-.home_testimonial_smalltitle {
-  font-size: 16px;
-  font-weight: 300;
-  color: #d9d9d9;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-  margin-top: 45px;
 }
 
 .blog_section {
@@ -567,7 +574,8 @@ h3.double:after {
 .footer_form {
   width: 100%;
   text-align: right;
-  margin-top: -30px;
+  margin-top: 30px;
+  margin-left: auto;
 }
 
 input[type="text"] {
@@ -654,7 +662,6 @@ button {
   background-color: #ffffff;
   transition: all 0.5s;
   margin: 2px;
-  
 }
 
 .dlab-social-icon li a:hover {
@@ -1992,73 +1999,72 @@ button {
 /*Btn Style One*/
 
 .btn-style-one {
-	position: relative;
-	display: inline-block;
-	font-size: 14px;
-	line-height: 30px;
-	color: #ffffff;
-	font-weight: 600;
-	text-transform: capitalize;
-	    border-radius: 50px;
-	overflow: hidden;
-	vertical-align: middle;
-	background: #c62028;
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 30px;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 50px;
+  overflow: hidden;
+  vertical-align: middle;
+  background: #c62028;
 }
 .btn-style-one:hover {
-	color: #000;
-	background:#191952;
+  color: #000;
+  background: #191952;
 }
 .btn-style-one .btn-title {
-	position: relative;
-	display: block;
-	z-index: 1;
-	padding: 7px 50px;
-	-webkit-transition: all 0.3s ease 0s;
-	-o-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
-	border-radius: 6px;
-	overflow: hidden;
-    text-transform: uppercase;
-        font-size: 14px;
+  position: relative;
+  display: block;
+  z-index: 1;
+  padding: 7px 50px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  border-radius: 6px;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 .btn-style-one:hover .btn-title {
-	color: #FFF ;
+  color: #fff;
 }
-
-
 
 .btn-style-one .btn-title::before {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	z-index: -1;
-	height: 100%;
-	width: 100%;
-	content: "";
-	background-color: #191952;
-    border-radius: 6px;
-    color: #fff !important;
-	-webkit-transform: scale(0, 1);
-	-ms-transform: scale(0, 1);
-	transform: scale(0, 1);
-	-webkit-transform-origin: right top;
-	-ms-transform-origin: right top;
-	transform-origin: right top;
-	transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1) 0s, -webkit-transform 500ms 0s;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background-color: #191952;
+  border-radius: 6px;
+  color: #fff !important;
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
+  transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1) 0s,
+    -webkit-transform 500ms 0s;
 }
 .btn-style-one:hover .btn-title:before {
-	-webkit-transform: scale(1, 1);
-	-ms-transform: scale(1, 1);
-	transform: scale(1, 1);
-	-webkit-transform-origin: top left;
-	-ms-transform-origin: top left;
-	transform-origin: top left;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
 }
 .btn-style-one .btn-title i {
-	margin-right: 10px;
-	font-size: 24px;
-	line-height: 1em;
-	top: 4px;
+  margin-right: 10px;
+  font-size: 24px;
+  line-height: 1em;
+  top: 4px;
 }
 
 .theme-btn-two {
@@ -2085,7 +2091,7 @@ button {
   background: #100f5c;
 }
 .btn-style-two:hover {
-  color: #000;
+  color: #c62028;
   background: transparent;
 }
 .btn-style-two .btn-title-two {
@@ -2114,7 +2120,7 @@ button {
   height: 100%;
   width: 100%;
   content: "";
-  background-color: #000;
+  background-color: #c62028;
   border-radius: 6px;
   color: #fff !important;
   -webkit-transform: scale(0, 1);
@@ -2425,13 +2431,13 @@ button {
     padding-left: 0px;
     padding-right: 0px;
   }
- .inner_service_section h1 {
+  .inner_service_section h1 {
     font-size: 32px;
     font-weight: 800;
     width: 100%;
     line-height: 40px;
   }
- .inner_service_section p {
+  .inner_service_section p {
     line-height: 25px;
     font-size: 18px;
   }
@@ -2632,23 +2638,25 @@ button {
     display: none;
   }
 }
-
+.logo-item:hover {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
 .logo-item > img {
-  height: 120px;
+  min-height: 60px;
+  min-width: 120px;
 }
 
 /* //bhagath */
-.background_double{
+.background_double {
   position: relative;
   z-index: 1;
-  
 }
-background_double::before{
-    border-top: none;
-
+background_double::before {
+  border-top: none;
 }
-.background_double::after{
- border-bottom: 3px solid #c62028;
+.background_double::after {
+  border-bottom: 3px solid #c62028;
   -webkit-box-shadow: 0 1px 0 0 red;
   -moz-box-shadow: 0 1px 0 0 red;
   box-shadow: 0 1px 0 0 red;
@@ -2661,11 +2669,10 @@ background_double::before{
   width: 35%;
   z-index: -1;
 }
-.h2_Span{
+.h2_Span {
   background: #fff;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 /* Bhagath_skell_tab */
-
