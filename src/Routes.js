@@ -9,6 +9,7 @@ const Contact = lazy(() => import("./components/contact/Contact"));
 const Clientele = lazy(() => import("./components/clientele"));
 const Career = lazy(() => import("./components/career"));
 const Blog = lazy(() => import("./components/blogs"));
+const BlogDetails = lazy(() => import("./components/blogs/BlogDetails"));
 const Routes = () => {
     return (
         <Suspense fallback={<Loader />}>
@@ -20,6 +21,7 @@ const Routes = () => {
                 <Route exact path="/career" component={Career} />
                 <Route exact path="/blog" component={Blog} />
                 <Route exact path="/clientele" component={Clientele} />
+                <Route exact path="/blog/details" component={BlogDetails} />
             </Switch>
         </Suspense>
     )
