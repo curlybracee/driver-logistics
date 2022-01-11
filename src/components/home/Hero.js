@@ -11,7 +11,6 @@ const Hero = () => {
                 <div class="banner_contantpart wow fadeInUp" data-wow-delay="1s">
                     <h1>
                         {currentBanner.title}<br />
-                        <span class="banner_redfont">3PL</span> Wizard<br />
                         <div dangerouslySetInnerHTML={{ __html: currentBanner.description }} />
                         <div class="banner_readmore">
                             <Link to="/about-us" class="theme-btn btn-style-one">
