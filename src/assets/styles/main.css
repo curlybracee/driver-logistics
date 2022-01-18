@@ -615,6 +615,12 @@ button {
   font-weight: 500;
 }
 
+.blog_section_latest {
+  width: 100%;
+  padding-top: 50px !important;
+  padding-bottom: 80px;
+}
+
 .copyright_outer_box {
   width: 100%;
   margin-top: 50px;

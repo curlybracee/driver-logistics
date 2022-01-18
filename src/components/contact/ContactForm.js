@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 import { useFormik } from 'formik';
 import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
+import { postContactForm } from "../../redux/action";
 // import { postSubscription } from '../redux/action';
 
 const ContactForm = () => {
@@ -27,14 +28,20 @@ const ContactForm = () => {
                 .required("Code is Required"),
             number: Yup.string()
                 .required("Number is Required"),
-            resume: Yup.string()
-                .required("Resume is Required"),
+            company: Yup.string()
+                .required("company is Required"),
+            query: Yup.string()
+                .required("query is Required"),
         }),
         onSubmit: (inputData) => {
             console.log('==============================================', inputData)
-            // dispatch(postResume(inputData))
+            dispatch(postContactForm(inputData))
         },
-
+        // "name": "Priyesh",
+        // "email": "priyeshk00@gmail.com",
+        // "message": "Hi test message",
+        // "subject": "New Enquiry",
+        // "phone": "9847139911",
     })
     return (
         <section className="contact_form_section">
@@ -43,9 +50,9 @@ const ContactForm = () => {
                     <div className="row">
                         <div className="col-md-6 wow fadeInUp" data-wow-delay="1s">
                             <div className="form_outer">
-                                <form action="#">
+                                <form onSubmit={Formik.handleSubmit}>
                                     <div class="form-group">
-                                        <label for="email">Name</label>
+                                        <label for="name">Name</label>
                                         <input type="name" class="form-control" id="name" onChange={Formik.handleChange} />
 
                                         {Formik.errors.name && Formik.touched.name ? (
@@ -53,7 +60,7 @@ const ContactForm = () => {
                                         ) : null}
                                     </div>
                                     <div class="form-group">
-                                        <label for="pwd">Email ID</label>
+                                        <label for="email">Email ID</label>
                                         <input type="email" class="form-control" id="email" onChange={Formik.handleChange} />
 
                                         {Formik.errors.email && Formik.touched.email ? (
@@ -61,8 +68,17 @@ const ContactForm = () => {
                                         ) : null}
                                     </div>
                                     <div class="form-group">
+                                        <label for="company">Company</label>
+                                        <input type="company" class="form-control" id="company" onChange={Formik.handleChange} />
+
+                                        {Formik.errors.company && Formik.touched.company ? (
+                                            <div className="formError">{Formik.errors.company}</div>
+                                        ) : null}
+                                    </div>
+    
+                                    <div class="form-group">
                                         <div class="labelpadding">
-                                            <label for="pwd">Contact number</label>
+                                            <label for="numberCode">Contact number</label>
                                         </div>
 
                                         <div class="row">
@@ -84,18 +100,12 @@ const ContactForm = () => {
                                         </div>
                                     </div>
 
+                                   
                                     <div className="form-group">
-                                        <label for="pwd">Company</label>
-                                        <input type="password" className="form-control" id="company" onChange={Formik.handleChange} />
-
-                                        {Formik.errors.company && Formik.touched.company ? (
-                                            <div className="formError">{Formik.errors.company}</div>
-                                        ) : null}
-                                    </div>
-                                    <div className="form-group">
-                                        <label for="pwd">Your Query</label>
+                                        <label for="query">Your Query</label>
                                         <textarea
-                                            className="form-control"
+                                            className="form-control b12"
+                                            
                                             id="query"
                                             rows="3"
                                             onChange={Formik.handleChange}

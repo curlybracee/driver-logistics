@@ -9,6 +9,9 @@ const Contact = lazy(() => import("./components/contact/Contact"));
 const Clientele = lazy(() => import("./components/clientele"));
 const Career = lazy(() => import("./components/career"));
 const Blog = lazy(() => import("./components/blogs"));
+const News = lazy(() => import("./components/news/News"));
+const CaseStudies = lazy(() => import("./components/case-studies/CaseStudies"));
+const NewsLetters = lazy(() => import("./components/news-letters/NewsLetters"));
 const BlogDetails = lazy(() => import("./components/blogs/BlogDetails"));
 const Routes = () => {
     return (
@@ -20,6 +23,9 @@ const Routes = () => {
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/career" component={Career} />
                 <Route exact path="/blog" component={Blog} />
+                <Route exact path="/news" component={News} />
+                <Route exact path="/case-studies" component={CaseStudies} />
+                <Route exact path="/news-letters" component={NewsLetters} />
                 <Route exact path="/clientele" component={Clientele} />
                 <Route exact path="/blog/details" component={BlogDetails} />
             </Switch>

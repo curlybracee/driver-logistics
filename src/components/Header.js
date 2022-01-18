@@ -36,6 +36,9 @@ const Header = () => {
             case '/clientele': setActive({ clientele: true }); break;
             case '/career': setActive({ career: true }); break;
             case '/blog': setActive({ blog: true }); break;
+            case '/news': setActive({ news: true }); break;
+            case '/case-studies': setActive({ case_studies: true }); break;
+            case '/news-letters': setActive({ news_letters: true }); break;
             case '/contact': setActive({ contact: true }); break;
             default: setActive({ home: true })
         }
@@ -74,9 +77,9 @@ const Header = () => {
                                         <li className={clsx(active.clientele && 'menu_active')}><Link to="/clientele">Clientele</Link></li>
                                         <li className={clsx(active.career && 'menu_active')}><Link to="/career">Career</Link></li>
                                         <li className={clsx(active.blog && 'menu_active')}><Link to="/blog">Blog</Link></li>
-                                        <li className={clsx(active.blog && 'menu_active')}><Link to="/blog">News</Link></li>
-                                        <li className={clsx(active.blog && 'menu_active')}><Link to="/">Case Studies</Link></li>
-                                        <li className={clsx(active.blog && 'menu_active')}><Link to="/">News Letters</Link></li>
+                                        <li className={clsx(active.news && 'menu_active')}><Link to="/news">News</Link></li>
+                                        <li className={clsx(active.case_studies && 'menu_active')}><Link to="/case-studies">Case Studies</Link></li>
+                                        <li className={clsx(active.news_letters && 'menu_active')}><Link to="/news-letters">News Letters</Link></li>
                                         <li className={clsx(active.contact && 'menu_active')}><Link to="/contact">Contact</Link></li>
                                     </ul>
 

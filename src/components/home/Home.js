@@ -3,7 +3,7 @@ import ConstructionService from './ConstructionService'
 import DigitisationService from './DigitisationService'
 import FleetTransportService from './FleetTransportService'
 import Hero from './Hero'
-// import LatestFromBlogs from './LatestFromBlogs'
+import LatestFromBlogs from './LatestFromBlogs'
 import LogoSection from './LogoSection'
 import Testimonial from './Testimonial'
 import WhareHouseService from './WhareHouseService'
@@ -37,7 +37,7 @@ const Home = () => {
             <Fade bottom>
                 <ViewportBlock />
             </Fade>
-            <br />
+            <div class="clearfix"></div>
             {/* <Fade bottom>
                 <LatestFromBlogs />
             </Fade> */}

@@ -29,10 +29,26 @@ const CareerForm = () => {
         }),
         onSubmit: (inputData) => {
             console.log('==============================================', inputData)
-            dispatch(postResume(inputData))
+            const {name,email,numberCode,number,resume}=inputData;
+            let objToSend={
+            name,
+            emailid:email,
+            phoneno:`${numberCode}${number}`,
+            resume:''
+
+            }
+            dispatch(postResume(objToSend))
         },
 
     })
+
+    // "name": "Priyesh",
+    // "emailid": "priyesh@burgeontech.com",
+    // "resume": "http://besterpsolution.in/demo/driver_logistics/public/resumes/1642036913.png",
+    // "phoneno": "9847139911",
+    // "updated_at": "2022-01-13T01:21:53.000000Z",
+    // "created_at": "2022-01-13T01:21:53.000000Z",
+    // "id": 5
     return (
         <section class="career_form_section wow fadeInUp" data-wow-delay="1s">
             <div class="container">
@@ -66,7 +82,7 @@ const CareerForm = () => {
 
                                         <div class="row">
                                             <div class="col-md-3 col-sm-12 labelpadding labelpaddingleft labelpaddingright">
-                                                <input type="number" class="form-control" id="numberCode" onChange={Formik.handleChange} />
+                                                <input type="number" class="form-control" id="numberCode" maxLength={4} onChange={Formik.handleChange} />
 
                                                 {Formik.errors.numberCode && Formik.touched.numberCode ? (
                                                     <div className="formError">{Formik.errors.numberCode}</div>
@@ -74,7 +90,7 @@ const CareerForm = () => {
                                             </div>
 
                                             <div class="col-md-9 col-sm-12 labelpaddingleft labelpaddingright">
-                                                <input type="number" class="form-control" id="number" onChange={Formik.handleChange} />
+                                                <input type="number" class="form-control" id="number" maxLength={10} onChange={Formik.handleChange} />
 
                                                 {Formik.errors.number && Formik.touched.number ? (
                                                     <div className="formError">{Formik.errors.number}</div>

@@ -4,23 +4,23 @@ import Fade from "react-reveal/Fade";
 
 const HowWeDrive = () => {
     return (
-        <section class="careers_map">
-            <div class="container">
-                <h2 class="background double">
+        <section className="careers_map">
+            <div className="container">
+                <h2 className="background double">
                     <span>HOW WE DRIVE</span>
                 </h2>
 
                 <Fade bottom>
-                    <div class="firstbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left">
+                    <div className="firstbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left">
                                     <img alt="" src={CareerImg.careers_img_1} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right">
                                     <h2>Passion For Customer Service</h2>
 
                                     <p>
@@ -38,16 +38,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="secondbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row row_reverse_new">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right_one">
+                    <div className="secondbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row row_reverse_new">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right_one">
                                     <img alt="" src={CareerImg.careers_img_2} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left_one">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left_one">
                                     <h2>Seeking Excellence</h2>
 
                                     <p>
@@ -69,16 +69,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="firstbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left">
+                    <div className="firstbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left">
                                     <img alt="" src={CareerImg.careers_img_3} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right">
                                     <h2>Effective Communication</h2>
 
                                     <p>
@@ -100,16 +100,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="secondbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row row_reverse_new">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right_one">
+                    <div className="secondbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row row_reverse_new">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right_one">
                                     <img alt="" src={CareerImg.careers_img_4} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left_one">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left_one">
                                     <h2>Embracing And Driving Innovation</h2>
 
                                     <p>We create new ideas that are useful – value innovation.</p>
@@ -135,16 +135,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="firstbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left">
+                    <div className="firstbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left">
                                     <img alt="" src={CareerImg.careers_img_5} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right">
                                     <h2>Listening And Acting Upon Constructive Feedback</h2>
 
                                     <p>
@@ -164,16 +164,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="secondbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row row_reverse_new">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right_one">
+                    <div className="secondbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row row_reverse_new">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right_one">
                                     <img alt="" src={CareerImg.careers_img_6} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left_one">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left_one">
                                     <h2>Making An Impact</h2>
 
                                     <p>
@@ -189,16 +189,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="firstbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left">
+                    <div className="firstbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left">
                                     <img alt="" src={CareerImg.careers_img_7} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right">
                                     <h2>Valuing Freedom And Responsibility</h2>
 
                                     <p>
@@ -212,16 +212,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="secondbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row row_reverse_new">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right_one">
+                    <div className="secondbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row row_reverse_new">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right_one">
                                     <img alt="" src={CareerImg.careers_img_8} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left_one">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left_one">
                                     <h2>Always Grateful</h2>
 
                                     <p>
@@ -237,16 +237,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="firstbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left">
+                    <div className="firstbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left">
                                     <img alt="" src={CareerImg.careers_img_9} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right">
                                     <h2>Serving Without Ego</h2>
 
                                     <p>
@@ -261,16 +261,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="secondbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row row_reverse_new">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right_one">
+                    <div className="secondbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row row_reverse_new">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right_one">
                                     <img alt="" src={CareerImg.careers_img_10} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left_one">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left_one">
                                     <h2>Acceptance That Change Is The Only Constant</h2>
 
                                     <p>
@@ -284,16 +284,16 @@ const HowWeDrive = () => {
                 </Fade>
 
                 <Fade bottom>
-                    <div class="lastbox wow fadeInUp" data-wow-delay="1s">
-                        <div class="row">
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_left">
+                    <div className="lastbox wow fadeInUp" data-wow-delay="1s">
+                        <div className="row">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_left">
                                     <img alt="" src={CareerImg.careers_img_11} />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 new_class_one">
-                                <div class="careers_map_contantbox_right">
+                            <div className="col-md-6 new_class_one">
+                                <div className="careers_map_contantbox_right">
                                     <h2>Always A “Work In Progress</h2>
 
                                     <p>

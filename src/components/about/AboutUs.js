@@ -11,9 +11,9 @@ const AboutUs = () => {
             <Fade bottom>
                 <AboutUsHead />
             </Fade>
-            <Fade bottom>
+            {/* <Fade bottom>
                 <OurTeam />
-            </Fade>
+            </Fade> */}
             <Fade bottom>
                 <OurVision />
             </Fade>

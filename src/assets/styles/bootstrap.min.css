@@ -15,7 +15,8 @@ body {
   font-size: 14.7px;
   padding: 3px;
   margin-left: 21px;
-  text-align: end;
+  position: absolute;
+  text-align: start;
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
 	display: block
@@ -2333,8 +2334,10 @@ input[type=date].form-control, input[type=datetime-local].form-control, input[ty
 }
 .form-group {
     margin-bottom: 8px;
+	position: relative;
     font-family: 'Poppins', sans-serif;
         width: 100%;
+		
 }
 .checkbox, .radio {
 	position: relative;

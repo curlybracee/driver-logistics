@@ -1,14 +1,16 @@
 import React from 'react'
-import { Logo1, Logo2, Logo3, Logo4, Logo5 } from '../../assets/images'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Fade from 'react-reveal/Fade';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useSelector } from 'react-redux';
 const LogoSection = () => {
     const matches840 = useMediaQuery('(max-width:840px)');
     const matches480 = useMediaQuery('(max-width:480px)');
-    return (
+    const { data :{data=[]} } = useSelector(state => state.userLog.clients)
+
+    return data.length&& (
         <section class="logo_section">
             <div class="container">
                 <div class="col-md-12">
@@ -25,13 +27,15 @@ const LogoSection = () => {
                                 dots={false}
                                 rewind={false}
                                 className='owl-theme' loop margin={10}>
-                                <div className='logo-item'><img src={Logo1} alt='logo1' /></div>
-
+                               {data.map(item=><div key={item.id} className='logo-item'>
+                                   <img src={item.image} alt='logo1' />
+                                   </div>) }
+{/* 
                                 <div className='logo-item'><img src={Logo2} alt='logo2' /></div>
 
                                 <div className='logo-item'><img src={Logo3} alt='Logo3' /></div>
                                 <div className='logo-item'><img src={Logo4} alt='logo5' /></div>
-                                <div className='logo-item'><img src={Logo5} alt='logo5' /></div>
+                                <div className='logo-item'><img src={Logo5} alt='logo5' /></div> */}
                             </OwlCarousel>
                         </div>
                     </Fade>

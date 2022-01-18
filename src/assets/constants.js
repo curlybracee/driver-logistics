@@ -5,8 +5,9 @@ export const URL = {
     TESTIMONIAL: 'testimonial',
     BANNER: 'banner',
     BLOG: 'blog',
-    CLIENT: 'client',
-    RESUME: 'postresume',
+    CLIENT: 'clientlogos',
+    RESUME: 'career',
+    CLIENT_LOGOS:'clientlogos',
     NEWS_LETTER: 'newsletter',
     CONTACT: 'contact',
 }

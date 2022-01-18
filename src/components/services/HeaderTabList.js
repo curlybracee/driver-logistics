@@ -4,7 +4,6 @@ import TabPanel2 from './TabPanel2';
 import TabPanel3 from './TabPanel3';
 import TabPanel4 from './TabPanel4';
 import Fade from 'react-reveal/Fade';
-import clsx from 'clsx'
 
 function HeaderTabList(props) {
     const [visibleState, SetVisibleState] = useState('first');

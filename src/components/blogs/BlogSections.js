@@ -18,7 +18,7 @@ const BlogSections = () => {
                     <div class='row'>
 
                         {data?.data?.map(item =>
-                            <div class="col-md-4 wow fadeInUp" data-wow-delay="1s">
+                            <div class="col-md-4 wow fadeInUp blogAlign" data-wow-delay="1s">
 
                                 <div class="blog_newbox">
 
