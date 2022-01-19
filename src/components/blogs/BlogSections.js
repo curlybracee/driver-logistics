@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import auther_img from '../../assets/images/auther_img.png'
 import blogBox from '../../assets/images/blog_box_img_1.png'
@@ -8,7 +8,7 @@ import blogIcon2 from '../../assets/images/blog_icon_2.png'
 
 const BlogSections = () => {
     const { data = {} } = useSelector(state => state.userLog.blogs)
-
+const DATA=[1,11,7,1,1,1,1,1,1,1,8,1,1,1,8,1,1,1,1,9,1,1,1,1]
     return (
         <section class="inner_blog_contantbox">
 
@@ -17,8 +17,8 @@ const BlogSections = () => {
                 <div class="col-md-12">
                     <div class='row'>
 
-                        {data?.data?.map(item =>
-                            <div class="col-md-4 wow fadeInUp blogAlign" data-wow-delay="1s">
+                        {data?.data?.map((item,index) =>
+                            <div class={`col-md-4 wow fadeInUp blogAlign-${index}`} data-wow-delay="1s">
 
                                 <div class="blog_newbox">
 
@@ -49,7 +49,7 @@ const BlogSections = () => {
                             </div>
                         )
                         }
-
+                        
                     </div>
                 </div>
 

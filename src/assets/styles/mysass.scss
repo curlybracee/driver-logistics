@@ -1,0 +1,8 @@
+$modifier: 1;
+
+@while $modifier < 50 {
+      .blogAlign-#{$modifier} {
+    margin-top: 50px !important;
+  }
+  $modifier: $modifier + 3;
+}

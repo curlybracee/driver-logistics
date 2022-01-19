@@ -10,7 +10,7 @@ const LogoSection = () => {
     const matches480 = useMediaQuery('(max-width:480px)');
     const { data :{data=[]} } = useSelector(state => state.userLog.clients)
 
-    return data.length&& (
+    return data?.length&& (
         <section class="logo_section">
             <div class="container">
                 <div class="col-md-12">

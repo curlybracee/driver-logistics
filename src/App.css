@@ -107,6 +107,5 @@ input[type=number] {
 .b12{
 border-radius: 12px !important
 }
-.blogAlign:nth-child(even) {
-  margin-top: 50px;
-}
+
+
