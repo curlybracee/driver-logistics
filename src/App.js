@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Routes from './Routes'
 import { useDispatch } from 'react-redux';
-import { fetchBanner, fetchBlogs, fetchClients, fetchTestimonials } from './redux/action';
+import { fetchBanner, fetchBlogs, fetchClients, fetchStatitics, fetchTestimonials } from './redux/action';
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
     dispatch(fetchBlogs())
     dispatch(fetchClients())
     dispatch(fetchBanner())
+    dispatch(fetchStatitics())
   }, [])
 
   return (

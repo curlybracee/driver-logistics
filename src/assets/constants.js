@@ -7,6 +7,7 @@ export const URL = {
     BLOG: 'blog',
     CLIENT: 'clientlogos',
     RESUME: 'career',
+    STATISTICS:'statistics',
     CLIENT_LOGOS:'clientlogos',
     NEWS_LETTER: 'newsletter',
     CONTACT: 'contact',

@@ -1,9 +1,22 @@
 import React, { useEffect } from 'react'
 import AnimatedNumber from "animated-number-react";
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+const formatToNum=(val)=>{
+    let string =val?.toString();
+    if(string.includes('M')){
+        return string.replace('M','000000')
+    }
+    if(string.includes('K')){
+        return string.replace('K','000')
+    }
+    else return string
+}
 const Counter = (props) => {
     const { inViewport, forwardedRef } = props;
     console.log({ inViewport });
+    const { data:statistics = {    } } = useSelector(state => state.userLog.statistics)
+    console.log({statistics});
     const [state, setState] = useState({
         registerd: 0,
         daily: 0,
@@ -13,13 +26,15 @@ const Counter = (props) => {
     })
     useEffect(() => {
         if (inViewport) {
-            setState({
-                registerd: 1000000,
-                daily: 100000,
-                monthly: 20000000,
-                happy: 700,
-                pincode: 7000,
-            })
+            if(statistics.statis_reg_user){
+                setState({
+                    registerd: formatToNum(statistics.statis_reg_user),
+                    daily: formatToNum(statistics.statis_active_user),
+                    monthly: formatToNum(statistics.statis_monthly_del),
+                    happy: formatToNum(statistics.statis_city),
+                    pincode: formatToNum(7000),
+                })
+            }
         }
         // else {
         //     setState({
@@ -30,7 +45,7 @@ const Counter = (props) => {
         //         pincode: 0,
         //     })
         // }
-    }, [inViewport])
+    }, [inViewport,statistics])
     function convertToInternationalCurrencySystem(labelValue) {
 
         // Nine Zeroes for Billions
@@ -49,6 +64,7 @@ const Counter = (props) => {
                     : Math.abs(Number(labelValue));
 
     }
+  
     const formatValue = (val) => convertToInternationalCurrencySystem(val)
     return (
         <section >

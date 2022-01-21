@@ -21,6 +21,10 @@ const initialState = {
         requestInProgress: false
 
     },
+    statistics: {
+        data: [],
+        requestInProgress: false
+    },
 };
 
 const userReducer = (state = initialState, action) => {
@@ -112,6 +116,29 @@ const userReducer = (state = initialState, action) => {
         case TYPES.FETCH_CLIENT_FAILURE: {
             return Object.assign({}, state, {
                 clients: {
+                    error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_STATISTICS_REQUEST: {
+            return Object.assign({}, state, {
+                statistics: {
+                    requestInProgress: true
+                },
+            })
+        }
+        case TYPES.FETCH_STATISTICS_SUCCESS: {
+            return Object.assign({}, state, {
+                statistics: {
+                    data: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_STATISTICS_FAILURE: {
+            return Object.assign({}, state, {
+                statistics: {
                     error: action.payload || [],
                     requestInProgress: false
                 },
