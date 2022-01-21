@@ -45,7 +45,7 @@ const FleetTransportService = () => {
                                 </ul>
 
                                 <div className="service_readmore">
-                                    <Link to="about-us" className="theme-btn-two btn-style-two"
+                                    <Link to="services" className="theme-btn-two btn-style-two"
                                     ><span className="btn-title-two">Read More</span>
                                     </Link>
                                 </div>

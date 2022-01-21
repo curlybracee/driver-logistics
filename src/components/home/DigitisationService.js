@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { ServiceDigitisationImg } from '../../assets/images'
 
 const DigitisationService = () => {
@@ -36,9 +37,8 @@ const DigitisationService = () => {
                                 </ul>
 
                                 <div className="service_readmore">
-                                    <a href="about-us.html" className="theme-btn-two btn-style-two"
-                                    ><span className="btn-title-two">Read More</span></a
-                                    >
+                                    <Link to="services" className="theme-btn-two btn-style-two"
+                                    ><span className="btn-title-two">Read More</span></Link>
                                 </div>
                             </div>
                         </Col>

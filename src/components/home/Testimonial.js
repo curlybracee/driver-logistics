@@ -22,8 +22,7 @@ const Testimonial = () => {
                         {data.map(item => <div class="col-md-12 testimonialCard" style={{ width: '100%' }}>
                             <div class="home_testi_bg">
                                 <div class="home_testimonial_title">TESTIMONIALS</div>
-                                <p>
-                                    {item.description}
+                                <p dangerouslySetInnerHTML={{__html:item.description}}>
                                 </p>
                                 <div className="home_testimonial_small_designation">
                                     {item.title} - {item.designation}
