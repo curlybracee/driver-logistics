@@ -144,6 +144,22 @@ const userReducer = (state = initialState, action) => {
                 },
             })
         }
+        case TYPES.POST_CONTACT_FORM_SUCCESS: {
+            return Object.assign({}, state, {
+                contact: {
+                    data: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.POST_CONTACT_FORM_FAILURE: {
+            return Object.assign({}, state, {
+                contact: {
+                    error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
         // case TYPES.POST_SUBSCRIPTION_REQUEST: {
         //     return Object.assign({}, state, {
         //         postSubscription: {

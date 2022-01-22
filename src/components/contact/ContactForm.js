@@ -16,7 +16,7 @@ const ContactForm = () => {
             name: '',
             numberCode: '',
             number: '',
-            resume: ''
+            message:'',
         },
         validationSchema: Yup.object({
             email: Yup.string()
@@ -35,7 +35,16 @@ const ContactForm = () => {
         }),
         onSubmit: (inputData) => {
             console.log('==============================================', inputData)
-            dispatch(postContactForm(inputData))
+            let objToSend={
+                ...inputData,
+                phone:inputData.numberCode+inputData.number,
+                message:inputData.query
+            }
+            delete objToSend.number
+            delete objToSend.numberCode
+            delete objToSend.query
+
+            dispatch(postContactForm(objToSend))
         },
         // "name": "Priyesh",
         // "email": "priyeshk00@gmail.com",
