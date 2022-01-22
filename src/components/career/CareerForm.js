@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from 'formik';
 import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
@@ -6,13 +6,13 @@ import { postResume } from '../../redux/action';
 
 const CareerForm = () => {
     const dispatch = useDispatch();
+    const [resume,setResume]=useState(null)
     const Formik = useFormik({
         initialValues: {
             email: "",
             name: '',
             numberCode: '',
             number: '',
-            resume: ''
         },
         validationSchema: Yup.object({
             email: Yup.string()
@@ -24,18 +24,15 @@ const CareerForm = () => {
                 .required("Code is Required"),
             number: Yup.string()
                 .required("Number is Required"),
-            resume: Yup.string()
-                .required("Resume is Required"),
         }),
         onSubmit: (inputData) => {
             console.log('==============================================', inputData)
-            const {name,email,numberCode,number,resume}=inputData;
+            const {name,email,numberCode,number}=inputData;
             let objToSend={
             name,
             emailid:email,
             phoneno:`${numberCode}${number}`,
-            resume:''
-
+            resume
             }
             dispatch(postResume(objToSend))
         },
@@ -49,6 +46,9 @@ const CareerForm = () => {
     // "updated_at": "2022-01-13T01:21:53.000000Z",
     // "created_at": "2022-01-13T01:21:53.000000Z",
     // "id": 5
+    const handleFileChange=(event)=>{
+        setResume(event.currentTarget.files[0]);
+    }
     return (
         <section class="career_form_section wow fadeInUp" data-wow-delay="1s">
             <div class="container">
@@ -101,11 +101,7 @@ const CareerForm = () => {
 
                                     <div class="form-group">
                                         <label for="pwd">Resume</label>
-                                        <input type="file" class="form-control" id="resume" onChange={Formik.handleChange} />
-
-                                        {Formik.errors.resume && Formik.touched.resume ? (
-                                            <div className="formError">{Formik.errors.resume}</div>
-                                        ) : null}
+                                        <input type="file" class="form-control" id="resume" onChange={handleFileChange} />
                                     </div>
 
                                     <button type="submit" class="contact_button">
