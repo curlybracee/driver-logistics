@@ -25,17 +25,14 @@ const DATA=[1,11,7,1,1,1,1,1,1,1,8,1,1,1,8,1,1,1,1,9,1,1,1,1]
                                     <img alt='' src={blogBox} class="image_new" />
                                     <div class="overlay_one">
                                     </div>
-                                    <div class="blog_auther"><img alt='' src={auther_img} /> <span>Surya Gopal</span></div>
+                                    <div class="blog_auther"><img alt='' src={auther_img} /> <span>{item.posted_by}</span></div>
                                     <div class="clearfix"></div>
-                                    <div class="blog_title"><a href="blog-details.html">Triple Bottom Line: The Yardstick
-                                    To Measure Sustainability
-                                    In The Supply Chain</a></div>
+                                    <div class="blog_title"><a href="blog-details.html">{item.title}</a></div>
 
-                                    <p>People, planet and profit are the three
-                                    driving forces that keep your supply
-                                    chain stable and organized. Building</p>
+                                    
+                                    <div dangerouslySetInnerHTML={{__html:item.description}} style={{fontSize:'14px'}}></div>
 
-                                    <div class="blog_datebox">21 July 2021 | 3 mins<a href="blog-details.html"><img
+                                    <div class="blog_datebox">{item.updated_at}<a href="blog-details.html"><img
                                         alt='' src={blogIcon1} /></a><a href="#"><img
                                             alt='' src={blogIcon2} /></a></div>
                                     <div class="clearfix"></div>
