@@ -12,3 +12,5 @@ export const URL = {
     NEWS_LETTER: 'newsletter',
     CONTACT: 'contact',
 }
+
+export const formatDate=(val)=>new Date(val).toDateString()

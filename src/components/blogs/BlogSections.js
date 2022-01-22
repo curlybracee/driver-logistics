@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { formatDate } from '../../assets/constants';
 import auther_img from '../../assets/images/auther_img.png'
 import blogBox from '../../assets/images/blog_box_img_1.png'
 import blogIcon1 from '../../assets/images/blog_icon_1.png'
@@ -8,7 +10,6 @@ import blogIcon2 from '../../assets/images/blog_icon_2.png'
 
 const BlogSections = () => {
     const { data = {} } = useSelector(state => state.userLog.blogs)
-const DATA=[1,11,7,1,1,1,1,1,1,1,8,1,1,1,8,1,1,1,1,9,1,1,1,1]
     return (
         <section class="inner_blog_contantbox">
 
@@ -27,19 +28,24 @@ const DATA=[1,11,7,1,1,1,1,1,1,1,8,1,1,1,8,1,1,1,1,9,1,1,1,1]
                                     </div>
                                     <div class="blog_auther"><img alt='' src={auther_img} /> <span>{item.posted_by}</span></div>
                                     <div class="clearfix"></div>
-                                    <div class="blog_title"><a href="blog-details.html">{item.title}</a></div>
+                                    <div class="blog_title"><Link to={`/blog/details/${item.id}`}>{item.title}</Link></div>
 
                                     
-                                    <div dangerouslySetInnerHTML={{__html:item.description}} style={{fontSize:'14px'}}></div>
+                                    <div dangerouslySetInnerHTML={{__html:item.shortdescription}} style={{fontSize:'14px'}}></div>
 
-                                    <div class="blog_datebox">{item.updated_at}<a href="blog-details.html"><img
-                                        alt='' src={blogIcon1} /></a><a href="#"><img
-                                            alt='' src={blogIcon2} /></a></div>
+                                    <div class="blog_datebox">
+                                        {formatDate(item.updated_at)}
+                                    <Link to={`/blog/details/${item.id}`}>
+                                        <img alt='' src={blogIcon1} />
+                                    </Link><a href="#"><img
+                                            alt='' src={blogIcon2} />
+                                            </a>
+                                    </div>
                                     <div class="clearfix"></div>
 
-                                    <div class="blog_readmore"><a href="/blog/details"
+                                    <div class="blog_readmore"><Link to={`/blog/details/${item.id}`}
                                         class="theme-btn-three btn-style-three"><span class="btn-title-three">Read
-                                        More</span></a></div>
+                                        More</span></Link></div>
 
                                 </div>
 
