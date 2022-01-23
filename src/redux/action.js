@@ -39,6 +39,7 @@ export const TYPES = {
     POST_CONTACT_FORM_SUCCESS: 'POST_CONTACT_FORM_SUCCESS',
 
     COMMON_FAILURE: 'COMMON_FAILURE',
+    CLEAR_TOAST:'CLEAR_TOAST'
 }
 export const action = (type, payload = {}) => {
     return { type, payload }
@@ -50,6 +51,7 @@ export const fetchBlogs = () => action(TYPES.FETCH_BLOG)
 export const fetchClients = () => action(TYPES.FETCH_CLIENT)
 export const fetchStatitics = () => action(TYPES.FETCH_STATISTICS)
 
+export const clearToast = () => action(TYPES.CLEAR_TOAST)
 
 export const postSubscription = (data) => action(TYPES.POST_SUBSCRIPTION, { data })
 export const postResume = (data) => action(TYPES.POST_RESUME, { data })

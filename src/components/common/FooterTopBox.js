@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function FooterTopBox() {
     return (
@@ -18,7 +19,7 @@ function FooterTopBox() {
 
                             <p>Get your <span>3PL</span> experience simplified and Amplified with Us.</p>
 
-                            <div className="footertop_readmore"><a href="#">LET'S TALK</a></div>
+                            <div className="footertop_readmore"><Link to="/contact">LET'S TALK</Link></div>
 
                         </div>
                     </div>

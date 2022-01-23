@@ -34,12 +34,13 @@ const BlogSections = () => {
                                     <div dangerouslySetInnerHTML={{__html:item.shortdescription}} style={{fontSize:'14px'}}></div>
 
                                     <div class="blog_datebox">
-                                        {formatDate(item.updated_at)}
+                                        {formatDate(item.updated_at)} | {item.readingtime}
                                     <Link to={`/blog/details/${item.id}`}>
                                         <img alt='' src={blogIcon1} />
-                                    </Link><a href="#"><img
-                                            alt='' src={blogIcon2} />
-                                            </a>
+                                    </Link>
+                                <Link to={`/blog/details/${item.id}`}>
+                                    <img alt='' src={blogIcon2} />
+                                            </Link>
                                     </div>
                                     <div class="clearfix"></div>
 

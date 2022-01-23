@@ -8,6 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Routes from './Routes'
 import { useDispatch } from 'react-redux';
 import { fetchBanner, fetchBlogs, fetchClients, fetchStatitics, fetchTestimonials } from './redux/action';
+import MyAlert from './components/common/MyAlert';
+import ScrollToTop from './components/common/ScrollToTop';
+import { Alert } from 'react-bootstrap';
 
 
 function App() {
@@ -28,7 +31,9 @@ function App() {
         <Header />
         <div class="clearfix"></div>
         <main className="main">
+        <ScrollToTop />
           <Routes />
+          <MyAlert />
         </main>
         <Footer />
       </Router>

@@ -25,6 +25,7 @@ const initialState = {
         data: [],
         requestInProgress: false
     },
+    toast:undefined
 };
 
 const userReducer = (state = initialState, action) => {
@@ -146,18 +147,34 @@ const userReducer = (state = initialState, action) => {
         }
         case TYPES.POST_CONTACT_FORM_SUCCESS: {
             return Object.assign({}, state, {
-                contact: {
-                    data: action.payload || [],
+                toast: {
+                    message: 'Your details successfully submitted',
+                    status:'success',
                     requestInProgress: false
                 },
             })
         }
-        case TYPES.POST_CONTACT_FORM_FAILURE: {
+        case TYPES.POST_RESUME_SUCCESS: {
             return Object.assign({}, state, {
-                contact: {
-                    error: action.payload || [],
+                toast: {
+                    message: 'Your details successfully submitted',
+                    status:'success',
                     requestInProgress: false
                 },
+            })
+        }
+        case TYPES.COMMON_FAILURE: {
+            return Object.assign({}, state, {
+                toast: {
+                    message:'Something went wrong',
+                    status:'error',
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.CLEAR_TOAST: {
+            return Object.assign({}, state, {
+                toast: undefined,
             })
         }
         // case TYPES.POST_SUBSCRIPTION_REQUEST: {

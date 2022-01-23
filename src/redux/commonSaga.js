@@ -63,7 +63,7 @@ function* handlePostSubscription(action) {
 function* handlePostResume(action) {
     const { response, error } = yield call(postApi, URL.RESUME, action?.payload?.data)
     if (error) {
-        yield put(Action(TYPES.POST_RESUME_FAILURE, error))
+        yield put(Action(TYPES.COMMON_FAILURE, error))
 
     } else {
         yield put(Action(TYPES.POST_RESUME_SUCCESS, response?.data))
