@@ -41,7 +41,6 @@ p {
 .header_outer {
   width: 100%;
   display: flex;
-  padding-top: 30px;
   padding-bottom: 20px;
 }
 
@@ -2255,7 +2254,6 @@ button {
   .header_outer {
     width: 100%;
     display: block;
-    padding-top: 30px;
     padding-bottom: 0px;
   }
 

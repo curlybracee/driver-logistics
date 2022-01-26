@@ -14,7 +14,7 @@
 .header_outer {
   width: 100%;
   display: flex;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 .main_logo {
@@ -128,4 +128,8 @@ a {
     top: 15px;
     right: 25px;
   }
+}
+
+.fullWidth{
+  width:100% !important;
 }

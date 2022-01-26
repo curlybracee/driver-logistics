@@ -45,14 +45,15 @@ const Header = () => {
     }, [pathname])
     return (
         <section className='header_section'>
-            <Container className='headerContainer'>
+            <Container className={clsx('headerContainer',isMobile&&'fullWidth')}>
                 <Col md={12}>
                     <div className="header_outer">
                         <Col md={3}>
-                            <div className="main_logo">
+                            <div className="main_logo" style={{textAlign:'left'}}>
                                 <Link to="/">
                                     <img
                                         src={MainLogo}
+                                        
                                         alt="Driver Logistics"
                                         title="Driver Logistics"
                                     />
