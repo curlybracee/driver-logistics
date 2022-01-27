@@ -10,6 +10,7 @@
 }
 .headerContainer {
   max-width: 90%;
+  padding: 0 !important;
 }
 .header_outer {
   width: 100%;

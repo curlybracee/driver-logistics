@@ -44,11 +44,11 @@ const Header = () => {
         }
     }, [pathname])
     return (
-        <section className='header_section'>
+        <section className='header_section' style={{padding:'0px'}}>
             <Container className={clsx('headerContainer',isMobile&&'fullWidth')}>
-                <Col md={12}>
+                <Col md={12} style={{padding:'0px'}}>
                     <div className="header_outer">
-                        <Col md={3}>
+                        <Col md={3} style={{padding:'0px'}}>
                             <div className="main_logo" style={{textAlign:'left'}}>
                                 <Link to="/">
                                     <img
