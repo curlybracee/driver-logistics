@@ -5,11 +5,11 @@ export const URL = {
     TESTIMONIAL: 'testimonial',
     BANNER: 'banner',
     BLOG: 'blog',
-    CLIENT: 'clientlogos',
+    CLIENT: 'client',
     RESUME: 'career',
     STATISTICS:'statistics',
     CLIENT_LOGOS:'clientlogos',
-    NEWS_LETTER: 'newsletter',
+    NEWS_LETTER: 'newslettersave',
     CONTACT: 'contact',
 }
 

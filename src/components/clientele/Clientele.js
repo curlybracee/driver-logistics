@@ -13,7 +13,7 @@ const Clientele = () => {
             <Fade bottom>
                 <LogoSection />
             </Fade>
-            <FeedBack />
+            {/* <FeedBack /> */}
             <Fade bottom>
                 <FooterTopBox />
             </Fade>

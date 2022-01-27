@@ -1841,7 +1841,7 @@ button {
   background: url(../images/services_right.png) no-repeat top right;
   /* opacity: ; */
   background-size: contain;
-  z-index: 100000000000000000;
+  z-index: 98;
   content: "";
 }
 
@@ -2550,7 +2550,7 @@ button {
     background: url(../images/services_right.png) no-repeat top right;
     /* opacity: ; */
     background-size: contain;
-    z-index: 100000000000000000;
+    z-index: 98;
     content: "";
     display: none;
   }

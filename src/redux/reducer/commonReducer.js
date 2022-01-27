@@ -177,29 +177,30 @@ const userReducer = (state = initialState, action) => {
                 toast: undefined,
             })
         }
-        // case TYPES.POST_SUBSCRIPTION_REQUEST: {
-        //     return Object.assign({}, state, {
-        //         postSubscription: {
-        //             requestInProgress: true
-        //         },
-        //     })
-        // }
-        // case TYPES.POST_SUBSCRIPTION_SUCCESS: {
-        //     return Object.assign({}, state, {
-        //         postSubscription: {
-        //             data: action.payload || [],
-        //             requestInProgress: false
-        //         },
-        //     })
-        // }
-        // case TYPES.POST_SUBSCRIPTION_FAILURE: {
-        //     return Object.assign({}, state, {
-        //         postSubscription: {
-        //             error: action.payload || [],
-        //             requestInProgress: false
-        //         },
-        //     })
-        // }
+        case TYPES.POST_SUBSCRIPTION_REQUEST: {
+            return Object.assign({}, state, {
+                postSubscription: {
+                    requestInProgress: true
+                },
+            })
+        }
+        case TYPES.POST_SUBSCRIPTION_SUCCESS: {
+            return Object.assign({}, state, {
+                toast: {
+                    message: 'Your details successfully submitted',
+                    status:'success',
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.POST_SUBSCRIPTION_FAILURE: {
+            return Object.assign({}, state, {
+                postSubscription: {
+                    error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
         // case TYPES.POST_RESUME_REQUEST: {
         //     return Object.assign({}, state, {
         //         postResume: {

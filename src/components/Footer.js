@@ -22,8 +22,7 @@ const Footer = () => {
                 .required("email is Required"),
         }),
         onSubmit: (inputData) => {
-            const { email } = inputData;
-            dispatch(postSubscription(email))
+            dispatch(postSubscription(inputData))
         },
 
     })

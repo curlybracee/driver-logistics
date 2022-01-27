@@ -1700,7 +1700,7 @@ font-family: 'Poppins', sans-serif;}
     background: url(../img/services_right.png) no-repeat top right;
     opacity: ;
     background-size: contain;
-    z-index: 100000000000000000;
+    z-index: 98;
     content: "";
 }
 
@@ -2393,7 +2393,7 @@ font-family: 'Poppins', sans-serif;}
     background: url(../img/services_right.png) no-repeat top right;
     opacity: ;
     background-size: contain;
-    z-index: 100000000000000000;
+    z-index: 98;
     content: "";
         display: none;
 }

@@ -31,7 +31,7 @@ function* handleFetchBlog() {
     }
 }
 function* handleFetchClient() {
-    const { response, error } = yield call(invokeApi, URL.CLIENT)
+    const { response, error } = yield call(invokeApi, URL.CLIENT_LOGOS)
     console.log({ response });
     if (error) {
         yield put(Action(TYPES.FETCH_CLIENT_FAILURE, error))
@@ -52,10 +52,11 @@ function* handleFetchStatitics() {
 
 function* handlePostSubscription(action) {
     const { email } = action?.payload.data
-    const { response, error } = yield call(postApi, URL.NEWS_LETTER, email)
+    console.log({email});
+    const { response, error } = yield call(postApi, URL.NEWS_LETTER, {email})
     console.log({ response });
     if (error) {
-        yield put(Action(TYPES.POST_SUBSCRIPTION_FAILURE, error))
+        yield put(Action(TYPES.COMMON_FAILURE, error))
     } else {
         yield put(Action(TYPES.POST_SUBSCRIPTION_SUCCESS, response?.data))
     }
