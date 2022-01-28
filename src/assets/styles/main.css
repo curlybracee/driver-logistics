@@ -996,6 +996,7 @@ button {
 .tab_img_box {
   display: flex;
   align-items: center;
+  padding: 0px !important;
 }
 
 .footer_contantbox_tab {

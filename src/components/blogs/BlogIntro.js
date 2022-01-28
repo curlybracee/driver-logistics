@@ -10,6 +10,7 @@ const BlogIntro = () => {
                         <div
                             class="col-md-6 inner_blog_box wow fadeInUp"
                             data-wow-delay="1s"
+                            style={{padding:'0px'}}
                         >
                             <div class="">
                                 <h1>

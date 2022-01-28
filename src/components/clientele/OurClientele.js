@@ -11,7 +11,7 @@ const OurClientele = () => {
 
                     <div className="row">
 
-                        <div className="col-md-6 inner_text_box wow fadeInUp" data-wow-delay="1s">
+                        <div className="col-md-6 inner_text_box wow fadeInUp" data-wow-delay="1s" style={{padding:'0px'}}>
 
                             <div className="">
                                 <h1>Our <span className="banner_redfont">CLIENTELE</span>

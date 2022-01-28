@@ -11,7 +11,7 @@ const ContactSection = () => {
 
                 <div class="row">
 
-                    <div class="col-md-6 inner_contact_box">
+                    <div class="col-md-6 inner_contact_box" style={{padding:'0px'}}>
 
                         <div class="inner_contact_contantbox">
                             <h1>TALK TO <span class="banner_redfont">US</span>

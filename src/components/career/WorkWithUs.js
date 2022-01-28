@@ -10,6 +10,7 @@ const WorkWithUs = () => {
                         <div
                             class="col-md-6 inner_contact_box wow fadeInUp"
                             data-wow-delay="1s"
+                            style={{padding:'0px'}}
                         >
                             <div class="inner_career_contantbox">
                                 <h1>
