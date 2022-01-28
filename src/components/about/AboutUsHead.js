@@ -12,7 +12,7 @@ function AboutUsHead() {
 
                     <div className="row">
 
-                        <div className="col-md-6">
+                        <div className="col-md-6" style={{padding:'0px'}}>
 
                             <div className="inner_aboutsection_contantpart wow fadeInUp" data-wow-delay="1s">
 

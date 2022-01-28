@@ -38,7 +38,7 @@ function HeaderTabList(props) {
 
     return (
         !isMobile ?
-            <div id="skltbsResponsive" className="skltbs">
+            <div id="skltbsResponsive" className="skltbs" style={{padding:'0px'}}>
 
                 <ul role="tablist" className="skltbs-tab-group">
                     <li role="presentation" className="skltbs-tab-item">
