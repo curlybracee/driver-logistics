@@ -10,7 +10,9 @@ const Hero = () => {
             <div className='banner_contantpart_outer'>
                 <div class="banner_contantpart wow fadeInUp" data-wow-delay="1s">
                     <h1 style={{textAlign:'left'}}>
-                        {currentBanner.title}<br />
+                        {currentBanner.title!==null ?currentBanner.title:<>Let us be Your<br />
+                        <span class="banner_redfont">3PL</span> Wizard
+                        </>}<br />
                         <div style={{textAlign:'left',marginBottom:'20px'}}  dangerouslySetInnerHTML={{ __html: currentBanner.description }} />
                         <div class="banner_readmore">
                             <Link to="/about-us" class="theme-btn btn-style-one">
