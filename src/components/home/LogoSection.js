@@ -26,6 +26,8 @@ const LogoSection = () => {
                                 items={matches480 ? 2 : matches840 ? 3 : 5}
                                 dots={false}
                                 rewind={false}
+                                autoplay={true}
+                                autoplayTimeout={3000}
                                 className='owl-theme' loop margin={10}>
                                {data.map(item=><div key={item.id} className='logo-item'>
                                    <img src={item.image} alt='logo1' />
