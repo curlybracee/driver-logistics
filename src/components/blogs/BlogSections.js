@@ -22,17 +22,23 @@ const BlogSections = () => {
                             <div class={`col-md-4 wow fadeInUp blogAlign-${index}`} data-wow-delay="1s">
 
                                 <div class="blog_newbox">
-
-                                    <img alt='' src={blogBox} class="image_new" />
-                                    <div class="overlay_one">
-                                    </div>
+                                    <img alt='' src={item?.image} class="image_new" />
+                                    {item?.image&&<div class="overlay_one"></div>}
                                     <div class="blog_auther"><img alt='' src={auther_img} /> <span>{item.posted_by}</span></div>
                                     <div class="clearfix"></div>
                                     <div class="blog_title"><Link to={`/blog/details/${item.id}`}>{item.title}</Link></div>
+                                    <div dangerouslySetInnerHTML={{__html:item.shortdescription}}
+                                     style={{
+                                         fontSize:'14px',
+                                         display:'block',
+                                         maxHeight:'300px',
+                                         overflow:'hidden',
+                                          wordWrap: 'break-word',
+                                         textOverflow:'ellipsis',
+                                         marginBottom:'15px'
+                                         }}>
 
-                                    
-                                    <div dangerouslySetInnerHTML={{__html:item.shortdescription}} style={{fontSize:'14px'}}></div>
-
+                                    </div>
                                     <div class="blog_datebox">
                                         {formatDate(item.updated_at)} | {item.readingtime}
                                     <Link to={`/blog/details/${item.id}`}>

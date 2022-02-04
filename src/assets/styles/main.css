@@ -1213,6 +1213,7 @@ button {
 
 .blog_newbox {
   width: 100%;
+  min-height: 300px;
   padding: 20px 30px 50px 30px;
   border: #d3d8e4 solid 1px;
   border-radius: 6px;
@@ -1236,7 +1237,8 @@ button {
   bottom: 0;
   left: 4.2%;
   right: 0;
-  height: 33%;
+  height: auto;
+  max-height: 33%;
   width: 91.5%;
   opacity: 0;
   transition: 0.8s ease;
@@ -2206,7 +2208,7 @@ button {
   height: 100%;
   width: 100%;
   content: "";
-  background-color: #000;
+  background-color: #191952;
   border-radius: 6px;
   color: #fff !important;
   -webkit-transform: scale(0, 1);
