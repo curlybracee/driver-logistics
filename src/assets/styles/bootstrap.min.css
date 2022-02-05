@@ -11,7 +11,7 @@ body {
 	margin: 0
 }
 .formError {
-  color: #144114;
+  color: #ce2e33;
   font-size: 14.7px;
   padding: 3px;
   margin-left: 21px;
@@ -2280,7 +2280,7 @@ output {
     width: 100%;
     padding: 15px 20px;
     border-radius: 50px;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
     line-height: 1.5;
         color: #000;
     background: #fff;
@@ -2333,7 +2333,7 @@ input[type=date].form-control, input[type=datetime-local].form-control, input[ty
 }
 }
 .form-group {
-    margin-bottom: 8px;
+    margin-bottom: 30px;
 	position: relative;
     font-family: 'Poppins', sans-serif;
         width: 100%;

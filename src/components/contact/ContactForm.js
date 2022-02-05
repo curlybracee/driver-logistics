@@ -5,10 +5,12 @@ import { useFormik } from 'formik';
 import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import { postContactForm } from "../../redux/action";
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 // import { postSubscription } from '../redux/action';
 
 const ContactForm = () => {
-
+    const [value, setValue] = React.useState('')
     const dispatch = useDispatch()
     const Formik = useFormik({
         initialValues: {
@@ -16,7 +18,7 @@ const ContactForm = () => {
             name: '',
             numberCode: '',
             number: '',
-            message:'',
+            message: '',
         },
         validationSchema: Yup.object({
             email: Yup.string()
@@ -24,10 +26,11 @@ const ContactForm = () => {
                 .required("Email is Required"),
             name: Yup.string()
                 .required("Name is Required"),
-            numberCode: Yup.string()
-                .required("Code is Required"),
             number: Yup.string()
-                .required("Number is Required"),
+                .required("Number is Required").test('isPossible', 'not valid',
+                function (val){
+                   return val?(isValidPhoneNumber(val)?true:false):true
+                }),
             company: Yup.string()
                 .required("company is Required"),
             query: Yup.string()
@@ -35,10 +38,10 @@ const ContactForm = () => {
         }),
         onSubmit: (inputData) => {
             console.log('==============================================', inputData)
-            let objToSend={
+            let objToSend = {
                 ...inputData,
-                phone:inputData.numberCode+inputData.number,
-                message:inputData.query
+                phone: inputData.numberCode + inputData.number,
+                message: inputData.query
             }
             delete objToSend.number
             delete objToSend.numberCode
@@ -84,37 +87,47 @@ const ContactForm = () => {
                                             <div className="formError">{Formik.errors.company}</div>
                                         ) : null}
                                     </div>
-    
+
                                     <div class="form-group">
                                         <div class="labelpadding">
+
                                             <label for="numberCode">Contact number</label>
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-3 col-sm-12 labelpadding labelpaddingleft labelpaddingright">
-                                                <input type="number" class="form-control" id="numberCode" onChange={Formik.handleChange} />
-
-                                                {Formik.errors.numberCode && Formik.touched.numberCode ? (
-                                                    <div className="formError">{Formik.errors.numberCode}</div>
+                                            <div class="col-sm-12 labelpadding labelpaddingleft labelpaddingright">
+                                                {/* <input type="number" class="form-control" id="numberCode" onChange={Formik.handleChange} /> */}
+                                                <PhoneInput
+                                                    defaultCountry="IN"
+                                                    placeholder="Enter phone number"
+                                                    value={value}
+                                                    international
+                                                    countryCallingCodeEditable={false}
+                                                    id='number'
+                                                    onChange={(val) => Formik.setFieldValue('number', val)}
+                                                    // error={value ? (isPossiblePhoneNumber(value) ? value : 'Invalid phone number') : 'Phone number required'}
+                                                />
+                                                {Formik.errors.number && Formik.touched.number ? (
+                                                    <div className="formError">{Formik.errors.number}</div>
                                                 ) : null}
                                             </div>
 
-                                            <div class="col-md-9 col-sm-12 labelpaddingleft labelpaddingright">
+                                            {/* <div class="col-md-9 col-sm-12 labelpaddingleft labelpaddingright">
                                                 <input type="number" class="form-control" id="number" onChange={Formik.handleChange} />
 
                                                 {Formik.errors.number && Formik.touched.number ? (
                                                     <div className="formError">{Formik.errors.number}</div>
                                                 ) : null}
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
 
-                                   
+
                                     <div className="form-group">
                                         <label for="query">Your Query</label>
                                         <textarea
                                             className="form-control b12"
-                                            
+
                                             id="query"
                                             rows="3"
                                             onChange={Formik.handleChange}
