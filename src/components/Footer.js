@@ -127,11 +127,11 @@ const Footer = () => {
                                     <div class="dlab-topbar-right">
                                         <ul>
 
-                                            <li class="dlab-social-icon"><Link href="#"> <FontAwesomeIcon icon={faEnvelope} size="1x" />  </Link></li>
+                                            {/* <li class="dlab-social-icon"><Link to={{pathname:"https://www.linkedin.com/company/driver-logistics-llp"}} target="_blank"> <FontAwesomeIcon icon={faEnvelope} size="1x" />  </Link></li> */}
 
-                                            <li class="dlab-social-icon"><Link href="#"> <FontAwesomeIcon icon={faInstagram} size="1x" /> </Link></li>
-                                            <li class="dlab-social-icon"><Link href="#"> <FontAwesomeIcon icon={faFacebookF} size="1x" /> </Link></li>
-                                            <li class="dlab-social-icon"><Link href="#"> <FontAwesomeIcon icon={faLinkedinIn} size="1x" /> </Link></li>
+                                            <li class="dlab-social-icon"><Link to={{pathname:"https://www.instagram.com/driverlogistics/"}} target="_blank"> <FontAwesomeIcon icon={faInstagram} size="1x" /> </Link></li>
+                                            <li class="dlab-social-icon"><Link to={{pathname:"https://www.facebook.com/driverlogisticsllp"}} target="_blank"> <FontAwesomeIcon icon={faFacebookF} size="1x" /> </Link></li>
+                                            <li class="dlab-social-icon"><Link to={{pathname:"https://www.linkedin.com/company/driver-logistics-llp"}} target="_blank"> <FontAwesomeIcon icon={faLinkedinIn} size="1x" /> </Link></li>
                                         </ul>
                                     </div>
 
