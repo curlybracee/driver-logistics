@@ -667,6 +667,9 @@ button {
   background-color: #ffffff;
   transition: all 0.5s;
   margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dlab-social-icon li a:hover {

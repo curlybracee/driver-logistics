@@ -38,8 +38,9 @@
   display: flex;
   align-items: center;
 }
-.menu_active {
-  border-bottom: #ce2e33 solid 2px !important;
+.menu_active a{
+  color: #ce2e33 !important;
+  /* border-bottom: #ce2e33 solid 2px !important; */
 }
 .stellarnav {
   display: flex;
@@ -49,11 +50,27 @@
   justify-content: flex-end;
 }
 .stellarnav-mobile {
+  color: #fff;
   display: flex;
   list-style: none;
   align-items: center;
   margin-bottom: 0;
   justify-content: flex-end;
+  background-color: transparent;
+}
+.mobile-nav{
+ 
+}
+.mobile-nav-container{
+  padding: 0px !important;
+  position: fixed !important;
+  top: 0 !important;
+  width: 90% !important;
+  height: 100vh !important;
+  background-color: #000 !important;
+  z-index: 99 !important;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
 }
 a {
   text-decoration: none !important;
@@ -61,11 +78,11 @@ a {
 .stellarnav li {
   display: inline-block;
   margin-left: 25px;
-  border-bottom: transparent solid 2px;
+  /* border-bottom: transparent solid 2px; */
 }
 .stellarnav li a {
   color: #000;
-  font-size: clamp(10px, 1vw, 14px);
+  font-size: clamp(10px, 1vw, 15px);
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   transition: all 0.3s ease-out;
@@ -94,29 +111,34 @@ a {
   .stellarnav {
     display: none;
   }
+  .mobile-nav-container{
+    visibility: visible;
+right:0px !important;
+transition: all 0.3s ease-in !important;
+  }
   .stellarnav-mobile {
-    position: absolute;
+    /* position: absolute; */
     display: block;
     list-style: none;
-    background-color: #ebebeb;
-    left: 0;
-    top: 0px;
-    transition: all 0.5s ease-out;
+    background-color: transparent;
+    /* right: 0; */
+    /* top: 20px; */
     width: 100%;
   }
   .stellarnav-mobile li a {
-    color: #000;
-    font-size: 14px;
+    color: #fff;
+    font-size: 15px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    transition: all 0.3s ease-out;
     text-transform: uppercase;
   }
   .stellarnav-mobile li {
     text-align: left;
-    border-bottom: 1px solid silver;
+    /* border-bottom: 1px solid silver; */
     padding: 10px;
-    transition: all 0.5s ease;
+  }
+  .menu_active{
+    border-bottom: none !important;
   }
   .mobile-menu-icon {
     display: block;
@@ -128,9 +150,23 @@ a {
     outline: none;
     top: 15px;
     right: 25px;
+    z-index: 100;
+  }
+  .extra-text{
+    margin-top: auto;
+    font-size: 15px !important;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+
   }
 }
 
 .fullWidth{
   width:100% !important;
+}
+.social-buttons{
+  padding: 0;
+  display: flex;
+  width: 100%;
 }

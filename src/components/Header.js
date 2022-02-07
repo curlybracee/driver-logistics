@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 const Header = () => {
     const { pathname } = useLocation()
@@ -44,35 +45,30 @@ const Header = () => {
         }
     }, [pathname])
     return (
-        <section className='header_section' style={{padding:'0px'}}>
-            <Container className={clsx('headerContainer',isMobile&&'fullWidth')}>
-                <Col md={12} style={{padding:'0px'}}>
+        <section className='header_section' style={{ padding: '0px' }}>
+            <Container className={clsx('headerContainer', isMobile && 'fullWidth')}>
+                <Col md={12} style={{ padding: '0px' }} className={matches840 && isMobile && "mobile-nav-container"}>
                     <div className="header_outer">
-                        <Col md={3} style={{padding:'0px'}}>
-                            <div className="main_logo" style={{textAlign:'left'}}>
+                        <Col md={3} style={{ padding: '0px' }}>
+                            <div className="main_logo" style={{ textAlign: 'left' }}>
                                 <Link to="/">
                                     <img
                                         src={MainLogo}
-                                        
+
                                         alt="Driver Logistics"
                                         title="Driver Logistics"
                                     />
                                 </Link>
                             </div>
                         </Col>
-                        <button className="mobile-menu-icon" onClick={() => setIsMobile(!isMobile)}>
-                            {
-                                isMobile ? (
-                                    <i className='fa fa-times'></i>
-                                ) : <i className='fa fa-bars'></i>
-                            }
-                        </button>
-                        <Col md={9} style={{ flex: 1 }}>
+
+                        <Col md={9} style={{ flex: 1 }} className={matches840 && isMobile && "mobile-nav"}>
                             <div className="menupart">
                                 <div id="main-nav" style={{ whiteSpace: 'nowrap' }}>
                                     <ul onClick={() => setIsMobile(false)} className={matches840 && isMobile ? "stellarnav-mobile" : "stellarnav"}>
                                         <li className={clsx(active.home && 'menu_active')}><Link to="/">
-                                            <FontAwesomeIcon icon={faHome} size="1x" />  </Link></li>
+                                            {isMobile ? 'Home' : <FontAwesomeIcon icon={faHome} size="1x" />}
+                                        </Link></li>
                                         <li className={clsx(active.about_us && 'menu_active')}><Link to="/about-us">About Us</Link></li>
                                         <li className={clsx(active.services && 'menu_active')}><Link to="/services">Services</Link></li>
                                         <li className={clsx(active.clientele && 'menu_active')}><Link to="/clientele">Clientele</Link></li>
@@ -82,13 +78,38 @@ const Header = () => {
                                         {/* <li className={clsx(active.case_studies && 'menu_active')}><Link to="/case-studies">Case Studies</Link></li> */}
                                         {/* <li className={clsx(active.news_letters && 'menu_active')}><Link to="/news-letters">News Letters</Link></li> */}
                                         <li className={clsx(active.contact && 'menu_active')}><Link to="/contact">Contact</Link></li>
+                                        <li className="extra-text visible-xs" >
+                                            <a href="#" class="probootstrap-burger-menu active"><i></i></a>
+                                            <h5 style={{fontSize:'15px'}}>Address</h5>
+                                            <p style={{wordWrap:'break-word',textOverflow:'ellipsis'}}>
+                                                University Road,<br/>
+                                                 CUSAT PO, Kochi,<br/>
+                                                  Kerala, India - 682022
+                                                 </p>
+                                            <h5>Call</h5>
+                                            <p>+91 484 254 4002</p>
+                                            <h5>Connect</h5>
+                                            <ul class="social-buttons">
+                                            <li className="dlab-social-icon"><Link to={{pathname:"https://www.instagram.com/driverlogistics/"}} target="_blank"> <FontAwesomeIcon icon={faInstagram} size="1x" color='#000' /> </Link></li>
+                                            <li class="dlab-social-icon"><Link to={{pathname:"https://www.facebook.com/driverlogisticsllp"}} target="_blank"> <FontAwesomeIcon icon={faFacebookF} size="1x" color='#000' /> </Link></li>
+                                            <li class="dlab-social-icon"><Link to={{pathname:"https://www.linkedin.com/company/driver-logistics-llp"}} target="_blank"> <FontAwesomeIcon icon={faLinkedinIn} size="1x" color='#000' /> </Link></li>
+                                            </ul>
+                                        </li>
                                     </ul>
+
 
 
                                 </div>
                             </div>
                         </Col>
                     </div>
+                    <button className="mobile-menu-icon" onClick={() => setIsMobile(!isMobile)}>
+                        {
+                            isMobile ? (
+                                <i className='fa fa-times' style={{ color: '#fff' }}></i>
+                            ) : <i className='fa fa-bars'></i>
+                        }
+                    </button>
                 </Col>
             </Container>
         </section >
