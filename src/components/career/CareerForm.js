@@ -3,10 +3,12 @@ import { useFormik } from 'formik';
 import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import { postResume } from '../../redux/action';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 
 const CareerForm = () => {
     const dispatch = useDispatch();
-    const [resume,setResume]=useState(null)
+    const [resume, setResume] = useState(null)
     const Formik = useFormik({
         initialValues: {
             email: "",
@@ -20,19 +22,20 @@ const CareerForm = () => {
                 .required("Email is Required"),
             name: Yup.string()
                 .required("Name is Required"),
-            numberCode: Yup.string()
-                .required("Code is Required"),
             number: Yup.string()
-                .required("Number is Required"),
+                .required("Number is Required").test('isPossible', 'not valid',
+                    function (val) {
+                        return val ? (isValidPhoneNumber(val) ? true : false) : true
+                    }),
         }),
         onSubmit: (inputData) => {
             console.log('==============================================', inputData)
-            const {name,email,numberCode,number}=inputData;
-            let objToSend={
-            name,
-            emailid:email,
-            phoneno:`${numberCode}${number}`,
-            resume
+            const { name, email, numberCode, number } = inputData;
+            let objToSend = {
+                name,
+                emailid: email,
+                phoneno: `${numberCode}${number}`,
+                resume
             }
             dispatch(postResume(objToSend))
         },
@@ -46,7 +49,7 @@ const CareerForm = () => {
     // "updated_at": "2022-01-13T01:21:53.000000Z",
     // "created_at": "2022-01-13T01:21:53.000000Z",
     // "id": 5
-    const handleFileChange=(event)=>{
+    const handleFileChange = (event) => {
         setResume(event.currentTarget.files[0]);
     }
     return (
@@ -81,7 +84,22 @@ const CareerForm = () => {
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-3 col-sm-12 labelpadding labelpaddingleft labelpaddingright">
+                                            <div class="col-sm-12 labelpadding labelpaddingleft labelpaddingright">
+                                                {/* <input type="number" class="form-control" id="numberCode" onChange={Formik.handleChange} /> */}
+                                                <PhoneInput
+                                                    defaultCountry="IN"
+                                                    placeholder="Enter phone number"
+                                                    international
+                                                    countryCallingCodeEditable={false}
+                                                    id='number'
+                                                    onChange={(val) => Formik.setFieldValue('number', val)}
+                                                // error={value ? (isPossiblePhoneNumber(value) ? value : 'Invalid phone number') : 'Phone number required'}
+                                                />
+                                                {Formik.errors.number && Formik.touched.number ? (
+                                                    <div className="formError">{Formik.errors.number}</div>
+                                                ) : null}
+                                            </div>
+                                            {/* <div class="col-md-3 col-sm-12 labelpadding labelpaddingleft labelpaddingright">
                                                 <input type="number" class="form-control" id="numberCode" maxLength={4} onChange={Formik.handleChange} />
 
                                                 {Formik.errors.numberCode && Formik.touched.numberCode ? (
@@ -95,7 +113,7 @@ const CareerForm = () => {
                                                 {Formik.errors.number && Formik.touched.number ? (
                                                     <div className="formError">{Formik.errors.number}</div>
                                                 ) : null}
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
 
