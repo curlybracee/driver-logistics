@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import AnimatedNumber from "animated-number-react";
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import * as _ from 'lodash';
+
 const formatToNum=(val)=>{
     let string =val?.toString();
     if(string.includes('M')){
@@ -16,7 +18,7 @@ const Counter = (props) => {
     const { inViewport, forwardedRef } = props;
     console.log({ inViewport });
     const { data:statistics = {    } } = useSelector(state => state.userLog.statistics)
-    console.log({statistics});
+    console.log('statistics.statis_reg_user',statistics.statis_reg_user);
     const [state, setState] = useState({
         registerd: 0,
         daily: 0,
@@ -24,9 +26,24 @@ const Counter = (props) => {
         happy: 0,
         pincode: 0,
     })
+    const [keyState, setKeyState] = useState({
+        firstName: '',
+        secondName: '',
+        thirdName: '',
+        forthName: '',
+        fifthName: '',
+    })
     useEffect(() => {
         if (inViewport) {
             if(statistics.statis_reg_user){
+                const allKeys = _.keys(statistics);
+               setKeyState({
+                firstName: allKeys[0],
+        secondName: allKeys[1],
+        thirdName: allKeys[2],
+        forthName: allKeys[3],
+        fifthName: allKeys[4]?allKeys[4]:'Pincodes',
+               })
                 setState({
                     registerd: formatToNum(statistics.statis_reg_user),
                     daily: formatToNum(statistics.statis_active_user),
@@ -81,7 +98,7 @@ const Counter = (props) => {
                                 />
                             </h2>
 
-                            <h4 className="counter_title">Registered Users</h4>
+                            <h4 className="counter_title">{keyState.firstName}</h4>
                         </div>
                     </div>
                     <div className="counder_box col-md-2 col-xs-12">
@@ -94,7 +111,7 @@ const Counter = (props) => {
                                     formatValue={formatValue}
                                 />
                             </h2>
-                            <h4 className="counter_title">Daily Active Users</h4>
+                            <h4 className="counter_title">{keyState.secondName}</h4>
                         </div>
                     </div>
                     <div className="counder_box col-md-2 col-xs-12">
@@ -107,7 +124,7 @@ const Counter = (props) => {
                                     formatValue={formatValue}
                                 />
                             </h2>
-                            <h4 className="counter_title">Monthly Deliveries</h4>
+                            <h4 className="counter_title">{keyState.thirdName}</h4>
                         </div>
                     </div>
                     <div className="counder_box col-md-2 col-xs-12">
@@ -120,7 +137,7 @@ const Counter = (props) => {
                                     formatValue={val => val.toFixed(0)}
                                 />
                             </h2>
-                            <h4 className="counter_title">Happy Clients</h4>
+                            <h4 className="counter_title">{keyState.forthName}</h4>
                         </div>
                     </div>
                     <div className="counder_box col-md-2 col-xs-12">
@@ -133,7 +150,7 @@ const Counter = (props) => {
                                     formatValue={(val) => val.toFixed(0)}
                                 />
                             </h2>
-                            <h4 className="counter_title">Pincodes</h4>
+                            <h4 className="counter_title">{keyState.fifthName}</h4>
                         </div>
                     </div>
 
