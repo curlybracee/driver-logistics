@@ -1,4 +1,5 @@
 import MainLogo from './main_logo.png';
+import FooterLogo from './footer_logo.png';
 import HeroImg from './banner_img.png'
 import Logo1 from './c1.jpg'
 import Logo2 from './c2.jpg'
@@ -30,5 +31,5 @@ export {
     Logo5,
     ServiceWareHouseImg, ServiceFleetImg, ServiceConstructionImg, ServiceDigitisationImg,
     tab_img_1, tab_img_2, tab_img_4, tab_img_3,
-    ContactSecImg, LocationIco, MailIco, PhoneIco, WorkWithUsImg, BlogIntroImg
+    ContactSecImg, LocationIco, MailIco, PhoneIco, WorkWithUsImg, BlogIntroImg,FooterLogo
 }

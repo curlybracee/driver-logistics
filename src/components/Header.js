@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import React, { useEffect, useState } from 'react'
 import { Col, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { MainLogo } from '../assets/images'
+import { FooterLogo,MainLogo } from '../assets/images'
 import { useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
@@ -49,15 +49,18 @@ const Header = () => {
             <Container className={clsx('headerContainer', isMobile && 'fullWidth')}>
                 <Col md={12} style={{ padding: '0px' }} className={matches840 && isMobile && "mobile-nav-container"}>
                     <div className="header_outer">
-                        <Col md={3} style={{ padding: '0px' }}>
+                        <Col md={3} >
                             <div className="main_logo" style={{ textAlign: 'left' }}>
                                 <Link to="/">
-                                    <img
-                                        src={MainLogo}
-
+                                {isMobile? <img
+                                        src={FooterLogo}
                                         alt="Driver Logistics"
                                         title="Driver Logistics"
-                                    />
+                                    />:<img
+                                    src={MainLogo}
+                                    alt="Driver Logistics"
+                                    title="Driver Logistics"
+                                />}
                                 </Link>
                             </div>
                         </Col>
