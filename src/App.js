@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './App.css';
-import './assets/styles/mysass.scss'
+// import './assets/styles/mysass.scss'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { BrowserRouter as Router } from "react-router-dom";
