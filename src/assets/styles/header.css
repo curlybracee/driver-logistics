@@ -1,7 +1,7 @@
 .header_section {
   width: 100%;
   border-bottom: #ebebeb solid 1px;
-  position: fixed;
+  position: absolute;
   background: #fff;
   z-index: 999 !important;
   max-height: 101px;

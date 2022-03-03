@@ -28,7 +28,7 @@ p {
 .header_section {
     width: 100%;
     border-bottom: #ebebeb solid 1px;
-    position: fixed;
+    position: absolute;
     background: #fff;
     z-index: 10;
 }
@@ -1193,14 +1193,7 @@ font-family: 'Poppins', sans-serif;}
     font-family: 'Poppins', sans-serif;
 }
 
-.blog_title {
-    
-    font-weight: 700;
-    text-align: left;
-    margin-top: 50px;
-    font-family: 'Poppins', sans-serif;
-    color: #050424;
-}
+
 
 .blog_title a{font-size: 16px;color: #050424; text-decoration: none;}
 .blog_title a:hover{ color: #c62028;}
