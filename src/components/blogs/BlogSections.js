@@ -31,11 +31,13 @@ const BlogSections = () => {
                                      style={{
                                          fontSize:'14px',
                                          display:'block',
-                                         maxHeight:'300px',
+                                         maxHeight:'100px',
                                          overflow:'hidden',
                                           wordWrap: 'break-word',
                                          textOverflow:'ellipsis',
-                                         marginBottom:'15px'
+                                         marginBottom:'15px',
+                                         overflowY: 'scroll'
+                                         
                                          }}>
 
                                     </div>
