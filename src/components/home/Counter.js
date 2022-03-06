@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import AnimatedNumber from "animated-number-react";
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import * as _ from 'lodash';
+
 const formatToNum=(val)=>{
     let string =val?.toString();
     if(string.includes('M')){
@@ -16,36 +18,8 @@ const Counter = (props) => {
     const { inViewport, forwardedRef } = props;
     console.log({ inViewport });
     const { data:statistics = {    } } = useSelector(state => state.userLog.statistics)
-    console.log({statistics});
-    const [state, setState] = useState({
-        registerd: 0,
-        daily: 0,
-        monthly: 0,
-        happy: 0,
-        pincode: 0,
-    })
-    useEffect(() => {
-        if (inViewport) {
-            if(statistics.statis_reg_user){
-                setState({
-                    registerd: formatToNum(statistics.statis_reg_user),
-                    daily: formatToNum(statistics.statis_active_user),
-                    monthly: formatToNum(statistics.statis_monthly_del),
-                    happy: formatToNum(statistics.statis_city),
-                    pincode: formatToNum(7000),
-                })
-            }
-        }
-        // else {
-        //     setState({
-        //         registerd: 0,
-        //         daily: 0,
-        //         monthly: 0,
-        //         happy: 0,
-        //         pincode: 0,
-        //     })
-        // }
-    }, [inViewport,statistics])
+    console.log('statistics.statis_reg_user',statistics);
+   
     function convertToInternationalCurrencySystem(labelValue) {
 
         // Nine Zeroes for Billions
@@ -64,78 +38,28 @@ const Counter = (props) => {
                     : Math.abs(Number(labelValue));
 
     }
-  
-    const formatValue = (val) => convertToInternationalCurrencySystem(val)
-    return (
+      return (
         <section >
             <div className="counter_sec" ref={forwardedRef}>
                 <div className="container counter_sec_">
+
+                    {statistics.map((item,index) =>
                     <div className="counder_box col-md-2 col-xs-12">
                         <div className="funfact text-center">
                             <i className="pe-7s-smile mt-5 text-white"></i>
                             <h2 data-animation-duration="5" data-value="1M" className="animate-number counter_number">
                                 <AnimatedNumber
-                                    value={state.registerd}
+                                    value={formatToNum(item.st_count)}
                                     duration={1000}
-                                    formatValue={formatValue}
+                                    formatValue={convertToInternationalCurrencySystem}
                                 />
                             </h2>
 
-                            <h4 className="counter_title">Registered Users</h4>
+                            <h4 className="counter_title">{item.title}</h4>
                         </div>
                     </div>
-                    <div className="counder_box col-md-2 col-xs-12">
-                        <div className="funfact text-center">
-                            <i className="pe-7s-rocket mt-5 text-white"></i>
-                            <h2 data-animation-duration="2000" data-value="100K" className="animate-number counter_number">
-                                <AnimatedNumber
-                                    value={state.daily}
-                                    duration={1000}
-                                    formatValue={formatValue}
-                                />
-                            </h2>
-                            <h4 className="counter_title">Daily Active Users</h4>
-                        </div>
-                    </div>
-                    <div className="counder_box col-md-2 col-xs-12">
-                        <div className="funfact text-center">
-                            <i className="pe-7s-add-user mt-5 text-white"></i>
-                            <h2 data-animation-duration="2000" data-value="20M" className="animate-number counter_number">
-                                <AnimatedNumber
-                                    value={state.monthly}
-                                    duration={1000}
-                                    formatValue={formatValue}
-                                />
-                            </h2>
-                            <h4 className="counter_title">Monthly Deliveries</h4>
-                        </div>
-                    </div>
-                    <div className="counder_box col-md-2 col-xs-12">
-                        <div className="funfact text-center">
-                            <i className="pe-7s-global mt-5 text-white"></i>
-                            <h2 data-animation-duration="2000" data-value="700" className="animate-number counter_number">
-                                <AnimatedNumber
-                                    value={state.happy}
-                                    duration={1000}
-                                    formatValue={val => val.toFixed(0)}
-                                />
-                            </h2>
-                            <h4 className="counter_title">Happy Clients</h4>
-                        </div>
-                    </div>
-                    <div className="counder_box col-md-2 col-xs-12">
-                        <div className="funfact text-center">
-                            <i className="pe-7s-global mt-5 text-white"></i>
-                            <h2 data-animation-duration="2000" data-value="7000" className="animate-number counter_number">
-                                <AnimatedNumber
-                                    value={state.pincode}
-                                    duration={1000}
-                                    formatValue={(val) => val.toFixed(0)}
-                                />
-                            </h2>
-                            <h4 className="counter_title">Pincodes</h4>
-                        </div>
-                    </div>
+                    )
+                 }
 
                 </div>
             </div>

@@ -34,7 +34,7 @@ p {
 .header_section {
   width: 100%;
   border-bottom: #ebebeb solid 1px;
-  position: fixed;
+  position: absolute;
   background: #fff;
   z-index: 10;
 }
@@ -1216,12 +1216,16 @@ button {
 
 .blog_newbox {
   width: 100%;
-  min-height: 300px;
+  min-height: 600px;
+  max-height: 600px;
   padding: 20px 30px 50px 30px;
   border: #d3d8e4 solid 1px;
   border-radius: 6px;
   box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 15%) !important;
-  padding-bottom: 50px;
+}
+::-webkit-scrollbar {
+  width: 8px;  
+  height: 8px; 
 }
 .blog_newbox img {
   width: 100%;
@@ -1325,6 +1329,8 @@ button {
   margin-top: 50px;
   font-family: "Poppins", sans-serif;
   color: #050424;
+  max-height: 150px;
+    overflow-y: auto;
 }
 
 .blog_title a {
