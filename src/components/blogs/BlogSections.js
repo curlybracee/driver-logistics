@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../../assets/constants';
 import auther_img from '../../assets/images/auther_img.png'
@@ -10,6 +10,7 @@ import { fetchBlogs } from '../../redux/action';
 
 
 const BlogSections = () => {
+    const dispatch=useDispatch()
     useEffect(()=>{
         dispatch(fetchBlogs({pageNo:2}))
     },[])
