@@ -19,7 +19,6 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchTestimonials())
-    dispatch(fetchBlogs())
     dispatch(fetchClients())
     dispatch(fetchBanner())
     dispatch(fetchStatitics())

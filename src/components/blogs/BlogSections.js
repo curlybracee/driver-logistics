@@ -6,9 +6,13 @@ import auther_img from '../../assets/images/auther_img.png'
 import blogBox from '../../assets/images/blog_box_img_1.png'
 import blogIcon1 from '../../assets/images/blog_icon_1.png'
 import blogIcon2 from '../../assets/images/blog_icon_2.png'
+import { fetchBlogs } from '../../redux/action';
 
 
 const BlogSections = () => {
+    useEffect(()=>{
+        dispatch(fetchBlogs({pageNo:2}))
+    },[])
     const { data = {} } = useSelector(state => state.userLog.blogs)
     return (
         <section class="inner_blog_contantbox">
