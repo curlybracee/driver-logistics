@@ -47,7 +47,7 @@ export const action = (type, payload = {}) => {
 
 export const fetchTestimonials = () => action(TYPES.FETCH_TESTIMONIALS)
 export const fetchBanner = () => action(TYPES.FETCH_BANNER)
-export const fetchBlogs = () => action(TYPES.FETCH_BLOG)
+export const fetchBlogs = () => action(TYPES.FETCH_BLOG,{data})
 export const fetchClients = () => action(TYPES.FETCH_CLIENT)
 export const fetchStatitics = () => action(TYPES.FETCH_STATISTICS)
 
