@@ -22,8 +22,9 @@ function* handleFetchBanner() {
     }
 }
 function* handleFetchBlog(action) {
-    const { pageNo } = action?.payload.data
-    const { response, error } = yield call(invokeApi, URL.BLOG)
+    const { page } = action?.payload.data
+    console.log({action});
+    const { response, error } = yield call(invokeApi, URL.BLOG,{page})
     console.log({ response });
     if (error) {
         yield put(Action(TYPES.FETCH_BLOG_FAILURE, error))

@@ -1,8 +1,15 @@
 import { BASE_API } from "../assets/constants";
+import _ from 'lodash'
 
 export const invokeApi = async (url, data) => {
+    let newUrl = url
+    console.log({data});
+    if(!_.isEmpty(data)){
+        console.log('lllll');
+        newUrl+='?'+new URLSearchParams({...data})
+    }
     console.log('frtching...');
-    return await fetch(`${BASE_API}/${url}`).then(res => res.json()).then(response => {
+    return await fetch(`${BASE_API}/${newUrl}`).then(res => res.json()).then(response => {
         return { response }
     }).catch(error => ({ error }))
 }
