@@ -1,4 +1,6 @@
-export const BASE_API = 'https://besterpsolution.in/demo/driver_logistics/public/api'
+const test_api='https://besterpsolution.in/demo/driver_logistics/public/api'
+const prod_api='https://driverlogistics.in'
+export const BASE_API = test_api
 
 
 export const URL = {

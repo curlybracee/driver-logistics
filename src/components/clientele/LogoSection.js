@@ -2,10 +2,10 @@ import React from "react";
 import { Col, Container } from "react-bootstrap";
 import Fade from 'react-reveal/Fade';
 import { useSelector } from 'react-redux';
-
+import _ from 'lodash'
 
 const LogoSection = () => {
-    const { data :{data=[]} } = useSelector(state => state.userLog.clients)
+    const { data :{data=[]}={} } = useSelector(state => _.get(state,'userLog.clients',{}))
     console.log({data});
 
     return (

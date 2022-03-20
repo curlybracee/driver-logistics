@@ -10,6 +10,7 @@ import WhareHouseService from './WhareHouseService'
 import Fade from 'react-reveal/Fade';
 import Counter from './Counter'
 import handleViewport from 'react-in-viewport';
+import { Grid } from '@material-ui/core'
 const ViewportBlock = handleViewport(Counter, /** options: {}, config: {} **/);
 const Home = () => {
 
@@ -19,6 +20,11 @@ const Home = () => {
                 <Hero />
             </Fade>
             <LogoSection />
+            <Fade bottom>
+            </Fade>
+            <Fade bottom>
+                <ViewportBlock />
+            </Fade>
             <Fade bottom>
                 <WhareHouseService />
             </Fade>
@@ -33,9 +39,6 @@ const Home = () => {
             </Fade>
             <Fade bottom>
                 <Testimonial />
-            </Fade>
-            <Fade bottom>
-                <ViewportBlock />
             </Fade>
             <div class="clearfix"></div>
             {/* <Fade bottom>

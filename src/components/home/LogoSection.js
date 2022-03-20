@@ -5,10 +5,11 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Fade from 'react-reveal/Fade';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useSelector } from 'react-redux';
+import _ from 'lodash'
 const LogoSection = () => {
     const matches840 = useMediaQuery('(max-width:840px)');
     const matches480 = useMediaQuery('(max-width:480px)');
-    const { data :{data=[]} } = useSelector(state => state.userLog.clients)
+    const { data :{data=[]}={} } = useSelector(state =>_.get(state,'userLog.clients',{}))
 
     return data?.length&& (
         <section class="logo_section">
