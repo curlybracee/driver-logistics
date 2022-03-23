@@ -7,7 +7,7 @@ import auther_img from '../../assets/images/auther_img.png'
 import blogBox from '../../assets/images/blog_box_img_1.png'
 import blogIcon1 from '../../assets/images/blog_icon_1.png'
 import blogIcon2 from '../../assets/images/blog_icon_2.png'
-import { fetchBlogs } from '../../redux/action';
+import { fetchNews } from '../../redux/action';
 // import {
 //     EmailShareButton,
 //     FacebookShareButton,
@@ -21,6 +21,7 @@ import { fetchBlogs } from '../../redux/action';
 //     FacebookIcon
 // } from 'react-share';
 import { createTheme, Dialog, ThemeProvider } from '@material-ui/core';
+import WillBeUpdatedSoon from '../common/WillBeUpdatedSoon';
 const theme = createTheme({
     overrides:{
         MuiButtonBase:{
@@ -30,7 +31,7 @@ const theme = createTheme({
         }
     }
   });
-const BlogSections = () => {
+const NewsSections = () => {
     const dispatch = useDispatch()
     const [page, setPage] = useState(1)
     const [open, setOpen] = useState(false)
@@ -38,14 +39,14 @@ const BlogSections = () => {
     useEffect(() => {
         console.log({ page });
         window.scrollTo(0, 0);
-        dispatch(fetchBlogs({ page }))
+        dispatch(fetchNews({ page }))
     }, [page])
-    const { data: { last_page, data } = {} } = useSelector(state => state.userLog.blogs)
+    const { data: { last_page, data=[] } = {} } = useSelector(state => state.userLog.news)
     console.log({ blogDetails: data });
     return (
         <section class="inner_blog_contantbox">
 
-            <div class="container" >
+           { data.length>0?<div class="container" >
 
                 <div class="col-md-12">
                     <div class='row'>
@@ -59,9 +60,9 @@ const BlogSections = () => {
                                     {/* {item?.image && <div class="overlay_one"></div>} */}
                                     {/* <div class="clearfix"></div> */}
                                     <div style={{ flex: 1, marginBottom: 'auto' }}>
-                                        <div class="blog_auther"><img alt='' src={auther_img} /> <span>{item.posted_by}</span></div>
+                                        <div class="blog_auther"><img alt='' src={auther_img} /> <span>{item?.posted_by}</span></div>
                                         <div class="blog_title" style={{ maxHeight: 50 }}><Link to={`/blog/details/${item.id}`} style={{ textOverflow: 'ellipsis', maxHeight: 50 }}>{item.title}</Link></div>
-                                        <div dangerouslySetInnerHTML={{ __html: item.shortdescription }}
+                                        <div dangerouslySetInnerHTML={{ __html: item?.description }}
                                             style={{
                                                 fontSize: '14px',
                                                 display: 'block',
@@ -80,7 +81,7 @@ const BlogSections = () => {
                                     </div>
                                     <div className="blogFooter" style={{ marginTop: 'auto' }}>
                                         <div class="blog_datebox" >
-                                            {formatDate(item.updated_at)} | {item.readingtime}
+                                            {/* {formatDate(item.updated_at)} | {item.readingtime} */}
                                             {/* <div onClick={() => {
                                             setOpen(true)
                                             setShareUrl(`/blog/details/${item.id}`)
@@ -93,7 +94,7 @@ const BlogSections = () => {
                                         </div>
                                         <div class="clearfix"></div>
 
-                                        <div class="blog_readmore"><Link to={`/blog/details/${item.id}`}
+                                        <div class="blog_readmore"><Link to={`/news/details/${item.id}`}
                                             class="theme-btn-three btn-style-three"><span class="btn-title-three">Read
                                                 More</span></Link></div>
                                     </div>
@@ -130,10 +131,10 @@ const BlogSections = () => {
                         </EmailShareButton>
                     </div>
                 </Dialog> */}
-            </div>
+            </div>:<WillBeUpdatedSoon/>}
 
         </section>
     )
 }
 
-export default BlogSections
+export default NewsSections

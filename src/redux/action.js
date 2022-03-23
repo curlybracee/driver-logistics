@@ -14,6 +14,11 @@ export const TYPES = {
     FETCH_BLOG_SUCCESS: 'FETCH_BLOG_SUCCESS',
     FETCH_BLOG_FAILURE: 'FETCH_BLOG_FAILURE',
 
+    FETCH_NEWS: 'FETCH_NEWS',
+    FETCH_NEWS_REQUEST: 'FETCH_NEWS_REQUEST',
+    FETCH_NEWS_SUCCESS: 'FETCH_NEWS_SUCCESS',
+    FETCH_NEWS_FAILURE: 'FETCH_NEWS_FAILURE',
+
     FETCH_CLIENT: 'FETCH_CLIENT',
     FETCH_CLIENT_REQUEST: 'FETCH_CLIENT_REQUEST',
     FETCH_CLIENT_SUCCESS: 'FETCH_CLIENT_SUCCESS',
@@ -48,6 +53,7 @@ export const action = (type, payload = {}) => {
 export const fetchTestimonials = () => action(TYPES.FETCH_TESTIMONIALS)
 export const fetchBanner = () => action(TYPES.FETCH_BANNER)
 export const fetchBlogs = (data) => action(TYPES.FETCH_BLOG,{data})
+export const fetchNews = (data) => action(TYPES.FETCH_NEWS,{data})
 export const fetchClients = () => action(TYPES.FETCH_CLIENT)
 export const fetchStatitics = () => action(TYPES.FETCH_STATISTICS)
 

@@ -16,6 +16,11 @@ const initialState = {
         requestInProgress: false
 
     },
+    news: {
+        data: [],
+        requestInProgress: false
+
+    },
     clients: {
         data: [],
         requestInProgress: false
@@ -94,6 +99,29 @@ const userReducer = (state = initialState, action) => {
         case TYPES.FETCH_BLOG_FAILURE: {
             return Object.assign({}, state, {
                 blogs: {
+                    error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_NEWS_REQUEST: {
+            return Object.assign({}, state, {
+                news: {
+                    requestInProgress: true
+                },
+            })
+        }
+        case TYPES.FETCH_NEWS_SUCCESS: {
+            return Object.assign({}, state, {
+                news: {
+                    data: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_NEWS_FAILURE: {
+            return Object.assign({}, state, {
+                news: {
                     error: action.payload || [],
                     requestInProgress: false
                 },

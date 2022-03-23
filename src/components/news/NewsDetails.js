@@ -8,21 +8,19 @@ import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { formatDate } from '../../assets/constants'
 
-
 const BlogDetails = () => {
     const { id } = useParams()
-    const { data: { data: blogDetails = [] } } = useSelector(state => state.userLog.blogs)
+    const { data: { data: newsDetails = [] } } = useSelector(state => state.userLog.news)
 
-    const [currentData, setCurrentData] = useState(blogDetails.filter(item => id === item.id))
+    const [currentData, setCurrentData] = useState(newsDetails.filter(item => id === item.id))
     useEffect(() => {
-        let tempData = blogDetails.filter(item => Number(id) === item.id)
+        let tempData = newsDetails.filter(item => Number(id) === item.id)
         setCurrentData(tempData[0])
-    }, [blogDetails,id])
-    console.log({ blogDetails, currentData });
+    }, [newsDetails,id])
+    console.log({ newsDetails, currentData });
     return (
         <Fade bottom>
-
-            <div>
+           <div>
                 <section class="blog_details_outer">
 
                     <div class="container">
@@ -65,7 +63,7 @@ const BlogDetails = () => {
 
                                         <h1>Recent Blogs</h1>
 
-                                        {blogDetails.map((item) => {
+                                        {newsDetails.map((item) => {
                                             if (item.id !== Number(id))
                                                 return <Link to={`/blog/details/${item.id}`}> <div class="resent_blog_box">
 
@@ -96,7 +94,7 @@ const BlogDetails = () => {
 
                 </section>
 
-            </div>
+            </div>s
         </Fade>
 
     )

@@ -32,6 +32,17 @@ function* handleFetchBlog(action) {
         yield put(Action(TYPES.FETCH_BLOG_SUCCESS, response?.data))
     }
 }
+function* handleFetchNews(action) {
+    const { page } = action?.payload.data
+    console.log({action});
+    const { response, error } = yield call(invokeApi, URL.NEWS,{page})
+    console.log({ response });
+    if (error) {
+        yield put(Action(TYPES.FETCH_NEWS_FAILURE, error))
+    } else {
+        yield put(Action(TYPES.FETCH_NEWS_SUCCESS, response?.data))
+    }
+}
 function* handleFetchClient() {
     const { response, error } = yield call(invokeApi, URL.CLIENT_LOGOS)
     console.log({ response });
@@ -86,6 +97,7 @@ export default function* mySagas() {
         takeLatest(TYPES.FETCH_TESTIMONIALS, handleFetchTestimonials),
         takeLatest(TYPES.FETCH_BANNER, handleFetchBanner),
         takeLatest(TYPES.FETCH_BLOG, handleFetchBlog),
+        takeLatest(TYPES.FETCH_NEWS, handleFetchNews),
         takeLatest(TYPES.FETCH_CLIENT, handleFetchClient),
         takeLatest(TYPES.FETCH_STATISTICS, handleFetchStatitics),
 

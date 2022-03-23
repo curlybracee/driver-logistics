@@ -7,9 +7,9 @@ import BlogSections from './BlogSections'
 const Blogs = () => {
     return (
         <div>
-            {/* <Fade bottom>
+            <Fade bottom>
                 <BlogIntro />
-            </Fade> */}
+            </Fade>
             <BlogSections />
             <Fade bottom>
                 <FooterTopBox />

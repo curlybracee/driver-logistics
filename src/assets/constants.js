@@ -12,6 +12,7 @@ export const URL = {
     STATISTICS:'statistics',
     CLIENT_LOGOS:'clientlogos',
     NEWS_LETTER: 'newslettersave',
+    NEWS: 'eventnews',
     CONTACT: 'contact',
 }
 
