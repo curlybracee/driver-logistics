@@ -49,7 +49,7 @@ const Header = () => {
             <Container className={clsx('headerContainer', isMobile && 'fullWidth')}>
                 <Col md={12} style={{ padding: '0px' }} className={matches840 && isMobile && "mobile-nav-container"}>
                     <div className="header_outer">
-                        <Col md={3} >
+                        <Col md={3} lg={3} >
                             <div className="main_logo" style={{ textAlign: 'left' }}>
                                 <Link to="/">
                                 {isMobile? <img
