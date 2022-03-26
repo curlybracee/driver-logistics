@@ -61,7 +61,7 @@ const BlogDetails = () => {
 
                                     <div class="blog_rightpart">
 
-                                        <h1>Recent Blogs</h1>
+                                        <h1>Recent News</h1>
 
                                         {newsDetails.map((item) => {
                                             if (item.id !== Number(id))

@@ -49,7 +49,7 @@ const Header = () => {
             <Container className={clsx('headerContainer', isMobile && 'fullWidth')}>
                 <Col md={12} style={{ padding: '0px' }} className={matches840 && isMobile && "mobile-nav-container"}>
                     <div className="header_outer">
-                        <Col md={3} lg={3} >
+                        <Col md={3} lg={3}sm={3} xl={3} >
                             <div className="main_logo" style={{ textAlign: 'left' }}>
                                 <Link to="/">
                                 {isMobile? <img
@@ -65,7 +65,7 @@ const Header = () => {
                             </div>
                         </Col>
 
-                        <Col md={9} style={{ flex: 1 }} className={matches840 && isMobile && "mobile-nav"}>
+                        <Col md={9} lg={9}sm={9} xl={9} style={{ flex: 1 }} className={matches840 && isMobile && "mobile-nav"}>
                             <div className="menupart">
                                 <div id="main-nav" style={{ whiteSpace: 'nowrap' }}>
                                     <ul onClick={() => setIsMobile(false)} className={matches840 && isMobile ? "stellarnav-mobile" : "stellarnav"}>
