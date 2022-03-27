@@ -46,7 +46,7 @@ const Counter = (props) => {
                 <div className="container counter_sec_">
 
                     {statistics?.map((item, index) =>
-                        <div className="counder_box col-md-2 col-xs-12">
+                        <div className="counder_box col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-12">
                             <div className="funfact text-center">
                                 {/* <i className="pe-7s-smile mt-5 text-white"></i> */}
                                 <h2 data-animation-duration="5" data-value="1M" className="animate-number counter_number">

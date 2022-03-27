@@ -51,7 +51,7 @@ const BlogSections = () => {
                     <div class='row'>
 
                         {data?.map((item, index) =>
-                            <div class={`col-md-4 wow fadeInUp blogAlign-${index}`} data-wow-delay="1s" style={{ marginBottom: 10 }}>
+                            <div class={`col-md-4 col-sm-6 col-xs-12 col-lg-4 col-xl-4 wow fadeInUp blogAlign-${index}`} data-wow-delay="1s" style={{ marginBottom: 10 }}>
                                 <div class="blog_newbox">
                                     <div style={{ height: '230px' }}>
                                         <img alt='' src={item?.image} class="image_new" />
