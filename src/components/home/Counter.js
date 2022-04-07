@@ -15,10 +15,8 @@ const formatToNum = (val) => {
 }
 const Counter = (props) => {
     const { inViewport, forwardedRef } = props;
-    console.log({ inViewport });
     const [port, setPort] = useState(inViewport)
     const { data: statistics = [] } = useSelector(state => state.userLog.statistics)
-    console.log('statistics.statis_reg_user', statistics);
     useEffect(() => {
         setPort(inViewport)
     }, [inViewport])

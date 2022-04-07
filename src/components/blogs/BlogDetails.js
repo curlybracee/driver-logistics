@@ -5,21 +5,24 @@ import recentImg from '../../assets/images/recent_img_1.png'
 import blogImg from '../../assets/images/blog_img.png'
 import Fade from 'react-reveal/Fade'
 import { Link, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { formatDate } from '../../assets/constants'
+import { fetchBlogById, fetchBlogs } from '../../redux/action'
+import Loader from '../Loader'
 
 
 const BlogDetails = () => {
     const { id } = useParams()
-    const { data: { data: blogDetails = [] } } = useSelector(state => state.userLog.blogs)
-
-    const [currentData, setCurrentData] = useState(blogDetails.filter(item => id === item.id))
+    const { data:  blogDetails = {},requestInProgress} = useSelector(state => state.userLog.blogById)
+    const { data: {data:blogs=[]}} = useSelector(state => state.userLog.blogs)
+    const dispatch = useDispatch()
     useEffect(() => {
-        let tempData = blogDetails.filter(item => Number(id) === item.id)
-        setCurrentData(tempData[0])
-    }, [blogDetails,id])
-    console.log({ blogDetails, currentData });
-    return (
+        // let tempData = blogDetails.filter(item => Number(id) === item.id)
+        // setblogDetails(tempData[0])
+        dispatch(fetchBlogById({id}))
+        dispatch(fetchBlogs({ page:0 }))
+    }, [id])
+    return requestInProgress?<Loader/>:(
         <Fade bottom>
 
             <div>
@@ -37,21 +40,21 @@ const BlogDetails = () => {
 
                                         <div class="blog_details_auther"><img src={author_img} alt='' />
 
-                                            <div className="blog_span_outer"><span>{currentData?.posted_by}</span>
-                                                <span>{formatDate(currentData?.updated_at)}</span>
+                                            <div className="blog_span_outer"><span>{blogDetails?.posted_by}</span>
+                                                <span>{formatDate(blogDetails?.updated_at)}</span>
                                                 <span
-                                                    class="right_border"> {currentData?.readingtime}</span>
+                                                    class="right_border"> {blogDetails?.readingtime}</span>
                                             </div>
 
                                             <div className="clearfix"></div>
-                                            <h1 style={{marginTop:'20px'}}>{currentData?.title}</h1>
+                                            <h1 style={{marginTop:'20px'}}>{blogDetails?.title}</h1>
 
                                         </div>
                                         <div class="blog_details_imgbox">
-                                            <img src={currentData?.image} alt='' />
+                                            <img src={blogDetails?.image} alt='' />
                                         </div>
 
-                                        <div dangerouslySetInnerHTML={{ __html: currentData?.description }} style={{ fontSize: '14px' }}>
+                                        <div dangerouslySetInnerHTML={{ __html: blogDetails?.description }} style={{ fontSize: '14px' }}>
 
                                         </div>
 
@@ -65,7 +68,7 @@ const BlogDetails = () => {
 
                                         <h1>Recent Blogs</h1>
 
-                                        {blogDetails.map((item) => {
+                                        {blogs.map((item) => {
                                             if (item.id !== Number(id))
                                                 return <Link to={`/blog/details/${item.id}`}> <div class="resent_blog_box">
 
@@ -75,7 +78,7 @@ const BlogDetails = () => {
 
                                                         <div class="resent_contantbox_span_outer">
                                                             <span>{item?.posted_by}</span>
-                                                            <span>{formatDate(currentData?.updated_at)}</span>
+                                                            <span>{formatDate(blogs?.updated_at)}</span>
 
                                                         </div>
 

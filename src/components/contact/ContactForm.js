@@ -37,7 +37,6 @@ const ContactForm = () => {
                 .required("query is Required"),
         }),
         onSubmit: (inputData) => {
-            console.log('==============================================', inputData)
             let objToSend = {
                 ...inputData,
                 phone: inputData.numberCode + inputData.number,
