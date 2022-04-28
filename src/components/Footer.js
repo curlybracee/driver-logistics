@@ -81,7 +81,7 @@ const Footer = () => {
 
                             <p>University Road, CUSAT
                                 PO, Kochi, Kerala, India -
-                                682022
+                                682022<br></br>
                                 <a href="mailto:info@driverlogistics.in">info@driverlogistics.in</a>
                             </p>
 

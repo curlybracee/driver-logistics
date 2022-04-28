@@ -52,7 +52,7 @@ function HeaderTabList(props) {
                         <button role="tab" className={visibleState === 'third' ? 'skltbs-tab-OnClicked' : 'skltbs-tab'} onClick={() => TabOnClick('third')} >3PL CONSULTATION</button>
                     </li>
                     <li role="presentation" className="skltbs-tab-item">
-                        <button role="tab" className={visibleState === 'fourth' ? 'skltbs-tab-OnClicked' : 'skltbs-tab'} onClick={() => TabOnClick('fourth')} >DIGITISATION & BUSINESS <br /> INTELLIGENCE</button>
+                        <button style={{paddingBottom:'45px'}} role="tab" className={visibleState === 'fourth' ? 'skltbs-tab-OnClicked' : 'skltbs-tab'} onClick={() => TabOnClick('fourth')} >DIGITISATION & BUSINESS <br /> INTELLIGENCE</button>
                     </li>
                 </ul>
                 <div className="skltbs-panel-group">

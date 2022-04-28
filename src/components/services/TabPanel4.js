@@ -12,7 +12,7 @@ function TabPanel4() {
                         <div class="inner_service_section_contantpart wow fadeInUp" data-wow-delay="1s">
 
                             <h1>DIGITISATION &
-                        BUSINESS<br /><span class="banner_redfont">INTELLIGENCE</span></h1>
+                        BUSINESS<br /><span  class="banner_redfont">INTELLIGENCE</span></h1>
                             <p>Driver Logistics specializes in developing customised
                             supply chain technology solutions to our customers.
                             Our growth has been driven by our customers asking
