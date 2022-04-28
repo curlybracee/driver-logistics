@@ -4,7 +4,6 @@ import Pulse from 'react-reveal/Pulse';
 
 
 function TabPanel2(props) {
-    console.log('22222222222222222222222222222222', props.loader)
 
     return (
         <div role="tabpanel" id="skltbsResponsive2" class="skltbs-panel">

@@ -14,12 +14,19 @@ const initialState = {
     blogs: {
         data: [],
         requestInProgress: false
-
+    },
+    blogById: {
+        data: {},
+        requestInProgress: false
     },
     news: {
         data: [],
         requestInProgress: false
 
+    },
+    newsById: {
+        data: {},
+        requestInProgress: false
     },
     clients: {
         data: [],
@@ -104,6 +111,29 @@ const userReducer = (state = initialState, action) => {
                 },
             })
         }
+        case TYPES.FETCH_BLOG_BY_ID_REQUEST: {
+            return Object.assign({}, state, {
+                blogById: {
+                    requestInProgress: true
+                },
+            })
+        }
+        case TYPES.FETCH_BLOG_BY_ID_SUCCESS: {
+            return Object.assign({}, state, {
+                blogById: {
+                    data: action.payload || {},
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_BLOG_BY_ID_FAILURE: {
+            return Object.assign({}, state, {
+                blogById: {
+                    error: action.payload || {},
+                    requestInProgress: false
+                },
+            })
+        }
         case TYPES.FETCH_NEWS_REQUEST: {
             return Object.assign({}, state, {
                 news: {
@@ -123,6 +153,29 @@ const userReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 news: {
                     error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_NEWS_BY_ID_REQUEST: {
+            return Object.assign({}, state, {
+                newsById: {
+                    requestInProgress: true
+                },
+            })
+        }
+        case TYPES.FETCH_NEWS_BY_ID_SUCCESS: {
+            return Object.assign({}, state, {
+                newsById: {
+                    data: action.payload || {},
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_NEWS_BY_ID_FAILURE: {
+            return Object.assign({}, state, {
+                newsById: {
+                    error: action.payload || {},
                     requestInProgress: false
                 },
             })

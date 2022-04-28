@@ -7,7 +7,6 @@ import { Col, Container } from 'react-bootstrap';
 import { Avatar } from '@material-ui/core';
 const LatestFromBlogs = () => {
     const { data: { data: blogData = [] } } = useSelector(state => state.userLog.blogs)
-    console.log({ blogData });
     useEffect(() => {
 
     }, [blogData.length])

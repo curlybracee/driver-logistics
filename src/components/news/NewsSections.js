@@ -37,12 +37,10 @@ const NewsSections = () => {
     const [open, setOpen] = useState(false)
     const [shareUrl, setShareUrl] = useState(false)
     useEffect(() => {
-        console.log({ page });
         window.scrollTo(0, 0);
         dispatch(fetchNews({ page }))
     }, [page])
     const { data: { last_page, data=[] } = {} } = useSelector(state => state.userLog.news)
-    console.log({ blogDetails: data });
     return (
         <section class="inner_blog_contantbox">
 

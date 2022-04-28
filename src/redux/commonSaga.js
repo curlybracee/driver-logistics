@@ -5,7 +5,6 @@ import { invokeApi, postApi } from './api';
 
 function* handleFetchTestimonials() {
     const { response, error } = yield call(invokeApi, URL.TESTIMONIAL)
-    console.log({ response });
     if (error) {
         yield put(Action(TYPES.FETCH_TESTIMONIALS_FAILURE, error))
     } else {
@@ -14,7 +13,6 @@ function* handleFetchTestimonials() {
 }
 function* handleFetchBanner() {
     const { response, error } = yield call(invokeApi, URL.BANNER)
-    console.log({ response });
     if (error) {
         yield put(Action(TYPES.FETCH_BANNER_FAILURE, error))
     } else {
@@ -23,29 +21,45 @@ function* handleFetchBanner() {
 }
 function* handleFetchBlog(action) {
     const { page } = action?.payload.data
-    console.log({action});
     const { response, error } = yield call(invokeApi, URL.BLOG,{page})
-    console.log({ response });
     if (error) {
         yield put(Action(TYPES.FETCH_BLOG_FAILURE, error))
     } else {
         yield put(Action(TYPES.FETCH_BLOG_SUCCESS, response?.data))
     }
 }
+function* handleFetchBlogById(action) {
+    const { id } = action?.payload.data
+    yield put(Action(TYPES.FETCH_BLOG_BY_ID_REQUEST))
+    const { response, error } = yield call(invokeApi,`${URL.BLOG}/${id}/edit`)
+    if (error) {
+        yield put(Action(TYPES.FETCH_BLOG_BY_ID_FAILURE, error))
+    } else {
+        yield put(Action(TYPES.FETCH_BLOG_BY_ID_SUCCESS, response?.data))
+    }
+}
 function* handleFetchNews(action) {
     const { page } = action?.payload.data
-    console.log({action});
     const { response, error } = yield call(invokeApi, URL.NEWS,{page})
-    console.log({ response });
     if (error) {
         yield put(Action(TYPES.FETCH_NEWS_FAILURE, error))
     } else {
         yield put(Action(TYPES.FETCH_NEWS_SUCCESS, response?.data))
     }
 }
+
+function* handleFetchNewsById(action) {
+    const { id } = action?.payload.data
+    yield put(Action(TYPES.FETCH_NEWS_BY_ID_REQUEST))
+    const { response, error } = yield call(invokeApi, `${URL.NEWS}/${id}/edit`)
+    if (error) {
+        yield put(Action(TYPES.FETCH_NEWS_BY_ID_FAILURE, error))
+    } else {
+        yield put(Action(TYPES.FETCH_NEWS_BY_ID_SUCCESS, response?.data))
+    }
+}
 function* handleFetchClient() {
     const { response, error } = yield call(invokeApi, URL.CLIENT_LOGOS)
-    console.log({ response });
     if (error) {
         yield put(Action(TYPES.FETCH_CLIENT_FAILURE, error))
     } else {
@@ -54,7 +68,6 @@ function* handleFetchClient() {
 }
 function* handleFetchStatitics() {
     const { response, error } = yield call(invokeApi, URL.STATISTICS)
-    console.log({ response });
     if (error) {
         yield put(Action(TYPES.FETCH_STATISTICS_FAILURE, error))
     } else {
@@ -65,9 +78,7 @@ function* handleFetchStatitics() {
 
 function* handlePostSubscription(action) {
     const { email } = action?.payload.data
-    console.log({email});
     const { response, error } = yield call(postApi, URL.NEWS_LETTER, {email})
-    console.log({ response });
     if (error) {
         yield put(Action(TYPES.COMMON_FAILURE, error))
     } else {
@@ -97,7 +108,9 @@ export default function* mySagas() {
         takeLatest(TYPES.FETCH_TESTIMONIALS, handleFetchTestimonials),
         takeLatest(TYPES.FETCH_BANNER, handleFetchBanner),
         takeLatest(TYPES.FETCH_BLOG, handleFetchBlog),
+        takeLatest(TYPES.FETCH_BLOG_BY_ID, handleFetchBlogById),
         takeLatest(TYPES.FETCH_NEWS, handleFetchNews),
+        takeLatest(TYPES.FETCH_NEWS_BY_ID, handleFetchNewsById),
         takeLatest(TYPES.FETCH_CLIENT, handleFetchClient),
         takeLatest(TYPES.FETCH_STATISTICS, handleFetchStatitics),
 

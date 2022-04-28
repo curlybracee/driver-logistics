@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../../assets/constants';
 import auther_img from '../../assets/images/auther_img.png'
-import blogBox from '../../assets/images/blog_box_img_1.png'
-import blogIcon1 from '../../assets/images/blog_icon_1.png'
 import blogIcon2 from '../../assets/images/blog_icon_2.png'
 import { fetchBlogs } from '../../redux/action';
 // import {
@@ -36,12 +34,10 @@ const BlogSections = () => {
     const [open, setOpen] = useState(false)
     const [shareUrl, setShareUrl] = useState(false)
     useEffect(() => {
-        console.log({ page });
         window.scrollTo(0, 0);
         dispatch(fetchBlogs({ page }))
     }, [page])
     const { data: { last_page, data } = {} } = useSelector(state => state.userLog.blogs)
-    console.log({ blogDetails: data });
     return (
         <section class="inner_blog_contantbox">
 
