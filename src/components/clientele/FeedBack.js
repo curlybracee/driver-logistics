@@ -23,7 +23,6 @@ const FeedBack = () => {
     }
     useEffect(() => {
 
-        console.log('result', data)
     }, [data])
 
     return (
