@@ -18,12 +18,10 @@ const BelowService = () => {
                         <h1 style={{
                             textAlign: 'center',
                             width: '100%',
-                            fontSize: '28px',
                             paddingLeft: '40px',
                             paddingRight: '40px',
                             lineHeight: '33px',
                             marginBottom: '20px',
-                            fontWeight: '600',
                             fontFamily: 'sans-serif'}}>
                             Best in Class Logistics Company in Kochi,Kerala<br /> with Pan India
                             Presence
