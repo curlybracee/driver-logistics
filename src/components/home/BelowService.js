@@ -6,8 +6,8 @@ const BelowService = () => {
         <section style={{
             width: '100%',
             background: 'none',
-            paddingTop: '80px',
-            paddingBottom: '80px',
+            paddingTop: '50px',
+            paddingBottom:'30px',
             position: 'relative',
             zIndex: '1',
             textAlign: 'center'

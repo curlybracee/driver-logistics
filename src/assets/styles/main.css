@@ -2697,6 +2697,12 @@ background_double::before {
   text-align: left;
 
 }
+.styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-content__QOGZd .styles_row-content-text__2sgAB {
+  text-align: left;
+  color: var(--row-content-color, black);
+  font-size: var(--row-content-text-size, medium);
+  padding: var(--row-content-padding-top, 0) var(--row-content-padding-right, 0) var(--row-content-padding-bottom, 0) var(--row-content-padding-left, 0);
+}
 
 /* .faq-row-wrapper {
   .faq-body {

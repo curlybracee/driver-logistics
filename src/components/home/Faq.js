@@ -39,7 +39,7 @@ const FaqSection = () => {
             width: '100%',
             background: 'none',
             paddingTop: '80px',
-            paddingBottom: '80px',
+            paddingBottom: '30px',
             position: 'relative',
             zIndex: '1',
             textAlign: 'center'
@@ -58,8 +58,8 @@ const FaqSection = () => {
                             rowContentTextSize: "16px",
                             rowContentPaddingTop: "10px",
                             rowContentPaddingBottom: "10px",
-                            rowContentPaddingLeft: "50px",
-                            rowContentPaddingRight: "150px",
+                            rowContentPaddingLeft: "30px",
+                            rowContentPaddingRight: "80px",
                             arrowColor: "red"
                         }}
                         config={{
