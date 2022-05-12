@@ -161,7 +161,7 @@ p {
 .service_section_outer {
   width: 100%;
   background: none;
-  padding-top: 80px;
+  padding-top: 10px;
   padding-bottom: 80px;
   position: relative;
   z-index: 1;
@@ -2692,5 +2692,21 @@ background_double::before {
   padding-left: 20px;
   padding-right: 20px;
 }
+.styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_row-title-text__1MuhU {
+  padding-right: 3em;
+  text-align: left;
 
+}
+
+/* .faq-row-wrapper {
+  .faq-body {
+      .faq-row {
+          .row-content {
+              .row-content-text {
+                text-align: left;
+              }
+          }
+      }
+  }
+} */
 /* Bhagath_skell_tab */

@@ -28,9 +28,9 @@ const BelowService = () => {
                             Best in Class Logistics Company in Kochi,Kerala<br /> with Pan India
                             Presence
                         </h1>
-                        <h2>
+                        <h3>
                             Kerala’s leading logistics company for comprehensive 3PL services.
-                        </h2>
+                        </h3>
                         <p>
                             Driver Logistics gained a paramount name among logistics companies in Kerala by delivering outright and customised logistics and warehouse solutions for clients, enabling them to save on time and cost.
 

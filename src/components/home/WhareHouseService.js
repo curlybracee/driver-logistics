@@ -5,7 +5,7 @@ import { ServiceWareHouseImg } from '../../assets/images'
 
 const WhareHouseService = () => {
     return (
-        <section className="service_section_outer">
+        <section className="service_section_outer" style={{paddingTop:'1px'}}>
             <Container>
                 <div className="service_contantbox_outer">
                     <h2 className="background double"><span>SERVICES</span></h2>
