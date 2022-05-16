@@ -15,7 +15,7 @@ const BelowService = () => {
             <Container className="container">
                 <div className="service_contantbox_outer">
                     <div className="service_box service_img_right">
-                        <h2 style={{
+                        <h3 style={{
                             textAlign: 'center',
                             width: '100%',
                             paddingLeft: '40px',
@@ -24,7 +24,7 @@ const BelowService = () => {
                             fontFamily: 'sans-serif'}}>
                             Best in Class Logistics Company in Kochi,Kerala<br /> with Pan India
                             Presence
-                        </h2>
+                        </h3>
                         <h4>
                             Kerala’s leading logistics company for comprehensive 3PL services.
                         </h4>
