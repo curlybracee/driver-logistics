@@ -37,6 +37,21 @@ const initialState = {
         data: [],
         requestInProgress: false
     },
+    orders:{
+        data: [],
+        requestInProgress: false 
+    },
+    orderDetails:{
+        data: [],
+        requestInProgress: false
+    },
+    dashboard:{
+        data: [],
+        requestInProgress: false
+    },
+    auth:{
+
+    },
     toast:undefined
 };
 
@@ -328,6 +343,100 @@ const userReducer = (state = initialState, action) => {
         //         },
         //     })
         // }
+
+        case TYPES.FETCH_ORDERS_REQUEST: {
+            return Object.assign({}, state, {
+                orders: {
+                    requestInProgress: true
+                },
+            })
+        }
+        case TYPES.FETCH_ORDERS_SUCCESS: {
+            return Object.assign({}, state, {
+                orders: {
+                    data: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_ORDERS_FAILURE: {
+            return Object.assign({}, state, {
+                orders: {
+                    error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_ORDER_DETAILS_REQUEST: {
+            return Object.assign({}, state, {
+                orderDetails: {
+                    requestInProgress: true
+                },
+            })
+        }
+        case TYPES.FETCH_ORDER_DETAILS_SUCCESS: {
+            return Object.assign({}, state, {
+                orderDetails: {
+                    data: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_ORDER_DETAILS_FAILURE: {
+            return Object.assign({}, state, {
+                orderDetails: {
+                    error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_DASHBOARD_REQUEST: {
+            return Object.assign({}, state, {
+                dashboard: {
+                    requestInProgress: true
+                },
+            })
+        }
+        case TYPES.FETCH_DASHBOARD_SUCCESS: {
+            return Object.assign({}, state, {
+                dashboard: {
+                    data: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_DASHBOARD_FAILURE: {
+            return Object.assign({}, state, {
+                dashboard: {
+                    error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.LOGIN_FORM_REQUEST: {
+            return Object.assign({}, state, {
+                auth: {
+                    requestInProgress: true
+                },
+            })
+        }
+        case TYPES.LOGIN_FORM_SUCCESS: {
+            console.log({action})
+            return Object.assign({}, state, {
+                auth: {
+                    data: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.LOGIN_FORM_FAILURE: {
+            return Object.assign({}, state, {
+                auth: {
+                    error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
         default: return state
     }
 }

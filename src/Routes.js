@@ -14,6 +14,9 @@ const CaseStudies = lazy(() => import("./components/case-studies/CaseStudies"));
 const NewsLetters = lazy(() => import("./components/news-letters/NewsLetters"));
 const BlogDetails = lazy(() => import("./components/blogs/BlogDetails"));
 const NewsDetails = lazy(() => import("./components/news/NewsDetails"));
+const Login = lazy(() => import("./components/login/"));
+const Dashboard = lazy(() => import("./components/dashboard/"));
+const CustomReport = lazy(() => import("./components/dashboard/CustomReport"));;
 const Routes = () => {
     return (
         <Suspense fallback={<Loader />}>
@@ -30,6 +33,9 @@ const Routes = () => {
                 <Route exact path="/clientele" component={Clientele} />
                 <Route exact path="/blog/details/:id" component={BlogDetails} />
                 <Route exact path="/news/details/:id" component={NewsDetails} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/dashboard" component={Dashboard} />
+                <Route exact path="/custom-report" component={CustomReport} />
             </Switch>
         </Suspense>
     )

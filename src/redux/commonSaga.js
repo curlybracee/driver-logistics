@@ -21,7 +21,7 @@ function* handleFetchBanner() {
 }
 function* handleFetchBlog(action) {
     const { page } = action?.payload.data
-    const { response, error } = yield call(invokeApi, URL.BLOG,{page})
+    const { response, error } = yield call(invokeApi, URL.BLOG, { page })
     if (error) {
         yield put(Action(TYPES.FETCH_BLOG_FAILURE, error))
     } else {
@@ -31,7 +31,7 @@ function* handleFetchBlog(action) {
 function* handleFetchBlogById(action) {
     const { id } = action?.payload.data
     yield put(Action(TYPES.FETCH_BLOG_BY_ID_REQUEST))
-    const { response, error } = yield call(invokeApi,`${URL.BLOG}/${id}/edit`)
+    const { response, error } = yield call(invokeApi, `${URL.BLOG}/${id}/edit`)
     if (error) {
         yield put(Action(TYPES.FETCH_BLOG_BY_ID_FAILURE, error))
     } else {
@@ -40,7 +40,7 @@ function* handleFetchBlogById(action) {
 }
 function* handleFetchNews(action) {
     const { page } = action?.payload.data
-    const { response, error } = yield call(invokeApi, URL.NEWS,{page})
+    const { response, error } = yield call(invokeApi, URL.NEWS, { page })
     if (error) {
         yield put(Action(TYPES.FETCH_NEWS_FAILURE, error))
     } else {
@@ -78,7 +78,7 @@ function* handleFetchStatitics() {
 
 function* handlePostSubscription(action) {
     const { email } = action?.payload.data
-    const { response, error } = yield call(postApi, URL.NEWS_LETTER, {email})
+    const { response, error } = yield call(postApi, URL.NEWS_LETTER, { email })
     if (error) {
         yield put(Action(TYPES.COMMON_FAILURE, error))
     } else {
@@ -103,6 +103,42 @@ function* handlePostContact(action) {
         yield put(Action(TYPES.POST_CONTACT_FORM_SUCCESS, response?.data))
     }
 }
+
+function* LoginUser(action) {
+    const { response, error } = yield call(postApi, URL.LOGIN, action?.payload?.data, true)
+    if (error) {
+        yield put(Action(TYPES.COMMON_FAILURE, error))
+
+    } else {
+        yield put(Action(TYPES.LOGIN_FORM_SUCCESS, response?.Data))
+    }
+}
+function* handleGetOrders(action) {
+    const { response, error } = yield call(postApi, URL.GET_ORDERS, action?.payload?.data, true)
+    if (error) {
+        yield put(Action(TYPES.COMMON_FAILURE, error))
+    } else {
+        yield put(Action(TYPES.FETCH_ORDERS_SUCCESS, response?.Data))
+    }
+}
+function* handleGetOrderDetails(action) {
+    const { response, error } = yield call(postApi, URL.GET_ORDER_DETAILS, action?.payload?.data, true)
+    if (error) {
+        yield put(Action(TYPES.COMMON_FAILURE, error))
+    } else {
+        yield put(Action(TYPES.FETCH_ORDER_DETAILS_SUCCESS, response?.Data))
+    }
+}
+function* handleDashBoard(action) {
+
+    const { response, error } = yield call(postApi, URL.GET_DASHBOARD, action?.payload?.data, true)
+    if (error) {
+        yield put(Action(TYPES.COMMON_FAILURE, error))
+    } else {
+        yield put(Action(TYPES.FETCH_DASHBOARD_SUCCESS, response?.Data))
+    }
+}
+
 export default function* mySagas() {
     yield all([
         takeLatest(TYPES.FETCH_TESTIMONIALS, handleFetchTestimonials),
@@ -117,5 +153,9 @@ export default function* mySagas() {
         takeLatest(TYPES.POST_SUBSCRIPTION, handlePostSubscription),
         takeLatest(TYPES.POST_RESUME, handlePostResume),
         takeLatest(TYPES.POST_CONTACT_FORM, handlePostContact),
+        takeLatest(TYPES.LOGIN_FORM, LoginUser),
+        takeLatest(TYPES.FETCH_ORDERS, handleGetOrders),
+        takeLatest(TYPES.FETCH_ORDER_DETAILS, handleGetOrderDetails),
+        takeLatest(TYPES.FETCH_DASHBOARD, handleDashBoard),
     ])
 }
