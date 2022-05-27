@@ -3,6 +3,28 @@ import MUIDataTable from "mui-datatables";
 import { useSelector } from 'react-redux';
 import { Grid, makeStyles } from '@material-ui/core';
 import { SearchOutlined } from '@mui/icons-material';
+import { CacheProvider } from "@emotion/react";
+import createCache from "@emotion/cache";
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
+
+const muiCache = createCache({
+    "key": "mui",
+    "prepend": true
+});
+const getMuiTheme = () => createTheme({
+    overrides: {
+        MUIDataTable: {
+            root: {
+                color: 'red'
+            },
+            MUIDataTableBodyCell: {
+                root: {
+                    fontSize: '16px !important'
+                }
+            },
+        },
+    }
+})
 const useStyles = makeStyles({
     toolBar: {
         display: 'flex',
@@ -12,7 +34,25 @@ const useStyles = makeStyles({
     search: {
         width: 300,
         borderRadius: 10,
-        border: '1px solid black'
+        border: '1px solid black',
+        height: '30px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    input: {
+        border: 'none',
+        height: '28px',
+        width: '100%',
+        padding: '0 10',
+        borderRadius: 10,
+        '&:focus': {
+            outline: 'none'
+        }
+    },
+    searchIcon: {
+        width: '30px',
+        height: '30px'
     }
 })
 const columns = [
@@ -68,17 +108,23 @@ export default function TableView() {
         <Grid item xs={12} style={{ width: '100%' }}>
             <Grid item xs={12} className={classes.toolBar}>
                 <div className={classes.search}>
-                    <input />
-                    <SearchOutlined />
+                    <input className={classes.input} />
+                    <div className={classes.searchIcon}>
+                        <SearchOutlined />
+                    </div>
                 </div>
                 <div>download</div>
             </Grid>
-            <MUIDataTable
-                title={"track order"}
-                data={data}
-                columns={columns}
-                options={options}
-            />
+            <CacheProvider value={muiCache}>
+                <MuiThemeProvider theme={getMuiTheme}>
+                    <MUIDataTable
+                        title={"track order"}
+                        data={data}
+                        columns={columns}
+                        options={options}
+                    />
+                </MuiThemeProvider>
+            </CacheProvider>
         </Grid>
     );
 }
