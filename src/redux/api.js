@@ -1,28 +1,41 @@
-import { AUTH_API, BASE_API,CRM_API } from "../assets/constants";
+import { BASE_API, CRM_API, USER_BASE_API } from "../assets/constants";
 import _ from 'lodash'
 
-export const invokeApi = async (url, data,auth) => {
-    console.log({auth})
+export const invokeApi = async (url, data) => {
     let newUrl = url
-    if(!_.isEmpty(data)){
-        newUrl+='?'+new URLSearchParams({...data})
+    console.log({ data });
+    if (!_.isEmpty(data)) {
+        console.log('lllll');
+        newUrl += '?' + new URLSearchParams({ ...data })
     }
-    return await fetch(`${auth?AUTH_API:BASE_API}/${newUrl}`).then(res => res.json()).then(response => {
+    console.log('frtching...');
+    return await fetch(`${BASE_API}/${newUrl}`).then(res => res.json()).then(response => {
         return { response }
     }).catch(error => ({ error }))
 }
 
-export const postApi = async (url, formElement,auth,json) => {
+export const postApi = async (url, formElement) => {
     var form_data = new FormData();
-    for ( var key in formElement ) {
+    for (var key in formElement) {
         form_data.append(key, formElement[key]);
     }
-    console.log({formElement})
-    return await fetch(`${auth?(json?CRM_API:AUTH_API):BASE_API}/${url}`, {
+    return await fetch(`${BASE_API}/${url}`, {
         method: 'POST',
-        body: json?JSON.stringify(formElement):form_data
+        body: form_data
     }).then(res => res.json()).then(response => {
         return { response }
     }).catch(error => ({ error }))
 }
 
+export const UserpostApi = async (url, formElement, crm = false) => {
+    var form_data = new FormData();
+    for (var key in formElement) {
+        form_data.append(key, formElement[key]);
+    }
+    return await fetch(`${crm ? CRM_API : USER_BASE_API}/${url}`, {
+        method: 'POST',
+        body: form_data
+    }).then(res => res.json()).then(response => {
+        return { response }
+    }).catch(error => ({ error }))
+}

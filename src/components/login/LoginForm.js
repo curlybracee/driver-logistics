@@ -1,75 +1,87 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useFormik } from 'formik';
 import * as Yup from "yup";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { postLogin, getLogin } from '../../redux/action';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
-import { fetchDashboard, fetchOrderDetails, fetchOrders, loginUser } from "../../redux/action";
-import { useHistory } from "react-router-dom";
+import { LoginSideImg } from '../../assets/images'
 
 const LoginForm = () => {
-    const dispatch = useDispatch()
-    const { auth: { data = [] } } = useSelector(state => state.userLog)
-    console.log({ data })
-    const history = useHistory()
+    const dispatch = useDispatch();
     const Formik = useFormik({
         initialValues: {
-            user_name: '',
-            password: '',
+            name: "",
+            password: ''
         },
         validationSchema: Yup.object({
-            user_name: Yup.string()
-                .required("Name is Required"),
+            name: Yup.string()
+                .required("Username is Required"),
             password: Yup.string()
-                .required("password is required"),
+                .required("Password is Required"),
+
         }),
         onSubmit: (inputData) => {
-            console.log({ inputData })
-            let obj = {}
-            obj.UserName = inputData.user_name;
-            obj.Password = inputData.password;
-            dispatch(loginUser(obj))
+            const { name, password } = inputData;
+            let objToSend = {
+                UserName: name,
+                Password: password
+            }
+
+            dispatch(postLogin(objToSend))
         },
 
-    });
- 
-    if (data.length > 0) {
-        history.push('/dashboard')
-    }
+    })
+
+
+
     return (
-        <section className="inner_contact_section">
-            <div className="container">
-                <div className="col-md-12">
-                    <div className="row">
-                        <div className="col-md-6 wow fadeInUp" data-wow-delay="1s">
-                            <h5>Login</h5>
-                            <div className="form_outer">
-                                <form onSubmit={Formik.handleSubmit}>
-                                    <div class="form-group">
-                                        <label for="user_name">Username</label>
-                                        <input type="name" class="form-control text-transform-unset" id="user_name" onChange={Formik.handleChange} />
+        <div>
+            <section class="inner_career_section">
+                <section class="career_form_section wow fadeInUp" data-wow-delay="1s">
+                    <div class="container">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src={LoginSideImg}></img>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form_outer loginfrm1">
+                                        <h2>Login</h2>
 
-                                        {Formik.errors.user_name && Formik.touched.user_name ? (
-                                            <div className="formError">{Formik.errors.user_name}</div>
-                                        ) : null}
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control text-transform-unset" id="password" onChange={Formik.handleChange} />
+                                        <form onSubmit={Formik.handleSubmit}>
+                                            <div class="form-group">
+                                                <label for="pwd">Username</label>
+                                                <input type="name" class="form-control" id="name" onChange={Formik.handleChange} />
 
-                                        {Formik.errors.password && Formik.touched.password ? (
-                                            <div className="formError">{Formik.errors.password}</div>
-                                        ) : null}
+                                                {Formik.errors.name && Formik.touched.name ? (
+                                                    <div className="formError">{Formik.errors.name}</div>
+                                                ) : null}
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Password</label>
+                                                <input type="password" class="form-control" id="password" onChange={Formik.handleChange} />
+
+                                                {Formik.errors.password && Formik.touched.password ? (
+                                                    <div className="formError">{Formik.errors.password}</div>
+                                                ) : null}
+                                            </div>
+
+
+                                            <button type="submit" class="contact_button" style={{ width: '100%' }}>
+                                                Login
+                                            </button>
+                                        </form>
                                     </div>
-                                    <button type="submit" className="contact_button">
-                                        Login
-                                    </button>
-                                </form>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
+            </section>
+        </div>
     );
 };
 

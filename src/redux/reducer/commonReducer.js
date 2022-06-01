@@ -14,19 +14,12 @@ const initialState = {
     blogs: {
         data: [],
         requestInProgress: false
-    },
-    blogById: {
-        data: {},
-        requestInProgress: false
+
     },
     news: {
         data: [],
         requestInProgress: false
 
-    },
-    newsById: {
-        data: {},
-        requestInProgress: false
     },
     clients: {
         data: [],
@@ -37,22 +30,17 @@ const initialState = {
         data: [],
         requestInProgress: false
     },
-    orders:{
-        data: [],
-        requestInProgress: false 
-    },
-    orderDetails:{
+    toast: undefined,
+    search_data: {
         data: [],
         requestInProgress: false
     },
-    dashboard:{
+    dashboard: {
         data: [],
         requestInProgress: false
     },
-    auth:{
 
-    },
-    toast:undefined
+
 };
 
 const userReducer = (state = initialState, action) => {
@@ -126,29 +114,6 @@ const userReducer = (state = initialState, action) => {
                 },
             })
         }
-        case TYPES.FETCH_BLOG_BY_ID_REQUEST: {
-            return Object.assign({}, state, {
-                blogById: {
-                    requestInProgress: true
-                },
-            })
-        }
-        case TYPES.FETCH_BLOG_BY_ID_SUCCESS: {
-            return Object.assign({}, state, {
-                blogById: {
-                    data: action.payload || {},
-                    requestInProgress: false
-                },
-            })
-        }
-        case TYPES.FETCH_BLOG_BY_ID_FAILURE: {
-            return Object.assign({}, state, {
-                blogById: {
-                    error: action.payload || {},
-                    requestInProgress: false
-                },
-            })
-        }
         case TYPES.FETCH_NEWS_REQUEST: {
             return Object.assign({}, state, {
                 news: {
@@ -168,29 +133,6 @@ const userReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 news: {
                     error: action.payload || [],
-                    requestInProgress: false
-                },
-            })
-        }
-        case TYPES.FETCH_NEWS_BY_ID_REQUEST: {
-            return Object.assign({}, state, {
-                newsById: {
-                    requestInProgress: true
-                },
-            })
-        }
-        case TYPES.FETCH_NEWS_BY_ID_SUCCESS: {
-            return Object.assign({}, state, {
-                newsById: {
-                    data: action.payload || {},
-                    requestInProgress: false
-                },
-            })
-        }
-        case TYPES.FETCH_NEWS_BY_ID_FAILURE: {
-            return Object.assign({}, state, {
-                newsById: {
-                    error: action.payload || {},
                     requestInProgress: false
                 },
             })
@@ -245,7 +187,7 @@ const userReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 toast: {
                     message: 'Your details successfully submitted',
-                    status:'success',
+                    status: 'success',
                     requestInProgress: false
                 },
             })
@@ -254,7 +196,7 @@ const userReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 toast: {
                     message: 'Your details successfully submitted',
-                    status:'success',
+                    status: 'success',
                     requestInProgress: false
                 },
             })
@@ -262,8 +204,8 @@ const userReducer = (state = initialState, action) => {
         case TYPES.COMMON_FAILURE: {
             return Object.assign({}, state, {
                 toast: {
-                    message:'Something went wrong',
-                    status:'error',
+                    message: 'Something went wrong',
+                    status: 'error',
                     requestInProgress: false
                 },
             })
@@ -284,7 +226,7 @@ const userReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 toast: {
                     message: 'Your details successfully submitted',
-                    status:'success',
+                    status: 'success',
                     requestInProgress: false
                 },
             })
@@ -293,6 +235,32 @@ const userReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 postSubscription: {
                     error: action.payload || [],
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.POST_LOGIN_FORM_SUCCESS: {
+            return Object.assign({}, state, {
+                toast: {
+                    message: 'Your details successfully submitted',
+                    status: 'success',
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.POST_LOGIN_FAILURE: {
+            return Object.assign({}, state, {
+                toast: {
+                    message: 'Failed.Invalid Username / Password',
+                    status: 'error',
+                    requestInProgress: false
+                },
+            })
+        }
+        case TYPES.FETCH_SEARCH: {
+            return Object.assign({}, state, {
+                search_data: {
+                    data: action.payload || [],
                     requestInProgress: false
                 },
             })
@@ -343,53 +311,6 @@ const userReducer = (state = initialState, action) => {
         //         },
         //     })
         // }
-
-        case TYPES.FETCH_ORDERS_REQUEST: {
-            return Object.assign({}, state, {
-                orders: {
-                    requestInProgress: true
-                },
-            })
-        }
-        case TYPES.FETCH_ORDERS_SUCCESS: {
-            return Object.assign({}, state, {
-                orders: {
-                    data: action.payload || [],
-                    requestInProgress: false
-                },
-            })
-        }
-        case TYPES.FETCH_ORDERS_FAILURE: {
-            return Object.assign({}, state, {
-                orders: {
-                    error: action.payload || [],
-                    requestInProgress: false
-                },
-            })
-        }
-        case TYPES.FETCH_ORDER_DETAILS_REQUEST: {
-            return Object.assign({}, state, {
-                orderDetails: {
-                    requestInProgress: true
-                },
-            })
-        }
-        case TYPES.FETCH_ORDER_DETAILS_SUCCESS: {
-            return Object.assign({}, state, {
-                orderDetails: {
-                    data: action.payload || [],
-                    requestInProgress: false
-                },
-            })
-        }
-        case TYPES.FETCH_ORDER_DETAILS_FAILURE: {
-            return Object.assign({}, state, {
-                orderDetails: {
-                    error: action.payload || [],
-                    requestInProgress: false
-                },
-            })
-        }
         case TYPES.FETCH_DASHBOARD_REQUEST: {
             return Object.assign({}, state, {
                 dashboard: {
@@ -408,30 +329,6 @@ const userReducer = (state = initialState, action) => {
         case TYPES.FETCH_DASHBOARD_FAILURE: {
             return Object.assign({}, state, {
                 dashboard: {
-                    error: action.payload || [],
-                    requestInProgress: false
-                },
-            })
-        }
-        case TYPES.LOGIN_FORM_REQUEST: {
-            return Object.assign({}, state, {
-                auth: {
-                    requestInProgress: true
-                },
-            })
-        }
-        case TYPES.LOGIN_FORM_SUCCESS: {
-            console.log({action})
-            return Object.assign({}, state, {
-                auth: {
-                    data: action.payload || [],
-                    requestInProgress: false
-                },
-            })
-        }
-        case TYPES.LOGIN_FORM_FAILURE: {
-            return Object.assign({}, state, {
-                auth: {
                     error: action.payload || [],
                     requestInProgress: false
                 },

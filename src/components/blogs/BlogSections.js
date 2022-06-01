@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../../assets/constants';
 import auther_img from '../../assets/images/auther_img.png'
+import blogBox from '../../assets/images/blog_box_img_1.png'
+import blogIcon1 from '../../assets/images/blog_icon_1.png'
 import blogIcon2 from '../../assets/images/blog_icon_2.png'
 import { fetchBlogs } from '../../redux/action';
 // import {
@@ -20,14 +22,14 @@ import { fetchBlogs } from '../../redux/action';
 // } from 'react-share';
 import { createTheme, Dialog, ThemeProvider } from '@material-ui/core';
 const theme = createTheme({
-    overrides:{
-        MuiButtonBase:{
-            root:{
-                fontSize:'16px !important'
+    overrides: {
+        MuiButtonBase: {
+            root: {
+                fontSize: '16px !important'
             }
         }
     }
-  });
+});
 const BlogSections = () => {
     const dispatch = useDispatch()
     const [page, setPage] = useState(1)
@@ -47,7 +49,7 @@ const BlogSections = () => {
                     <div class='row'>
 
                         {data?.map((item, index) =>
-                            <div class={`col-md-4 col-sm-6 col-xs-12 col-lg-4 col-xl-4 wow fadeInUp blogAlign-${index}`} data-wow-delay="1s" style={{ marginBottom: 10 }}>
+                            <div class={`col-md-4 wow fadeInUp blogAlign-${index}`} data-wow-delay="1s" style={{ marginBottom: 10 }}>
                                 <div class="blog_newbox">
                                     <div style={{ height: '230px' }}>
                                         <img alt='' src={item?.image} class="image_new" />

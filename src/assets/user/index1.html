@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+            <html>
+               <head>
+                  <link rel="stylesheet" href="css/bootstrap.min.css">
+                  <link rel="stylesheet" href="css/style.css">
+                  <link rel="stylesheet" href="css/responsive.css">
+                  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.css">
+                  <!-- Google Font -->
+                  <link rel="preconnect" href="https://fonts.googleapis.com">
+                  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+                  <!-- End Google Font -->
+               </head>
+               <body>
+                  <!--[if lt IE 7]>
+                  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+                  <![endif]-->
+                  <div class="admin">
+                     <aside>
+                        <div class="brad_loog">
+                           <a href=""> <img src="img/logo_admin.jpg" alt=""></a>
+                        </div>
+                        <div>
+                           <ul class="side_menu">
+                              <li><a href=""> <i class="fa fa-th-large"></i> Dashboard</a></li>
+                              <li><a href=""> <i  class="fa fa-truck "></i> Tracking</a></li>
+                           </ul>
+                        </div>
+                     </aside>
+                     <div class="right_col">
+                        <header>
+                           <div class="inner">
+                              <div class="mobile_logo">
+                                 <a href=""> <img src="img/logo_admin.jpg" alt=""></a>
+                              </div>
+                              <div class="seach_col mobile">
+                                 <div class="search_wrap">
+                                    <input type="text" placeholder="Search transactions, Invoices or Help">
+                                    <button><i class="fa fa-search"></i></button>
+                                 </div>
+                              </div>
+                              <div class="header_right_info">
+                                 <div class="inner">
+                                    <div class="paint">
+                                       National Paints Logo
+                                    </div>
+                                    <ul class="user_col">
+                                       <li class="search_mobile">
+                                          <div class="search_sml">
+                                             <i class="fa fa-search"></i>
+                                          </div>
+                                       </li>
+                                       <li>
+                                          <a href="" class="more_menu">
+                                          <i class="fa fa-th-large"></i>
+                                          </a>
+                                       </li>
+                                       <li class="dp_user">
+                                          <a href=""> <img src="img/user.png" alt=""> </a>
+                                       </li>
+                                       <li class="mobile_nav">
+                                          <i class="fa fa-bars"></i>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </header>
+                        <!-- mobile Search -->
+                        <section class="mobile_search_wrap">
+                           <div class="search_wrap mobile clearfix">
+                              <input type="text" placeholder="Search transactions, Invoices or Help">
+                              <button><i class="fa fa-search"></i></button>
+                           </div>
+                        </section>
+                        <!-- end header -->
+                        <div class="clearfix"></div>
+                        <section class="col_dlp_transist clearfix" style="float: left; width: 100%;">
+                           <ul class="tab_clp">
+                              <li><a href="" class="active">In-Transit </a></li>
+                              <li><a href="">Delivered</a></li>
+                           </ul>
+                        </section>
+                        <div class="clearfix"></div>
+                        <section class="main_contents">
+                           <div class="table_body shadow   mb-5 bg-body rounded">
+                              <h3 class="title">Track Orders</h3>
+                              <div class="table-responsive">
+                                 <table class="table table-bordered table_pt">
+                                    <thead>
+                                       <tr>
+                                          <th scope="col">LR NO</th>
+                                          <th scope="col">LR DATE & TIME</th>
+                                          <th scope="col"> CONSIGNEE</th>
+                                          <th scope="col">DESTINATION</th>
+                                          <th scope="col">VEHICLE NO</th>
+                                          <th scope="col">STATUS</th>
+                                          <th scope="col"></th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a data-bs-toggle="modal" data-bs-target="#track_dtls" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a href="" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a href="" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a href="" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a href="" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a data-bs-toggle="modal" data-bs-target="#track_dtls" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a href="" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a href="" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a href="" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                       <tr>
+                                          <th scope="row" class="align-middle">LR0001</th>
+                                          <td  class="align-middle">10-02-2022, 10:12 AM</td>
+                                          <td class="align-middle">ACCCV</td>
+                                          <td class="align-middle"> DESTINATION </td>
+                                          <td class="align-middle">  KL 01236</td>
+                                          <td class="align-middle"> <span class="status"> IN-TRANSIT</span> </td>
+                                          <td class="align-middle text-center"> <a href="" class="btn btn_comm"> Details</a> </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                           <footer>
+                              <p class="text-center"> Copyright © 2022 driverlogistics. All rights reserved</p>
+                           </footer>
+                        </section>
+                     </div>
+                  </div>
+                  <div class="overlay"></div>
+                  <div class="mobile_menu">
+                     <button class="btn_close"> <i class="fa fa-times-circle"></i> </button>
+                     <ul class="side_menu">
+                        <li><a href=""> <i class="fa fa-th-large"></i> Dashboard</a></li>
+                        <li><a href=""> <i class="fa fa-truck "></i> Tracking</a></li>
+                     </ul>
+                  </div>
+                  <!-- MODEL  -->
+                  <!-- Button trigger modal -->
+                  <!-- Modal -->
+                  <!-- Modal -->
+                  <div class="modal fade" id="track_dtls" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Order Details</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body">
+                              <ul class="d-flex track_dtls_input_row">
+                                 <li>
+                                    <div class="form-group">
+                                       <label for="" class="mb-2">LR NUMBER</label>
+                                       <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="form-group">
+                                       <label for="" class="mb-2">STATUS</label>
+                                       <input type="text" placeholder="IN TRANSIT" class="form-control">
+                                    </div>
+                                 </li>
+                              </ul>
+                              <div class="tracking_block mt-3  ">
+                                 <div class="p-5">
+                                    <div class="row">
+                                       <div class="col-lg-12 hh-grayBox pt45 pb20">
+                                          <div class="d-lg-flex justify-content-between">
+                                             <div class="order-tracking completed">
+                                                <span class="is-complete"></span>
+                                                <p>Picked<br><span>Mon, June 24</span></p>
+                                             </div>
+                                             <div class="order-tracking completed">
+                                                <span class="is-complete"></span>
+                                                <p>In-Transit<br><span>Tue, June 25</span></p>
+                                             </div>
+                                             <div class="order-tracking completed">
+                                                <span class="is-complete"></span>
+                                                <p>Picked<br><span>Mon, June 24</span></p>
+                                             </div>
+                                             <div class="order-tracking">
+                                                <span class="is-complete"></span>
+                                                <p>Delivered<br><span>Fri, June 28</span></p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- MODEL  --> 
+               </body>
+               <script src="js/jquery.min.js"></script>
+               <script src="js/bootstrap.min.js"></script>
+               <script src="js/popper.min.js"></script>
+               <script>
+                  $(".mobile_nav").click(function(){
+                     $(".mobile_menu").toggleClass("is_open");
+                     $(".overlay").css("display", "block");
+                  });
+                  
+                  $(".btn_close").click(function(){
+                     $(".mobile_menu").removeClass("is_open");
+                     $(".overlay").css("display", "none", "slow");
+                  });
+                  
+                  //////////////////////////searcher mobile///////
+                  
+                  $(".search_mobile").click(function(){
+                      
+                     $(".mobile_search_wrap").slideToggle();
+                  });
+                  
+                  
+               </script>
+            </html>

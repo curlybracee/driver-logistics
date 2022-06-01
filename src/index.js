@@ -6,7 +6,6 @@ import { rootReducer } from './redux/reducer/rootReducer';
 import createSagaMiddleware from 'redux-saga';
 import commonSaga from './redux/commonSaga';
 
-import './index.css';
 import App from './App';
 
 const sagaMiddleware = createSagaMiddleware()

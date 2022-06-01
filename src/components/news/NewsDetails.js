@@ -5,21 +5,20 @@ import recentImg from '../../assets/images/recent_img_1.png'
 import blogImg from '../../assets/images/blog_img.png'
 import Fade from 'react-reveal/Fade'
 import { Link, useParams } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { formatDate } from '../../assets/constants'
-import { fetchNews, fetchNewsById } from '../../redux/action'
-import Loader from '../Loader'
 
 const BlogDetails = () => {
     const { id } = useParams()
-    const { data: currentData={},requestInProgress } = useSelector(state => state.userLog.newsById)
     const { data: { data: newsDetails = [] } } = useSelector(state => state.userLog.news)
-    const dispatch=useDispatch();
+
+    const [currentData, setCurrentData] = useState(newsDetails.filter(item => id === item.id))
     useEffect(() => {
-        dispatch(fetchNewsById({id}))
-        dispatch(fetchNews({ page:0 }))
-    }, [id])
-    return requestInProgress?<Loader/>:(
+        let tempData = newsDetails.filter(item => Number(id) === item.id)
+        setCurrentData(tempData[0])
+    }, [newsDetails,id])
+    console.log({ newsDetails, currentData });
+    return (
         <Fade bottom>
            <div>
                 <section class="blog_details_outer">
@@ -62,11 +61,11 @@ const BlogDetails = () => {
 
                                     <div class="blog_rightpart">
 
-                                        <h1>Recent News</h1>
+                                        <h1>Recent Blogs</h1>
 
                                         {newsDetails.map((item) => {
                                             if (item.id !== Number(id))
-                                                return <Link to={`/news/details/${item.id}`}> <div class="resent_blog_box">
+                                                return <Link to={`/blog/details/${item.id}`}> <div class="resent_blog_box">
 
                                                     <div class="resent_image"><img src={recentImg} alt='' /></div>
                                                     <div class="resent_contantbox">

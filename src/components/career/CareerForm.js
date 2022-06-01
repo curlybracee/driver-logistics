@@ -29,6 +29,7 @@ const CareerForm = () => {
                     }),
         }),
         onSubmit: (inputData) => {
+            console.log('==============================================', inputData)
             const { name, email, numberCode, number } = inputData;
             let objToSend = {
                 name,

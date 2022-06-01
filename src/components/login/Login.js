@@ -1,14 +1,21 @@
-import React from 'react'
-import LoginForm from './LoginForm';
-
+import React, { useEffect } from 'react'
+import LoginForm from './LoginForm'
+import { useHistory } from 'react-router-dom'
 const Login = () => {
-  return (
-    <div>
-      <div>Login</div>
-      <LoginForm/>
+    const history = useHistory()
 
-    </div>
-  )
+    const item = localStorage.getItem("user");
+    useEffect(() => {
+        if (item !== null) {
+            history.push('/dashboard')
+        }
+
+    }, [item])
+    return (
+        <div>
+            <LoginForm />
+        </div>
+    )
 }
 
-export default Login;
+export default Login

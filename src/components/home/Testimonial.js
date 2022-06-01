@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 const Testimonial = () => {
     const { data = [] } = useSelector(state => state.userLog.testimonials)
+    console.log({ data });
     useEffect(() => {
 
     }, [data])

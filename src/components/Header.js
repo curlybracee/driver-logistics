@@ -1,8 +1,8 @@
 import clsx from 'clsx'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { FooterLogo, MainLogo } from '../assets/images'
+import { FooterLogo,MainLogo } from '../assets/images'
 import { useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
@@ -12,7 +12,7 @@ import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands
 const Header = () => {
     const { pathname } = useLocation()
     const matches840 = useMediaQuery('(max-width:840px)');
-    const headerRef = useRef()
+
     const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
@@ -28,6 +28,7 @@ const Header = () => {
         career: false,
         blog: false,
         contact: false,
+        login: false,
     })
     useEffect(() => {
         switch (pathname) {
@@ -46,27 +47,27 @@ const Header = () => {
         }
     }, [pathname])
     return (
-        <section className='header_section' style={{ padding: '0px' }} ref={headerRef}>
+        <section className='header_section' style={{ padding: '0px' }}>
             <Container className={clsx('headerContainer', isMobile && 'fullWidth')}>
                 <Col md={12} style={{ padding: '0px' }} className={matches840 && isMobile && "mobile-nav-container"}>
                     <div className="header_outer">
-                        <Col md={3} lg={3} sm={3} xl={3} >
+                        <Col md={3} sm={3} >
                             <div className="main_logo" style={{ textAlign: 'left' }}>
                                 <Link to="/">
-                                    {isMobile ? <img
+                                {isMobile? <img
                                         src={FooterLogo}
                                         alt="Driver Logistics"
                                         title="Driver Logistics"
-                                    /> : <img
-                                        src={MainLogo}
-                                        alt="Driver Logistics"
-                                        title="Driver Logistics"
-                                    />}
+                                    />:<img
+                                    src={MainLogo}
+                                    alt="Driver Logistics"
+                                    title="Driver Logistics"
+                                />}
                                 </Link>
                             </div>
                         </Col>
 
-                        <Col md={9} lg={9} sm={9} xl={9} style={{ flex: 1 }} className={matches840 && isMobile && "mobile-nav"}>
+                        <Col md={9} sm={9} style={{ flex: 1 }} className={matches840 && isMobile && "mobile-nav"}>
                             <div className="menupart">
                                 <div id="main-nav" style={{ whiteSpace: 'nowrap' }}>
                                     <ul onClick={() => setIsMobile(false)} className={matches840 && isMobile ? "stellarnav-mobile" : "stellarnav"}>
@@ -82,22 +83,22 @@ const Header = () => {
                                         {/* <li className={clsx(active.case_studies && 'menu_active')}><Link to="/case-studies">Case Studies</Link></li> */}
                                         {/* <li className={clsx(active.news_letters && 'menu_active')}><Link to="/news-letters">News Letters</Link></li> */}
                                         <li className={clsx(active.contact && 'menu_active')}><Link to="/contact">Contact</Link></li>
-                                        <li className={clsx(active.contact && 'menu_active')}><Link to="/login">login</Link></li>
+                                        <li className={clsx(active.login && 'menu_active')}><Link to="/login">Login</Link></li>
                                         <li className="extra-text visible-xs" >
                                             <a href="#" class="probootstrap-burger-menu active"><i></i></a>
-                                            <h5 style={{ fontSize: '15px' }}>Address</h5>
-                                            <p style={{ wordWrap: 'break-word', textOverflow: 'ellipsis' }}>
-                                                University Road,<br />
-                                                CUSAT PO, Kochi,<br />
-                                                Kerala, India - 682022
-                                            </p>
+                                            <h5 style={{fontSize:'15px'}}>Address</h5>
+                                            <p style={{wordWrap:'break-word',textOverflow:'ellipsis'}}>
+                                                University Road,<br/>
+                                                 CUSAT PO, Kochi,<br/>
+                                                  Kerala, India - 682022
+                                                 </p>
                                             <h5>Call</h5>
                                             <p>+91 484 254 4002</p>
                                             <h5>Connect</h5>
                                             <ul class="social-buttons">
-                                                <li className="dlab-social-icon"><Link to={{ pathname: "https://www.instagram.com/driverlogistics/" }} target="_blank"> <FontAwesomeIcon icon={faInstagram} size="1x" color='#000' /> </Link></li>
-                                                <li class="dlab-social-icon"><Link to={{ pathname: "https://www.facebook.com/driverlogisticsllp" }} target="_blank"> <FontAwesomeIcon icon={faFacebookF} size="1x" color='#000' /> </Link></li>
-                                                <li class="dlab-social-icon"><Link to={{ pathname: "https://www.linkedin.com/company/driver-logistics-llp" }} target="_blank"> <FontAwesomeIcon icon={faLinkedinIn} size="1x" color='#000' /> </Link></li>
+                                            <li className="dlab-social-icon"><Link to={{pathname:"https://www.instagram.com/driverlogistics/"}} target="_blank"> <FontAwesomeIcon icon={faInstagram} size="1x" color='#000' /> </Link></li>
+                                            <li class="dlab-social-icon"><Link to={{pathname:"https://www.facebook.com/driverlogisticsllp"}} target="_blank"> <FontAwesomeIcon icon={faFacebookF} size="1x" color='#000' /> </Link></li>
+                                            <li class="dlab-social-icon"><Link to={{pathname:"https://www.linkedin.com/company/driver-logistics-llp"}} target="_blank"> <FontAwesomeIcon icon={faLinkedinIn} size="1x" color='#000' /> </Link></li>
                                             </ul>
                                         </li>
                                     </ul>

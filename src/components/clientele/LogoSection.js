@@ -6,6 +6,7 @@ import _ from 'lodash'
 
 const LogoSection = () => {
     const { data :{data=[]}={} } = useSelector(state => _.get(state,'userLog.clients',{}))
+    console.log({data});
 
     return (
 

@@ -22,6 +22,7 @@ import MailIco from './contact_icon_2.png'
 import PhoneIco from './contact_icon_3.png'
 import WorkWithUsImg from './career_img.png'
 import BlogIntroImg from './blog_img.png'
+import LoginSideImg from './login_sideimage.jpg';
 export {
     MainLogo, HeroImg,
     Logo1,
@@ -31,5 +32,5 @@ export {
     Logo5,
     ServiceWareHouseImg, ServiceFleetImg, ServiceConstructionImg, ServiceDigitisationImg,
     tab_img_1, tab_img_2, tab_img_4, tab_img_3,
-    ContactSecImg, LocationIco, MailIco, PhoneIco, WorkWithUsImg, BlogIntroImg,FooterLogo
+    ContactSecImg, LocationIco, MailIco, PhoneIco, WorkWithUsImg, BlogIntroImg,FooterLogo,LoginSideImg
 }

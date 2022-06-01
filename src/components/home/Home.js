@@ -6,8 +6,6 @@ import Hero from './Hero'
 import LatestFromBlogs from './LatestFromBlogs'
 import LogoSection from './LogoSection'
 import Testimonial from './Testimonial'
-import BelowService from './BelowService'
-import Faq from './Faq'
 import WhareHouseService from './WhareHouseService'
 import Fade from 'react-reveal/Fade';
 import Counter from './Counter'
@@ -28,10 +26,6 @@ const Home = () => {
                 <ViewportBlock />
             </Fade>
             <Fade bottom>
-                <BelowService />
-            </Fade>
-
-            <Fade bottom>
                 <WhareHouseService />
             </Fade>
             <Fade bottom>
@@ -42,9 +36,6 @@ const Home = () => {
             </Fade>
             <Fade bottom>
                 <DigitisationService />
-            </Fade>
-            <Fade bottom>
-                <Faq />
             </Fade>
             <Fade bottom>
                 <Testimonial />
