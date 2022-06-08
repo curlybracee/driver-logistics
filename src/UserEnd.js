@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: 60,
     display: 'flex'
+  },
+  sectionContainer: {
+    display: 'flex',
+    width: '100%'
   }
   ,
 }))
@@ -32,9 +36,17 @@ function UserEnd() {
   }
   const classes = useStyles();
   const [open, setOpen] = useState(true)
+  const handleMouseEnter = (e) => {
+    let mousePosition = e?.clientX;
+    if (mousePosition < 5) {
+      setOpen(true)
+    }
+  }
+
   return (
-    <div className={"userend"} >
-      <div class="admin" onMouseEnter={() => setOpen(true)}>
+
+    <div className={"userend"}>
+      <div class="admin" onMouseMove={handleMouseEnter} >
         {/* <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -43,33 +55,23 @@ function UserEnd() {
         >
           <i class="fa-solid fa-bars"></i>
         </IconButton> */}
-        <Drawer anchor={'left'} open={open} onClose={() => setOpen(false)} >
-          <SideMenu handleClose={() => setOpen(false)} />
-        </Drawer>
+        {/* <Drawer anchor={'left'} open={open} onClose={() => setOpen(false)} > */}
+        {/* </Drawer> */}
 
         <div class="right_col">
           <Header onSearch={onSearch} headline="Header" />
-          {/* <Card className={classes.appbar}>
-            <Link to='/dashboard' onClick={() => handleClick(1)} className={classes.navLink}>
-              Dashboard
-            </Link>
-            <Link to='/dashboard/intransist' onClick={() => handleClick(5)} className={classes.navLink}>
-              custom report
-            </Link>
-            {/* <Link className={classes.navLink}>
-                        help
-                    </Link>
-                    <Link className={classes.navLink}>
-                        tutorials
-                    </Link> 
-        </Card> */}
-          <section class="col_dlp_transist clearfix" style={{ float: "left", width: "100%" }}>
-            <ul class="tab_clp">
-              <li><Link to="/dashboard">Dashboard</Link></li>
-              <li><Link to="/dashboard/delivered">custom report</Link></li>
-            </ul>
-          </section>
-          <Routes />
+          <div className={classes.sectionContainer}>
+            <SideMenu open={open} setOpen={setOpen} />
+            <div style={{ flex: 1 }}>
+              <section class="col_dlp_transist clearfix">
+                <ul class="tab_clp">
+                  <li><Link to="/dashboard">Dashboard</Link></li>
+                  <li><Link to="/dashboard/all">custom report</Link></li>
+                </ul>
+              </section>
+              <Routes />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>

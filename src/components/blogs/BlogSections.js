@@ -54,11 +54,12 @@ const BlogSections = () => {
                                     <div style={{ height: '230px' }}>
                                         <img alt='' src={item?.image} class="image_new" />
                                     </div>
+                                    {console.log({ item })}
                                     {/* {item?.image && <div class="overlay_one"></div>} */}
                                     {/* <div class="clearfix"></div> */}
                                     <div style={{ flex: 1, marginBottom: 'auto' }}>
                                         <div class="blog_auther"><img alt='' src={auther_img} /> <span>{item.posted_by}</span></div>
-                                        <div class="blog_title" style={{ maxHeight: 50 }}><Link to={`/blog/details/${item.id}`} style={{ textOverflow: 'ellipsis', maxHeight: 50 }}>{item.title}</Link></div>
+                                        <div class="blog_title" style={{ maxHeight: 50 }}><Link to={`/blog/details/${item.id}?title=${item.title}`} style={{ textOverflow: 'ellipsis', maxHeight: 50 }}>{item.title}</Link></div>
                                         <div dangerouslySetInnerHTML={{ __html: item.shortdescription }}
                                             style={{
                                                 fontSize: '14px',
@@ -85,13 +86,13 @@ const BlogSections = () => {
                                         }}>
                                             <img alt='' src={blogIcon1} />
                                         </div> */}
-                                            <Link to={`/blog/details/${item.id}`}>
+                                            <Link to={`/blog/details/${item.id}?title=${item.title}`}>
                                                 <img alt='' src={blogIcon2} />
                                             </Link>
                                         </div>
                                         <div class="clearfix"></div>
 
-                                        <div class="blog_readmore"><Link to={`/blog/details/${item.id}`}
+                                        <div class="blog_readmore"><Link to={`/blog/details/${item.id}?title=${item.title}`}
                                             class="theme-btn-three btn-style-three"><span class="btn-title-three">Read
                                                 More</span></Link></div>
                                     </div>

@@ -24,6 +24,11 @@ const theme = createTheme({
 });
 
 const Delivered = (props) => {
+   const { pathname } = useLocation();
+   let type = pathname.split('/')
+   type = type[type.length - 1]
+
+   console.debug({ type })
    // const { data = [] } = useSelector(state => state.userLog.search_data)
    const [searchText, setSearchText] = useState("");
    const [sortLR, setSortLR] = useState("")
@@ -102,7 +107,7 @@ const Delivered = (props) => {
       form_data.append("PageSize", PageSize);
       form_data.append("Userid", Userid);
       form_data.append("Clientpntr", Clientpntr);
-      form_data.append("Status", "Delivered");
+      form_data.append("Status", type === "all" ? '' : "Delivered");
       form_data.append("Keyword", Keyword);
       form_data.append("LRSort", LRSort);
       form_data.append("LRDateSort", LRDateSort);
@@ -251,7 +256,7 @@ const Delivered = (props) => {
                               <td class="align-middle">{item.ConsgneM_name}</td>
                               {/* <td class="align-middle"> DESTINATION </td>
                                       <td class="align-middle">  KL 01236</td> */}
-                              <td class="align-middle"> <span class="status"> DELIVERED</span> </td>
+                              <td class="align-middle"> <span class="status"> {item.LRTL_remarks === 'DELIVERED' ? 'DELIVERED' : 'IN-TRANSIT'}</span> </td>
                               <td class="align-middle text-center"> <Link to={`/dashboard/delivered/details/${item.LRTL_orderlrnumber}`} class="btn btn_comm"> Details</Link> </td>
                            </tr>
                         )

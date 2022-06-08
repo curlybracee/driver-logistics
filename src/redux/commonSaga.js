@@ -117,12 +117,10 @@ function* handlePostLogin(action) {
     }
 }
 function* handleUpdateSearch(action) {
-    const CRM = true;
     const searchKey = action?.payload?.data;
     yield call(history.push, `/dashboard/search/${searchKey}`)
 }
 function* handleDashBoard(action) {
-    const CRM = true;
     const { response, error } = yield call(UserpostApi, URL.GET_DASHBOARD, action?.payload?.data)
     if (error) {
         yield put(Action(TYPES.COMMON_FAILURE, error))

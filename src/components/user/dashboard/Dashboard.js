@@ -1,14 +1,11 @@
-import { AppBar, Card, Grid, IconButton, makeStyles, Toolbar, Typography, useTheme } from '@material-ui/core'
-import clsx from 'clsx'
+import {  Grid, makeStyles } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchDashboard } from '../../../redux/action'
 import DashboardCard from './DashboardCard'
-import { Link } from 'react-router-dom'
 // import { DeliveredIcon, LogisticIcon, ReturnIcon, TransitIcon } from '../../assets/images/dashboard'
-const drawerWidth = 240;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         display: 'flex',
     },
@@ -57,9 +54,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Dashboard = () => {
     const classes = useStyles();
-    const theme = useTheme();
     const dispatch = useDispatch()
-    const [open, setOpen] = useState(1);
     const [Userid, setUserId] = useState(() => {
         const user = JSON.parse(localStorage.getItem("user"));
         const initialValue = user.Userid;
@@ -84,9 +79,6 @@ const Dashboard = () => {
         }))
     }, [])
 
-    const handleClick = (c) => {
-        setOpen(c)
-    }
     return (
         <>
             <div class="clearfix"></div>

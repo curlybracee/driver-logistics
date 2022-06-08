@@ -1,13 +1,9 @@
 import React from 'react';
-import { logo_admin, delivery_van } from '../../assets/user/img/'
 import { useState, useEffect } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from 'react-router-dom'
-import { useLocation } from "react-router-dom";
-import { useSelector } from 'react-redux'
 
-import { ReactPaginate } from 'react-paginate'
-import { createTheme, Dialog, ThemeProvider } from '@material-ui/core';
+import { createTheme, ThemeProvider } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 import { Spinner } from 'react-bootstrap';
 import { USER_BASE_API } from "../../assets/constants";
@@ -23,7 +19,7 @@ const theme = createTheme({
     }
 });
 
-const Returned = (props) => {
+const Returned = () => {
     // const { data = [] } = useSelector(state => state.userLog.search_data)
     const [searchText, setSearchText] = useState("");
     const [sortLR, setSortLR] = useState("")
@@ -33,13 +29,6 @@ const Returned = (props) => {
     // const [show, setShow] = useState(false);
     // const handleClose = () => setShow(false);
 
-    const handleShow = (OrderNo) => {
-
-
-
-        //  console.log(OrderNo);
-        // setShow(true);
-    }
 
     const [Userid, setUserId] = useState(() => {
         const user = JSON.parse(localStorage.getItem("user"));

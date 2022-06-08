@@ -35,10 +35,13 @@ const DetailsPage = () => {
         { name: 'Order placed', key: 'orderPlaced' },
         { name: 'Dispatched', key: 'dispatched' },
         { name: 'In Transit', key: 'intransit' },
-        { name: 'Out For Delivery', key: 'outForDelivery' },
+        { name: 'OUT FOR DELIVERY', key: 'outForDelivery' },
         { name: 'Delivered', key: 'delivered' }
     ]
     let flag = status.findIndex((item) => item.key === type)
+    const remarkType = tableDataTracking[tableDataTracking.length - 1]?.LRTL_remarks
+    flag = remarkType === 'OUT FOR DELIVERY' ? 3 : flag
+    console.debug({ status, type, flag })
     return (
         <>
 
@@ -66,7 +69,7 @@ const DetailsPage = () => {
                                 <li>
                                     <div class="form-group">
                                         <label for="" class="mb-2">STATUS</label>
-                                        <input type="text" value={TYPE[type]} class="form-control" />
+                                        <input type="text" value={remarkType} class="form-control" />
                                     </div>
                                 </li>
                             </ul>

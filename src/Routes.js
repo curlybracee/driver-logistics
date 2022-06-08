@@ -42,6 +42,7 @@ const Routes = () => {
         <UserGuardRoute exact path="/dashboard" component={Dashboard} />
         <UserGuardRoute exact path="/dashboard/intransist" component={Intransist} />
         <UserGuardRoute exact path="/dashboard/delivered" component={Delivered} />
+        <UserGuardRoute exact path="/dashboard/all" component={Delivered} />
         <UserGuardRoute exact path="/dashboard/returned" component={Returned} />
         <UserGuardRoute exact path="/dashboard/search/:id" component={DetailsPage} />
         <UserGuardRoute exact path="/dashboard/:type/details/:id" component={DetailsPage} />
