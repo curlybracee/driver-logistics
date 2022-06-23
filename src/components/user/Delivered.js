@@ -12,6 +12,7 @@ import { Pagination } from '@material-ui/lab';
 import { Spinner } from 'react-bootstrap';
 import { USER_BASE_API } from "../../assets/constants";
 import * as XLSX from 'xlsx';
+import DatePicker from '../common/DatePicker';
 
 const theme = createTheme({
    overrides: {
@@ -77,7 +78,7 @@ const Delivered = (props) => {
    //  const [open, setOpen] = useState(false)
    const [page_index, setPageIndex] = useState()
    const [last_page, setLastPage] = useState()
-
+   const [date, setDate] = useState({ FromDate: '', ToDate: '' })
 
    const [loading, setLoading] = useState(false);
 
@@ -112,7 +113,8 @@ const Delivered = (props) => {
       form_data.append("LRSort", LRSort);
       form_data.append("LRDateSort", LRDateSort);
       form_data.append("Pagination", "true");
-
+      form_data.append("FromDate", date.FromDate);
+      form_data.append("ToDate", date.ToDate);
       // console.log([...form_data]);
       fetch(USER_BASE_API + "/get-orders", {
          method: 'POST',
@@ -132,7 +134,7 @@ const Delivered = (props) => {
             setPageIndex(PageIndex);
             // console.log(PageIndex);
          })
-   }, [sortLR, sortLRDate, searchText, page])
+   }, [sortLR, sortLRDate, searchText, page, date])
 
    const handleSearchClick = () => {
       // dispatch(updateSearch(searchText))
@@ -216,6 +218,7 @@ const Delivered = (props) => {
                         <div class="search_wrap">
                            <input type="text" id="txt_search" placeholder="Search transactions, Invoices or Help" />
                         </div>
+                        <DatePicker onChange={setDate} />
                         <button onClick={handleSearchClick}><i class="fa fa-search"></i></button>
                      </div>
                   </li>

@@ -8,6 +8,7 @@ import { Pagination } from '@material-ui/lab';
 import { Spinner } from 'react-bootstrap';
 import { USER_BASE_API } from "../../assets/constants";
 import * as XLSX from 'xlsx';
+import DatePicker from '../common/DatePicker';
 
 const theme = createTheme({
     overrides: {
@@ -25,7 +26,7 @@ const Returned = () => {
     const [sortLR, setSortLR] = useState("")
     const [sortLRDate, setSortLRDate] = useState("")
 
-
+    const [date, setDate] = useState({ FromDate: '', ToDate: '' })
     // const [show, setShow] = useState(false);
     // const handleClose = () => setShow(false);
 
@@ -82,7 +83,8 @@ const Returned = () => {
         form_data.append("LRSort", LRSort);
         form_data.append("LRDateSort", LRDateSort);
         form_data.append("Pagination", "true");
-
+        form_data.append("FromDate", date.FromDate);
+        form_data.append("ToDate", date.ToDate);
         console.log([...form_data]);
         fetch(USER_BASE_API + "/get-orders", {
             method: 'POST',
@@ -102,7 +104,7 @@ const Returned = () => {
                 setPageIndex(PageIndex);
                 // console.log(PageIndex);
             })
-    }, [sortLR, sortLRDate, searchText, page])
+    }, [sortLR, sortLRDate, searchText, page, date])
     //  const [search, setSearch] = useState("");
     //  const handleSearchChange = (props) => {
     //    setSearch(props.target.value);
@@ -179,7 +181,7 @@ const Returned = () => {
 
             })
     }
-
+    console.debug({ date })
     return (
         <>
 
@@ -193,6 +195,7 @@ const Returned = () => {
                                 <div class="search_wrap">
                                     <input type="text" id="txt_search" placeholder="Search transactions, Invoices or Help" />
                                 </div>
+                                <DatePicker onChange={setDate} />
                                 <button onClick={handleSearchClick}><i class="fa fa-search"></i></button>
                             </form>
                         </li>
